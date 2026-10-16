@@ -1,3 +1,98 @@
+// Estado do Usuário
+let usuarioAtual = JSON.parse(localStorage.getItem('precifica_user')) || null;
+
+window.onload = () => {
+    verificarAutenticacao();
+    calcularPreco();
+};
+
+function verificarAutenticacao() {
+    if (!usuarioAtual) {
+        document.getElementById('modalAuth').classList.remove('hidden');
+    } else {
+        document.getElementById('modalAuth').classList.add('hidden');
+        document.getElementById('userGreeting').innerText = `Olá, ${usuarioAtual.nome || 'Cliente'}`;
+        atualizarBadgePlano();
+    }
+}
+
+let modoCadastro = false;
+function alternarModoAuth() {
+    modoCadastro = !modoCadastro;
+    document.getElementById('campoNomeDiv').classList.toggle('hidden', !modoCadastro);
+    document.getElementById('authSubtitle').innerText = modoCadastro ? "Crie sua conta gratuita em segundos" : "Acesse sua conta para começar a precificar";
+    document.getElementById('btnSubmitAuth').innerText = modoCadastro ? "Cadastrar Gratuitamente" : "Entrar na Plataforma";
+    document.getElementById('authToggleText').innerText = modoCadastro ? "Já tem uma conta?" : "Não tem uma conta?";
+    document.getElementById('authToggleBtn').innerText = modoCadastro ? "Fazer login" : "Criar conta grátis";
+}
+
+function realizarLogin(event) {
+    event.preventDefault();
+    const email = document.getElementById('authEmail').value;
+    const nome = modoCadastro ? document.getElementById('authNome').value || "Usuário" : email.split('@')[0];
+    
+    usuarioAtual = { email, nome, plano: 'FREE' };
+    localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
+    
+    verificarAutenticacao();
+    mostrarToast('Bem-vindo!', `Sessão iniciada como ${nome}.`);
+}
+
+function fazerLogout() {
+    localStorage.removeItem('precifica_user');
+    usuarioAtual = null;
+    verificarAutenticacao();
+}
+
+function atualizarBadgePlano() {
+    const badge = document.getElementById('badgePlanoNavbar');
+    const btnNav = document.getElementById('btnUpgradeNav');
+    if (usuarioAtual && usuarioAtual.plano === 'PRO') {
+        badge.innerText = "PRO";
+        badge.className = "bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase";
+        btnNav.classList.add('hidden');
+    } else {
+        badge.innerText = "FREE";
+        badge.className = "bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase";
+        btnNav.classList.remove('hidden');
+    }
+}
+
+function abrirPro() {
+    document.getElementById('modalPro').classList.remove('hidden');
+}
+
+function fecharPro() {
+    document.getElementById('modalPro').classList.add('hidden');
+}
+
+function ativarPlanoPro() {
+    if (usuarioAtual) {
+        usuarioAtual.plano = 'PRO';
+        localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
+        atualizarBadgePlano();
+        fecharPro();
+        mostrarToast('Parabéns!', 'Sua conta foi atualizada para o Plano PRO com sucesso!', 'success');
+    }
+}
+
+function checarRecursoPro(input) {
+    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
+        input.value = 0;
+        abrirPro();
+    } else {
+        calcularPreco();
+    }
+}
+
+function gerarPdfPro() {
+    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
+        abrirPro();
+    } else {
+        window.print();
+    }
+}
+
 function calcularPreco() {
     const nome = document.getElementById('nomeProduto').value.trim();
     const materiais = parseFloat(document.getElementById('custoMateriais').value) || 0;
@@ -5,56 +100,27 @@ function calcularPreco() {
     const horas = parseFloat(document.getElementById('horasTrabalho').value) || 0;
     const valorHora = parseFloat(document.getElementById('valorHora').value) || 0;
     const margem = parseFloat(document.getElementById('sliderMargem').value) || 60;
-    const taxaCartao = parseFloat(document.getElementById('taxaCartao').value) || 0;
+    const taxaCartao = usuarioAtual && usuarioAtual.plano === 'PRO' ? (parseFloat(document.getElementById('taxaCartao').value) || 0) : 0;
 
     const maoDeObra = horas * valorHora;
     const custoTotal = materiais + maoDeObra + custosFixos;
-    
     const precoBase = custoTotal * (1 + (margem / 100));
 
     let precoVenda = precoBase;
-    if (taxaCartao > 0 && taxaCartao < 100) {
+    if (taxaCartao > 0) {
         precoVenda = precoBase / (1 - (taxaCartao / 100));
     }
 
     const lucroLiquido = precoVenda - custoTotal - (precoVenda * (taxaCartao / 100));
-    const markup = custoTotal > 0 ? (precoVenda / custoTotal).toFixed(2) : 0;
 
-    document.getElementById('resNomeProduto').innerText = nome !== "" ? nome : "Produto sem identificação";
+    document.getElementById('resNomeProduto').innerText = nome !== "" ? nome : "Produto sem nome";
     document.getElementById('resCustoTotal').innerText = `Custo: ${custoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
     document.getElementById('resPrecoVenda').innerText = precoVenda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    
-    if (taxaCartao > 0) {
-        document.getElementById('resPrecoCartao').innerText = `À Vista / PIX: ${precoBase.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
-    } else {
-        document.getElementById('resPrecoCartao').innerText = `Preço validado para venda direta.`;
-    }
-
+    document.getElementById('resPrecoCartao').innerText = taxaCartao > 0 ? `À Vista: ${precoBase.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}` : `Venda Direta / PIX`;
     document.getElementById('resLucro').innerText = lucroLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-    // Indicador de Saúde
-    const badgeSaude = document.getElementById('badgeSaude');
-    if (margem < 30) {
-        badgeSaude.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400"></span> Atenção`;
-        badgeSaude.className = "px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center gap-1.5";
-    } else {
-        badgeSaude.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Excelente`;
-        badgeSaude.className = "px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5";
-    }
-
-    // Gráfico de Proporção
-    if (precoVenda > 0) {
-        const pctCusto = (custoTotal / precoVenda) * 100;
-        const pctLucro = 100 - pctCusto;
-        document.getElementById('barraCusto').style.width = `${pctCusto}%`;
-        document.getElementById('barraLucro').style.width = `${pctLucro}%`;
-        document.getElementById('valBarraCusto').innerText = custoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        document.getElementById('valBarraLucro').innerText = lucroLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        document.getElementById('txtMarkupEfetivo').innerText = `Markup: ${markup}x`;
-    }
 }
 
-function sincronizarMargem(origem) {
+function sincronizarMargem() {
     const slider = document.getElementById('sliderMargem');
     document.getElementById('labelMargem').innerText = `${slider.value}%`;
     calcularPreco();
@@ -65,10 +131,17 @@ function limparFormulario() {
     document.getElementById('sliderMargem').value = 60;
     document.getElementById('labelMargem').innerText = '60%';
     calcularPreco();
-    mostrarToast('Redefinido', 'Os campos foram limpos com sucesso.', 'info');
 }
 
 function salvarPrecificacao() {
+    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
+        let historico = JSON.parse(localStorage.getItem('precifica_historico_user')) || [];
+        if (historico.length >= 3) {
+            abrirPro();
+            return;
+        }
+    }
+
     const nome = document.getElementById('nomeProduto').value.trim() || "Produto Criativo";
     const preco = document.getElementById('resPrecoVenda').innerText;
     const lucro = document.getElementById('resLucro').innerText;
@@ -79,21 +152,20 @@ function salvarPrecificacao() {
     }
 
     const item = { nome, preco, lucro, data: new Date().toLocaleDateString('pt-BR') };
-    let historico = JSON.parse(localStorage.getItem('precifica_historico_enterprise')) || [];
+    let historico = JSON.parse(localStorage.getItem('precifica_historico_user')) || [];
     historico.unshift(item);
-    if (historico.length > 25) historico.pop();
-    localStorage.setItem('precifica_historico_enterprise', JSON.stringify(historico));
+    localStorage.setItem('precifica_historico_user', JSON.stringify(historico));
 
-    mostrarToast('Sucesso!', `"${nome}" foi salvo no histórico com sucesso.`);
+    mostrarToast('Salvo!', `"${nome}" foi registrado com sucesso.`);
 }
 
 function abrirHistorico() {
     const modal = document.getElementById('modalHistorico');
     const lista = document.getElementById('listaHistorico');
-    let historico = JSON.parse(localStorage.getItem('precifica_historico_enterprise')) || [];
+    let historico = JSON.parse(localStorage.getItem('precifica_historico_user')) || [];
 
     if (historico.length === 0) {
-        lista.innerHTML = `<p class="text-slate-500 text-xs text-center py-8">Nenhum registro encontrado no histórico.</p>`;
+        lista.innerHTML = `<p class="text-slate-500 text-xs text-center py-8">Nenhum cálculo salvo.</p>`;
     } else {
         lista.innerHTML = historico.map(h => `
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center">
@@ -115,41 +187,26 @@ function fecharHistorico() {
 }
 
 function limparHistorico() {
-    if (confirm('Deseja realmente apagar todo o histórico salvo?')) {
-        localStorage.removeItem('precifica_historico_enterprise');
-        abrirHistorico();
-        mostrarToast('Limpo', 'O histórico foi apagado.', 'info');
-    }
+    localStorage.removeItem('precifica_historico_user');
+    abrirHistorico();
 }
 
 function copiarResumo() {
     const nome = document.getElementById('resNomeProduto').innerText;
     const preco = document.getElementById('resPrecoVenda').innerText;
     const lucro = document.getElementById('resLucro').innerText;
-
-    if (preco === "R$ 0,00") {
-        mostrarToast('Aviso', 'Faça um cálculo antes de enviar o orçamento.', 'error');
-        return;
-    }
-
-    const texto = `🛍️ *Orçamento Oficial*\n📌 *Item:* ${nome}\n💰 *Preço Sugerido:* ${preco}\n✨ Qualidade e preço justo garantidos.`;
-    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
+    const texto = `🛍️ *Orçamento*\n📌 ${nome}\n💰 ${preco}\n✨ Qualidade garantida.`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`, '_blank');
 }
 
-// Sistema de Notificações Toasts Flutuantes
-function mostrarToast(titulo, mensagem, tipo = 'success') {
+function mostrarToast(titulo, mensagem) {
     const toast = document.getElementById('toastNotification');
     document.getElementById('toastTitle').innerText = titulo;
     document.getElementById('toastMessage').innerText = mensagem;
-    
     toast.classList.remove('translate-y-[-200%]', 'opacity-0');
     toast.classList.add('translate-y-0', 'opacity-100');
-
     setTimeout(() => {
         toast.classList.remove('translate-y-0', 'opacity-100');
         toast.classList.add('translate-y-[-200%]', 'opacity-0');
     }, 3500);
 }
-
-window.onload = () => { calcularPreco(); };
