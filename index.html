@@ -253,7 +253,7 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <span class="text-xl font-extrabold tracking-tight text-white">Precifica</span>
-                        <span id="badgePlanoNavbar" class="bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase">Free</span>
+                        <span id="badgePlanoNavbar" class="bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/25 uppercase">PRO</span>
                     </div>
                     <span class="block text-[11px] text-slate-400 font-medium" id="userGreeting">Olá, Visitante</span>
                 </div>
@@ -1343,7 +1343,6 @@
             document.getElementById('fgResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
             atualizarDashboard('Portes Grátis Embutidos', custoTotal, preco, preco - custoTotal);
         }
-        
 
         function calcularLote() {
             const qtd = parseFloat(document.getElementById('qtdLote').value) || 50;
@@ -1436,12 +1435,6 @@
             document.getElementById('userGreeting').innerText = 'Olá, ' + email.split('@')[0];
             document.getElementById('telaAuth').classList.add('hidden');
             mostrarToast('Bem-vindo', 'Sessão iniciada com sucesso!');
-        }
-
-        function realizarLoginSocial() {
-            document.getElementById('userGreeting').innerText = 'Olá, Administrador';
-            document.getElementById('telaAuth').classList.add('hidden');
-            mostrarToast('Google SSO', 'Autenticado com sucesso via Google!');
         }
 
         function esqueciSenha(e) {
