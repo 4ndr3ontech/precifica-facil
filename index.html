@@ -34,7 +34,7 @@
         <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-3xl mx-auto w-full my-auto py-6">
+            <div class="relative z-10 max-w-4xl mx-auto w-full my-auto py-6">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
@@ -124,7 +124,7 @@
             </div>
 
             <!-- Rodapé Fixo na Base da Coluna Esquerda -->
-            <div class="relative z-10 max-w-3xl mx-auto w-full pt-4">
+            <div class="relative z-10 max-w-4xl mx-auto w-full pt-4">
                 <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
@@ -247,7 +247,7 @@
 
     <!-- Navbar Enterprise -->
     <header class="border-b border-slate-800/60 bg-[#03050b]/90 backdrop-blur-xl sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-[90rem] mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/10">
                     <i class="fa-solid fa-chart-line text-white text-lg"></i>
@@ -275,35 +275,35 @@
         </div>
     </header>
 
-    <!-- Seletor de Módulos da Plataforma (Incluindo Ponto de Equilíbrio & Descontos) -->
-    <div class="max-w-7xl mx-auto px-6 pt-8 pb-2">
-        <div class="flex gap-3 overflow-x-auto pb-2 border-b border-slate-800/80">
-            <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
+    <!-- Seletor de Módulos da Plataforma (Largura Fluida Sem Scroll Horizontal) -->
+    <div class="max-w-[90rem] mx-auto px-6 pt-8 pb-2">
+        <div class="flex flex-wrap gap-2.5 pb-2 border-b border-slate-800/80">
+            <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
                 <i class="fa-solid fa-calculator"></i> Precificação Unitária
             </button>
-            <button onclick="mudarModulo('custosFixos')" id="tabCustosFixos" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('custosFixos')" id="tabCustosFixos" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-sliders text-indigo-400"></i> Modelos Custo Fixo <span id="tagModuloCustos" class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">1 Modelo</span>
             </button>
-            <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-tags text-emerald-400"></i> Simulador Descontos <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('breakeven')" id="tabBreakeven" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('breakeven')" id="tabBreakeven" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-chart-pie text-violet-400"></i> Ponto de Equilíbrio <span class="bg-violet-500/20 text-violet-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('ia')" id="tabIa" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('ia')" id="tabIa" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+            <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-boxes-stacked text-indigo-300"></i> Produção em Lote <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
             </button>
         </div>
     </div>
 
     <!-- Conteúdo Principal -->
-    <main class="max-w-7xl mx-auto px-6 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <main class="max-w-[90rem] mx-auto px-6 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- MÓDULO 1: PRECIFICAÇÃO UNITÁRIA -->
         <div id="moduloUnitario" class="contents">
@@ -520,7 +520,7 @@
             </div>
         </div>
 
-        <!-- MÓDULO NOVO: CALCULADORA DE PONTO DE EQUILÍBRIO (BREAK-EVEN) -->
+        <!-- MÓDULO: CALCULADORA DE PONTO DE EQUILÍBRIO (BREAK-EVEN) -->
         <div id="moduloBreakeven" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -674,7 +674,7 @@
     </main>
 
     <!-- Rodapé Pinned -->
-    <footer class="max-w-7xl mx-auto px-6 py-6 w-full text-center text-xs text-slate-500 font-medium">
+    <footer class="max-w-[90rem] mx-auto px-6 py-6 w-full text-center text-xs text-slate-500 font-medium">
         &copy; 2026 Precifica Corporation. Todos os direitos reservados.
     </footer>
 
@@ -724,7 +724,7 @@
                 if(el) el.classList.add('hidden');
                 const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
                 if(btn) {
-                    btn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer';
+                    btn.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer';
                 }
             });
 
@@ -743,7 +743,7 @@
             if(alvo) alvo.classList.remove('hidden');
             const btnAtivo = document.getElementById('tab' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
             if(btnAtivo) {
-                btnAtivo.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer';
+                btnAtivo.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer';
             }
         }
 
