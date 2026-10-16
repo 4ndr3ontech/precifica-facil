@@ -75,15 +75,15 @@
 
     <!-- Tela de Autenticação Enterprise -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row overflow-y-auto no-scrollbar">
-        <!-- Coluna Esquerda: Proposta de Valor & Planos -->
-        <div class="lg:w-[58%] min-h-screen bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-950/30 via-[#03050b] to-[#03050b] p-8 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative">
+        <!-- Coluna Esquerda: Proposta de Valor & Planos (Atualizada conforme imagem) -->
+        <div class="lg:w-[62%] min-h-screen bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-950/30 via-[#03050b] to-[#03050b] p-8 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative">
             
             <!-- Efeito de Brilho de Fundo -->
             <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
             
-            <div class="relative z-10 max-w-3xl mx-auto w-full">
+            <div class="relative z-10 max-w-4xl mx-auto w-full">
                 <!-- Logótipo e Status -->
-                <div class="flex items-center gap-4 mb-10">
+                <div class="flex items-center gap-4 mb-8">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.3)] ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-2xl"></i>
                     </div>
@@ -100,119 +100,135 @@
                 </div>
 
                 <!-- Título Principal Otimizado -->
-                <div class="mb-12">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
+                <div class="mb-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-5">
                         <i class="fa-solid fa-bolt text-indigo-400 text-xs"></i>
                         <span class="text-indigo-300 text-xs font-bold uppercase tracking-widest">A Suíte Definitiva</span>
                     </div>
                     
-                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.1] mb-5">
+                    <h1 class="text-3xl lg:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
                         Elimine o prejuízo e <br class="hidden md:block"/>
                         <span class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent drop-shadow-sm">escale o seu lucro real.</span>
                     </h1>
-                    <p class="text-slate-400 text-base lg:text-lg leading-relaxed font-medium max-w-2xl">
+                    <p class="text-slate-400 text-sm lg:text-base leading-relaxed font-medium max-w-2xl">
                         A plataforma com inteligência artificial para precificação unitária infalível, simulação de marketplaces e escala de produção estruturada.
                     </p>
                 </div>
 
-                <!-- Cards de Planos - Grid Melhorado e Alinhado -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                <!-- Cards de Planos - Exatamente igual ao print fornecido -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-1">
                     
                     <!-- Card Free -->
                     <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
                         <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide">Free</h3>
-                                <span class="bg-slate-800 text-slate-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Start</span>
+                            <div class="mb-1">
+                                <h3 class="text-white font-black text-lg tracking-wide">Free</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">Para começar a precificar</p>
                             </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500 font-medium">/mês</span>
+                            <div class="my-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500 font-medium">/mês</span>
                             </div>
                             <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Unitário</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Até 5 produtos cadastrados[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Custos Fixos</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">1 plano padrão de precificação[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">1 modelo de custo fixo[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Suporte por e-mail[cite: 3]</span>
                                 </li>
                             </ul>
                         </div>
-                        <button onclick="assinarPlano('FREE')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Começar Grátis</button>
+                        <button onclick="assinarPlano('FREE')" class="w-full bg-[#131b31] hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer border border-white/5">Criar conta</button>
                     </div>
 
-                    <!-- Card Pro (Destaque) -->
-                    <div class="bg-gradient-to-b from-indigo-900/50 to-[#03050b] p-6 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)] hover:-translate-y-1.5 transition-transform duration-300 mt-0 md:-mt-4 mb-0 md:-mb-4 z-10">
-                        <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)] whitespace-nowrap tracking-wider">MAIS ESCOLHIDO</div>
+                    <!-- Card Pro (Destaque idêntico ao print) -->
+                    <div class="bg-gradient-to-b from-indigo-950/70 to-[#03050b] p-6 rounded-3xl border border-indigo-500/60 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(99,102,241,0.4)] hover:-translate-y-1.5 transition-transform duration-300 mt-0 md:-mt-3 mb-0 md:-mb-3 z-10">
+                        <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)] whitespace-nowrap tracking-wider">Mais escolhido[cite: 3]</div>
                         
                         <div class="pt-2">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
-                                <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Top ROI</span>
+                            <div class="mb-1 flex items-center justify-between">
+                                <h3 class="text-white font-black text-lg tracking-wide flex items-center gap-1.5">Pro <span class="text-amber-400 text-xs">★</span></h3>
                             </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-4xl font-black text-white font-mono drop-shadow-md">14,99</span><span class="text-xs text-indigo-300 font-medium">/mês</span>
+                            <p class="text-xs text-indigo-200 mt-0.5">Para negócios em crescimento[cite: 3]</p>
+                            <div class="my-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-white font-mono drop-shadow-md">19,90</span><span class="text-xs text-indigo-300 font-medium">/mês[cite: 3]</span>
                             </div>
-                            <ul class="space-y-2 mb-6 text-[11px] text-slate-200 font-medium">
+                            <ul class="space-y-2.5 mb-6 text-[11px] text-slate-200 font-medium">
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">Marketplaces e Descontos</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Até 100 produtos cadastrados[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">Break-Even e IA Precificação</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">2 modelos de custo fixo p/ diferentes cenários[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">Antecipação e Impostos</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">IA avançada p/ auxiliar na formação de preços[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-bolt text-amber-400 mt-0.5"></i> <span class="leading-snug">Elasticidade e Comissões</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Exportação de relatórios em PDF[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-bolt text-amber-400 mt-0.5"></i> <span class="leading-snug">Frete Grátis</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Plano Padrão de precificação[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Suporte por e-mail[cite: 3]</span>
                                 </li>
                             </ul>
                         </div>
-                        <button onclick="assinarPlano('PRO')" class="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-black py-3.5 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
+                        <button onclick="assinarPlano('PRO')" class="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-black py-3.5 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro</button>
                     </div>
 
                     <!-- Card Premium -->
                     <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
                         <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide">Premium</h3>
-                                <span class="bg-emerald-500/20 text-emerald-400 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Escala</span>
+                            <div class="mb-1">
+                                <h3 class="text-white font-black text-lg tracking-wide">Premium</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">Operações sem limites[cite: 3]</p>
                             </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">29,99</span><span class="text-xs text-slate-500 font-medium">/mês</span>
+                            <div class="my-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-white font-mono">39,90</span><span class="text-xs text-slate-500 font-medium">/mês[cite: 3]</span>
                             </div>
-                            <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
+                            <ul class="space-y-2.5 mb-6 text-[11px] text-slate-300 font-medium">
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-infinity text-emerald-500 mt-0.5"></i> <span class="leading-snug">Lotes e Importação</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Até 3.000 produtos cadastrados[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Curva ABC e Multi-Market</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">30 modelos de custos fixos p/ diferentes cenários[cite: 3]</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Propostas B2B e Auditoria IA</span>
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">IA avançada p/ auxiliar na formação de preços[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Exportação de relatórios em PDF[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Plano Padrão de precificação[cite: 3]</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold">✓</span> <span class="leading-snug">Suporte prioritário por WhatsApp e e-mail.[cite: 3]</span>
                                 </li>
                             </ul>
                         </div>
-                        <button onclick="assinarPlano('PREMIUM')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Ativar Premium</button>
+                        <button onclick="assinarPlano('PREMIUM')" class="w-full bg-[#131b31] hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer border border-white/5">Assinar Premium</button>
                     </div>
 
                 </div>
             </div>
 
             <!-- Rodapé da Coluna Esquerda -->
-            <div class="relative z-10 max-w-3xl mx-auto w-full mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 font-medium border-t border-slate-800/50 gap-4">
+            <div class="relative z-10 max-w-4xl mx-auto w-full mt-8 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 font-medium border-t border-slate-800/50 gap-4">
                 <span>&copy; 2026 Precifica Corporation.</span>
                 <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-500"></i> Proteção SSL de Ponta a Ponta</span>
             </div>
         </div>
 
         <!-- Coluna Direita: Card de Login Profissional -->
-        <div class="lg:w-[42%] min-h-screen bg-[#03050b] p-6 lg:p-12 flex items-center justify-center relative">
-            <!-- Padrão de Fundo Sutíl -->
+        <div class="lg:w-[38%] min-h-screen bg-[#03050b] p-6 lg:p-12 flex items-center justify-center relative">
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 24px 24px;"></div>
-            
             <div class="absolute top-1/4 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
             <div class="max-w-md w-full bg-[#0a0f1d]/80 backdrop-blur-2xl border border-slate-700/50 p-8 lg:p-10 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative z-10">
@@ -266,7 +282,7 @@
         </div>
     </div>
 
-    <!-- Modal Planos (Interno na plataforma) -->
+    <!-- Modal Planos (Atualizado) -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto no-scrollbar">
         <div class="bg-[#0a0f1d] border border-white/5 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
@@ -277,55 +293,60 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Free -->
+                <!-- Free Modal -->
                 <div class="bg-[#050814]/80 p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between mb-1">
+                        <div class="mb-1">
                             <h3 class="text-white font-bold text-lg">Free</h3>
-                            <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
+                            <p class="text-xs text-slate-400">Para começar a precificar</p>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4">Para testes iniciais</p>
                         <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300 font-medium">
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Unitário e Custos Fixos</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Até 5 produtos cadastrados[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> 1 plano padrão de precificação[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> 1 modelo de custo fixo[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Suporte por e-mail[cite: 3]</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-[#0a0f1d] hover:bg-[#131b31] border border-white/10 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Plano Atual</button>
+                    <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-[#0a0f1d] hover:bg-[#131b31] border border-white/10 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Selecionar Free</button>
                 </div>
 
-                <!-- Pro -->
+                <!-- Pro Modal -->
                 <div class="bg-gradient-to-b from-indigo-950/80 to-[#0a0f1d] p-8 rounded-3xl border-2 border-indigo-500/70 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)]">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Vendido • Maior ROI</div>
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais escolhido[cite: 3]</div>
                     <div>
-                        <div class="flex items-center justify-between mb-1 mt-1">
-                            <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
-                            <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
+                        <div class="mb-1 mt-1">
+                            <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <span class="text-amber-400 text-xs">★</span></h3>
+                            <p class="text-xs text-indigo-200">Para negócios em crescimento[cite: 3]</p>
                         </div>
-                        <p class="text-xs text-indigo-200 mb-4">Para e-commerce e prestadores</p>
-                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 14,99</span><span class="text-xs text-indigo-300">/mês</span></div>
+                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês[cite: 3]</span></div>
                         <ul class="space-y-3 text-xs text-slate-200 font-medium leading-relaxed">
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simuladores: Marketplaces, Descontos & Break-Even</li>
-                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> <strong>Ferramentas PRO:</strong> Antecipação, Impostos, Elasticidade, Comissões e Frete Grátis</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Até 100 produtos cadastrados[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> 2 modelos de custo fixo p/ diferentes cenários[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> IA avançada p/ auxiliar na formação de preços[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Exportação de relatórios em PDF[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Plano Padrão de precificação[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Suporte por e-mail[cite: 3]</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-[0_0_15px_rgba(99,102,241,0.3)]">Assinar Pro Agora</button>
+                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-[0_0_15px_rgba(99,102,241,0.3)]">Assinar Pro</button>
                 </div>
 
-                <!-- Premium -->
+                <!-- Premium Modal -->
                 <div class="bg-[#050814]/80 p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between mb-1">
+                        <div class="mb-1">
                             <h3 class="text-white font-bold text-lg">Premium</h3>
-                            <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
+                            <p class="text-xs text-slate-400">Operações sem limites[cite: 3]</p>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4">Escala industrial e importação</p>
-                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 29,99</span><span class="text-xs text-slate-500">/mês</span></div>
+                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-500">/mês[cite: 3]</span></div>
                         <ul class="space-y-3 text-xs text-slate-300 font-medium leading-relaxed">
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produtos Ilimitados + Produção em Lotes</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Recursos do Pro inclusos</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> <strong>Ferramentas Premium:</strong> Importação, Curva ABC, Multi-Marketplaces, Propostas B2B e Auditoria IA</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Até 3.000 produtos cadastrados[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> 30 modelos de custos fixos p/ diferentes cenários[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> IA avançada p/ auxiliar na formação de preços[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Exportação de relatórios em PDF[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Plano Padrão de precificação[cite: 3]</li>
+                            <li><span class="text-emerald-400 font-bold mr-2">✓</span> Suporte prioritário por WhatsApp e e-mail[cite: 3].</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-[#0a0f1d] hover:bg-[#131b31] border border-white/10 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -1150,556 +1171,4 @@
                             <span class="font-medium text-slate-300">Mercado Livre Clássico (16%):</span> <strong id="multiMlClas" class="text-white font-mono text-sm">R$ 0,00</strong>
                         </div>
                         <div class="bg-[#0a0f1d] p-4 rounded-xl border border-white/5 flex justify-between items-center shadow-inner">
-                            <span class="font-medium text-slate-300">Mercado Livre Premium 12x (19%):</span> <strong id="multiMlPrem" class="text-white font-mono text-sm">R$ 0,00</strong>
-                        </div>
-                        <div class="bg-[#0a0f1d] p-4 rounded-xl border border-white/5 flex justify-between items-center shadow-inner">
-                            <span class="font-medium text-slate-300">Amazon (15%):</span> <strong id="multiAmazon" class="text-white font-mono text-sm">R$ 0,00</strong>
-                        </div>
-                        <div class="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20 flex justify-between items-center shadow-inner">
-                            <span class="font-bold text-emerald-400">Loja Própria / PIX (0%):</span> <strong id="multiPix" class="text-emerald-400 font-mono text-base font-black">R$ 0,00</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULO Propostas B2B -->
-        <div id="moduloPropostasB2b" class="hidden contents">
-            <div class="lg:col-span-7 glass-panel p-8 rounded-[24px]">
-                <div class="flex items-center justify-between mb-6 pb-5 border-b border-white/[0.05]">
-                    <div>
-                        <div class="flex items-center gap-2.5">
-                            <h2 class="text-xl font-black text-white tracking-tight">Gerador de Propostas & Contratos B2B</h2>
-                            <span class="bg-yellow-500/15 text-yellow-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-yellow-500/35 uppercase">PREMIUM</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-1 font-medium">Crie propostas comerciais executivas com cláusula de reajuste automático por inflação.</p>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Nome do Cliente Corporativo</label>
-                        <div class="relative group">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 group-hover:text-yellow-400 transition-colors"><i class="fa-solid fa-building text-xs"></i></span>
-                            <input type="text" id="b2bCliente" value="Construtora Alfa S.A." class="w-full pl-11 pr-4 py-3 input-premium focus:border-yellow-500/50 focus:shadow-[0_0_0_1px_rgba(234,179,8,0.5),inset_0_2px_4px_rgba(0,0,0,0.5)] rounded-xl text-white text-sm placeholder:text-slate-600">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Escopo / Descrição do Serviço</label>
-                        <div class="relative group">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 group-hover:text-yellow-400 transition-colors"><i class="fa-solid fa-file-signature text-xs"></i></span>
-                            <input type="text" id="b2bEscopo" value="Fornecimento de Lote Corporativo e Instalação" class="w-full pl-11 pr-4 py-3 input-premium focus:border-yellow-500/50 focus:shadow-[0_0_0_1px_rgba(234,179,8,0.5),inset_0_2px_4px_rgba(0,0,0,0.5)] rounded-xl text-white text-sm placeholder:text-slate-600">
-                        </div>
-                    </div>
-                    <button onclick="gerarPropostaB2b()" class="w-full bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-500 hover:to-amber-500 text-white font-bold py-3.5 rounded-xl text-xs transition cursor-pointer shadow-[0_0_15px_rgba(234,179,8,0.2)]">
-                        <i class="fa-solid fa-file-pdf mr-2"></i> Gerar Proposta Executiva B2B
-                    </button>
-                    <div id="b2bPreview" class="hidden bg-[#0a0f1d] p-5 rounded-2xl border border-white/5 text-xs text-slate-300 font-mono shadow-inner leading-relaxed">
-                        📄 <strong>Proposta Gerada com Sucesso!</strong> Inclui cláusula 4.2 de reajuste anual indexado à inflação e validade de 15 dias.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULO Auditoria -->
-        <div id="moduloAuditoria" class="hidden contents">
-            <div class="lg:col-span-7 glass-panel p-8 rounded-[24px]">
-                <div class="flex items-center justify-between mb-6 pb-5 border-b border-white/[0.05]">
-                    <div>
-                        <div class="flex items-center gap-2.5">
-                            <h2 class="text-xl font-black text-white tracking-tight">Auditoria de Preços da Concorrência (IA)</h2>
-                            <span class="bg-emerald-500/15 text-emerald-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/35 uppercase">PREMIUM</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-1 font-medium">Monitore o posicionamento médio praticado no seu nicho e receba recomendação de contra-ataque.</p>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Preço Médio da Concorrência (R$)</label>
-                            <div class="relative group">
-                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-[10px] font-bold group-hover:text-emerald-400 transition-colors">R$</span>
-                                <input type="number" id="audMercado" value="145" class="w-full pl-11 pr-4 py-3 input-premium focus:border-emerald-500/50 focus:shadow-[0_0_0_1px_rgba(16,185,129,0.5),inset_0_2px_4px_rgba(0,0,0,0.5)] rounded-xl text-white font-mono text-sm placeholder:text-slate-600">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">O seu Custo Base (R$)</label>
-                            <div class="relative group">
-                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-[10px] font-bold group-hover:text-emerald-400 transition-colors">R$</span>
-                                <input type="number" id="audCusto" value="70" class="w-full pl-11 pr-4 py-3 input-premium focus:border-emerald-500/50 focus:shadow-[0_0_0_1px_rgba(16,185,129,0.5),inset_0_2px_4px_rgba(0,0,0,0.5)] rounded-xl text-white font-mono text-sm placeholder:text-slate-600">
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="executarAuditoria()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3.5 rounded-xl text-xs transition cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                        <i class="fa-solid fa-shield-halved mr-2"></i> Executar Auditoria de Posicionamento
-                    </button>
-                    <div id="audResultado" class="hidden bg-[#0a0f1d] p-5 rounded-2xl border border-white/5 text-xs text-slate-300 font-mono shadow-inner leading-relaxed">
-                        <span class="text-emerald-400 mr-1 text-base">🎯</span> <strong>Parecer IA:</strong> O seu produto está posicionado com margem de 51%. Recomendamos fixar em <strong>R$ 139,90</strong> para capturar quota de mercado sem iniciar guerra de preços.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna Direita: Dashboard de Resultados Estratégico -->
-        <div class="lg:col-span-5 glass-panel p-8 rounded-[24px] flex flex-col justify-between h-full sticky top-24">
-            <div>
-                <div class="flex items-center justify-between mb-8 pb-5 border-b border-white/[0.05]">
-                    <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-lg bg-[#0a0f1d] border border-white/5 text-emerald-400 flex items-center justify-center text-xs font-black shadow-inner">2</span>
-                        Dashboard Financeiro
-                    </h2>
-                    <span id="badgeSaude" class="px-3 py-1 rounded-md text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Excelente</span>
-                </div>
-
-                <div class="space-y-5">
-                    <!-- Item Analisado -->
-                    <div class="bg-[#0a0f1d] p-5 rounded-2xl border border-white/5 flex items-center justify-between shadow-inner">
-                        <div>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-500 font-bold block mb-1">Item Analisado</span>
-                            <span id="resNomeProduto" class="text-sm font-bold text-slate-200 tracking-tight block max-w-[190px] truncate">Produto Unitário</span>
-                        </div>
-                        <span id="resCustoTotal" class="text-xs font-mono font-bold text-slate-400">Custo: R$ 0,00</span>
-                    </div>
-
-                    <!-- Preço Sugerido (Painel Principal) -->
-                    <div class="bg-gradient-to-br from-[#131b31] to-[#0a0f1d] p-7 rounded-2xl border border-indigo-500/30 shadow-[0_10px_30px_-10px_rgba(99,102,241,0.3)] relative overflow-hidden group">
-                        <!-- Efeito de brilho interno -->
-                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl group-hover:bg-indigo-500/30 transition-all duration-500"></div>
-                        
-                        <div class="relative z-10">
-                            <span class="text-[10px] uppercase tracking-widest text-indigo-300/80 font-black block mb-2">Preço Sugerido de Venda</span>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-2xl font-black text-white font-mono">R$</span>
-                                <span id="resPrecoVenda" class="text-5xl font-black font-mono text-white tracking-tight drop-shadow-md">0,00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lucro Líquido -->
-                    <div class="bg-emerald-950/20 p-5 rounded-2xl border border-emerald-500/20 flex items-center justify-between shadow-inner">
-                        <div>
-                            <span class="text-[9px] uppercase tracking-widest text-emerald-500/80 font-bold block mb-1">Lucro Líquido Estimado</span>
-                            <span class="text-[10px] text-emerald-400/60 font-medium">Valor limpo na sua mão</span>
-                        </div>
-                        <span id="resLucro" class="text-2xl font-mono font-black text-emerald-400 drop-shadow-sm">R$ 0,00</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Botões de Ação do Dashboard -->
-            <div class="mt-8 pt-6 border-t border-white/[0.05] flex gap-3">
-                <button onclick="copiarResumo()" class="flex-1 bg-[#0a0f1d] hover:bg-emerald-950/30 border border-white/5 hover:border-emerald-500/30 text-slate-300 hover:text-emerald-400 font-bold py-3.5 px-4 rounded-xl transition-all text-xs flex items-center justify-center gap-2 cursor-pointer shadow-inner">
-                    <i class="fa-brands fa-whatsapp text-sm"></i> Compartilhar
-                </button>
-                <button onclick="gerarPdfPro()" class="bg-[#0a0f1d] hover:bg-indigo-950/30 border border-white/5 hover:border-indigo-500/30 text-slate-300 hover:text-indigo-400 font-bold py-3.5 px-5 rounded-xl transition-all text-xs flex items-center justify-center gap-2 cursor-pointer shadow-inner" title="Relatório PDF">
-                    <i class="fa-solid fa-file-pdf"></i> PDF PRO
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="max-w-[90rem] mx-auto px-6 py-6 w-full text-center text-xs text-slate-600 font-medium border-t border-white/[0.02]">
-        &copy; 2026 Precifica Corporation. Todos os direitos reservados.
-    </footer>
-
-    <!-- Widget WhatsApp -->
-    <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Olá! Preciso de ajuda com a plataforma Precifica." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.4)] transition transform hover:scale-105 cursor-pointer" title="Fale connosco no WhatsApp">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-    </a>
-
-    <!-- Modal Histórico -->
-    <div id="modalHistorico" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-[#0a0f1d] border border-white/5 max-w-2xl w-full rounded-3xl p-6 shadow-2xl relative">
-            <div class="flex justify-between items-center mb-4 pb-3 border-b border-white/[0.05]">
-                <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico de Precificações
-                </h3>
-                <button onclick="fecharHistorico()" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-            <div id="listaHistorico" class="space-y-3 max-h-96 overflow-y-auto pr-2 no-scrollbar">
-                <p class="text-xs text-slate-400 text-center py-4">Nenhum cálculo salvo ainda.</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/[0.05] flex justify-between items-center">
-                <button onclick="limparHistorico()" class="text-xs text-red-400 hover:text-red-300 cursor-pointer font-bold">Apagar Histórico</button>
-                <button onclick="fecharHistorico()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold cursor-pointer transition">Fechar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script Principal & Controlo de Permissões de Planos -->
-    <script>
-        let planoAtual = 'PRO'; // FREE, PRO, PREMIUM
-        let historicoPrecificacao = [];
-        let modulosAtivosCalculados = { nome: 'Produto Unitário', custo: 0, preco: 0, lucro: 0 };
-
-        // Definindo as classes base para as abas (Estilo Estratégico Glass)
-        const classTabAtiva = 'px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.15)] cursor-pointer';
-        const classTabInativa = 'px-3 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 bg-[#0f1423] text-slate-400 border border-slate-800/60 hover:bg-slate-800/50 hover:text-slate-200 cursor-pointer';
-
-        function assinarPlano(plano) {
-            planoAtual = plano;
-            fecharPlanos();
-            const badgeNav = document.getElementById('badgePlanoNavbar');
-            if (badgeNav) {
-                badgeNav.innerText = plano;
-                if(plano === 'FREE') {
-                    badgeNav.className = 'bg-amber-500/10 text-amber-400 text-[9px] font-extrabold px-2 py-0.5 rounded-md border border-amber-500/20 uppercase tracking-wider';
-                } else if(plano === 'PRO') {
-                    badgeNav.className = 'bg-indigo-500/10 text-indigo-400 text-[9px] font-extrabold px-2 py-0.5 rounded-md border border-indigo-500/25 uppercase tracking-wider';
-                } else if(plano === 'PREMIUM') {
-                    badgeNav.className = 'bg-emerald-500/10 text-emerald-400 text-[9px] font-extrabold px-2 py-0.5 rounded-md border border-emerald-500/25 uppercase tracking-wider';
-                }
-            }
-            mostrarToast('Sucesso', 'Plano atualizado para ' + plano + ' com sucesso!');
-        }
-
-        const modulosPro = ['marketplaces', 'descontos', 'breakeven', 'ia', 'antecipacao', 'impostos', 'elasticidade', 'comissoes', 'freteGratis'];
-        const modulosPremium = ['lotes', 'importacao', 'curvaAbc', 'multiMarketplace', 'propostasB2b', 'auditoria'];
-        const todosModulos = ['unitario', 'custosFixos', ...modulosPro, ...modulosPremium];
-
-        function mudarModulo(modulo) {
-            if(modulosPro.includes(modulo) && planoAtual === 'FREE') {
-                abrirPlanos();
-                mostrarToast('Acesso Restrito', 'Este recurso exige o Plano Pro ou superior.');
-                return;
-            }
-            if(modulosPremium.includes(modulo) && planoAtual !== 'PREMIUM') {
-                abrirPlanos();
-                mostrarToast('Acesso Restrito', 'Este recurso é exclusivo do Plano Premium.');
-                return;
-            }
-
-            todosModulos.forEach(m => {
-                const el = document.getElementById('modulo' + m.charAt(0).toUpperCase() + m.slice(1));
-                if(el) el.classList.add('hidden');
-                const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
-                if(btn) btn.className = classTabInativa;
-            });
-
-            const alvo = document.getElementById('modulo' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
-            if(alvo) alvo.classList.remove('hidden');
-            const btnAtivo = document.getElementById('tab' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
-            if(btnAtivo) btnAtivo.className = classTabAtiva;
-
-            if(modulo === 'unitario') calcularPreco();
-            if(modulo === 'marketplaces') calcularMarketplace();
-            if(modulo === 'descontos') calcularDescontoPromo();
-            if(modulo === 'breakeven') calcularBreakEven();
-            if(modulo === 'lotes') calcularLote();
-            if(modulo === 'antecipacao') calcularAntecipacao();
-            if(modulo === 'impostos') calcularImpostos();
-            if(modulo === 'elasticidade') calcularElasticidade();
-            if(modulo === 'comissoes') calcularComissao();
-            if(modulo === 'freteGratis') calcularFreteGratis();
-            if(modulo === 'importacao') calcularImportacao();
-            if(modulo === 'multiMarketplace') calcularMultiMarket();
-        }
-
-        function abrirPlanos() { document.getElementById('modalPlanos').classList.remove('hidden'); }
-        function fecharPlanos() { document.getElementById('modalPlanos').classList.add('hidden'); }
-        function abrirHistorico() { document.getElementById('modalHistorico').classList.remove('hidden'); renderizarHistorico(); }
-        function fecharHistorico() { document.getElementById('modalHistorico').classList.add('hidden'); }
-
-        function mostrarToast(titulo, mensagem) {
-            const toast = document.getElementById('toastNotification');
-            document.getElementById('toastTitle').innerText = titulo;
-            document.getElementById('toastMessage').innerText = mensagem;
-            toast.classList.remove('translate-y-[-200%]', 'opacity-0');
-            setTimeout(() => { toast.classList.add('translate-y-[-200%]', 'opacity-0'); }, 3500);
-        }
-
-        function atualizarDashboard(nome, custo, preco, lucro) {
-            modulosAtivosCalculados = { nome, custo, preco, lucro };
-            document.getElementById('resNomeProduto').innerText = nome;
-            document.getElementById('resCustoTotal').innerText = 'Custo: R$ ' + custo.toFixed(2).replace('.', ',');
-            
-            // Formatando valor grande para se adequar ao novo layout
-            const valorFormatado = preco.toFixed(2).replace('.', ',');
-            document.getElementById('resPrecoVenda').innerText = valorFormatado;
-            
-            document.getElementById('resLucro').innerText = 'R$ ' + lucro.toFixed(2).replace('.', ',');
-            
-            const saudeEl = document.getElementById('badgeSaude');
-            const margemReal = custo > 0 ? (lucro / custo) * 100 : 0;
-            if(margemReal < 30) {
-                saudeEl.innerText = 'Margem Baixa';
-                saudeEl.className = 'px-3 py-1 rounded-md text-[9px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20';
-            } else {
-                saudeEl.innerText = 'Excelente';
-                saudeEl.className = 'px-3 py-1 rounded-md text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
-            }
-        }
-
-        function definirMargem(valor) {
-            document.getElementById('sliderMargem').value = valor;
-            sincronizarMargem();
-        }
-
-        function sincronizarMargem() {
-            const val = document.getElementById('sliderMargem').value;
-            const lbl = document.getElementById('labelMargem');
-            if(lbl) lbl.innerText = val + '%';
-            calcularPreco();
-        }
-
-        function calcularPreco() {
-            const materiais = parseFloat(document.getElementById('custoMateriais').value) || 0;
-            const fixos = parseFloat(document.getElementById('custosFixosProd').value) || 0;
-            const horas = parseFloat(document.getElementById('horasTrabalho').value) || 0;
-            const valorHora = parseFloat(document.getElementById('valorHora').value) || 0;
-            const margem = parseFloat(document.getElementById('sliderMargem').value) || 60;
-            const nome = document.getElementById('nomeProduto').value || 'Produto Unitário';
-
-            const custoTotal = materiais + fixos + (horas * valorHora);
-            const lucro = custoTotal * (margem / 100);
-            const precoVenda = custoTotal + lucro;
-
-            atualizarDashboard(nome, custoTotal, precoVenda, lucro);
-        }
-
-        function limparFormulario() {
-            document.getElementById('nomeProduto').value = '';
-            document.getElementById('custoMateriais').value = '';
-            document.getElementById('custosFixosProd').value = '';
-            document.getElementById('horasTrabalho').value = '';
-            document.getElementById('valorHora').value = '';
-            definirMargem(60);
-        }
-
-        function calcularTotalCustosFixos() {
-            const aluguel = parseFloat(document.getElementById('custoAluguel1').value) || 0;
-            const energia = parseFloat(document.getElementById('custoEnergia1').value) || 0;
-            const total = aluguel + energia;
-            atualizarDashboard('Custo Fixo Operacional', total, total, 0);
-        }
-
-        function adicionarCenarioCusto() {
-            mostrarToast('Cenários', 'Novo cenário de custos adicionado com sucesso!');
-        }
-
-        function calcularMarketplace() {
-            const comissaoPct = parseFloat(document.getElementById('selectMarketplace').value) || 0;
-            const custoBase = parseFloat(document.getElementById('custoBaseMarketplace').value) || 0;
-            const margem = parseFloat(document.getElementById('margemMarketplace').value) || 50;
-            const divisor = 1 - ((comissaoPct + margem) / 100);
-            const precoVenda = divisor > 0 ? custoBase / divisor : custoBase * 2;
-            const lucro = precoVenda * (margem / 100);
-            atualizarDashboard('Simulação Marketplace', custoBase, precoVenda, lucro);
-        }
-
-        function calcularDescontoPromo() {
-            const precoCheio = parseFloat(document.getElementById('precoCheioPromo').value) || 100;
-            const descontoPct = parseFloat(document.getElementById('sliderDesconto').value) || 15;
-            const novoPreco = precoCheio * (1 - (descontoPct / 100));
-            document.getElementById('resNovoPrecoPromo').innerText = 'R$ ' + novoPreco.toFixed(2).replace('.', ',');
-            atualizarDashboard('Promoção Black Friday', novoPreco * 0.6, novoPreco, novoPreco * 0.4);
-        }
-
-        function sincronizarDesconto() {
-            document.getElementById('labelDescontoPromo').innerText = document.getElementById('sliderDesconto').value + '%';
-            calcularDescontoPromo();
-        }
-
-        function calcularBreakEven() {
-            const custoFixo = parseFloat(document.getElementById('beCustoFixo').value) || 3000;
-            const precoVenda = parseFloat(document.getElementById('bePrecoVenda').value) || 150;
-            const custoVariavel = parseFloat(document.getElementById('beCustoVariavel').value) || 50;
-            const margemContribuicao = precoVenda - custoVariavel;
-            const unidades = margemContribuicao > 0 ? Math.ceil(custoFixo / margemContribuicao) : 0;
-            document.getElementById('resBreakEvenUnidades').innerText = unidades + ' un';
-            atualizarDashboard('Ponto de Equilíbrio', custoFixo, precoVenda, margemContribuicao * unidades);
-        }
-
-        function executarIa() {
-            document.getElementById('resultadoIaBox').classList.remove('hidden');
-            atualizarDashboard('Precificação IA Inteligente', 80, 148.90, 68.90);
-            mostrarToast('IA Precificação', 'Análise concluída com sucesso!');
-        }
-
-        function calcularAntecipacao() {
-            const valor = parseFloat(document.getElementById('antValor').value) || 0;
-            const parcelas = parseFloat(document.getElementById('antParcelas').value) || 1;
-            const taxa = parseFloat(document.getElementById('antTaxa').value) || 0;
-            const descontoTotal = valor * (taxa / 100) * parcelas;
-            const liquido = valor - descontoTotal;
-            document.getElementById('antResLiquido').innerText = 'R$ ' + liquido.toFixed(2).replace('.', ',');
-            document.getElementById('antResDesconto').innerText = 'R$ ' + descontoTotal.toFixed(2).replace('.', ',');
-            atualizarDashboard('Antecipação de Recebíveis', valor * 0.7, liquido, liquido - (valor * 0.7));
-        }
-
-        function calcularImpostos() {
-            const aliquota = parseFloat(document.getElementById('impRegime').value) || 6;
-            const custo = parseFloat(document.getElementById('impCusto').value) || 0;
-            const margem = parseFloat(document.getElementById('impMargem').value) || 50;
-            const divisor = 1 - ((aliquota + margem) / 100);
-            const preco = divisor > 0 ? custo / divisor : custo * 2;
-            document.getElementById('impResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
-            atualizarDashboard('Impostos por Regime', custo, preco, preco * (margem / 100));
-        }
-
-        function calcularElasticidade() {
-            const precoAtual = parseFloat(document.getElementById('elastPrecoAtual').value) || 100;
-            const qtdAtual = parseFloat(document.getElementById('elastQtdAtual').value) || 200;
-            const varPreco = parseFloat(document.getElementById('elastVarPreco').value) || 0;
-            const novoPreco = precoAtual * (1 + (varPreco / 100));
-            const novaQtd = qtdAtual * (1 - (1.5 * (varPreco / 100)));
-            const novaReceita = novoPreco * novaQtd;
-            const receitaAtual = precoAtual * qtdAtual;
-            const impacto = novaReceita - receitaAtual;
-            document.getElementById('elastResReceita').innerText = 'R$ ' + novaReceita.toFixed(2).replace('.', ',');
-            document.getElementById('elastResImpacto').innerText = (impacto >= 0 ? '+' : '') + 'R$ ' + impacto.toFixed(2).replace('.', ',');
-            atualizarDashboard('Elasticidade de Demanda', precoAtual * 0.5, novoPreco, novaReceita * 0.4);
-        }
-
-        function calcularComissao() {
-            const preco = parseFloat(document.getElementById('comPreco').value) || 0;
-            const pct = parseFloat(document.getElementById('comPct').value) || 0;
-            const bonus = parseFloat(document.getElementById('comBonus').value) || 0;
-            const custoComissao = (preco * (pct / 100)) + bonus;
-            const liquido = preco - custoComissao;
-            document.getElementById('comResCusto').innerText = 'R$ ' + custoComissao.toFixed(2).replace('.', ',');
-            document.getElementById('comResLiquido').innerText = 'R$ ' + liquido.toFixed(2).replace('.', ',');
-            atualizarDashboard('Comissão de Vendedor', preco * 0.4, liquido, liquido - (preco * 0.4));
-        }
-
-        function calcularFreteGratis() {
-            const custo = parseFloat(document.getElementById('fgCusto').value) || 0;
-            const frete = parseFloat(document.getElementById('fgFrete').value) || 0;
-            const margem = parseFloat(document.getElementById('fgMargem').value) || 50;
-            const custoTotal = custo + frete;
-            const preco = custoTotal * (1 + (margem / 100));
-            document.getElementById('fgResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
-            atualizarDashboard('Portes Grátis Embutidos', custoTotal, preco, preco - custoTotal);
-        }
-
-        function calcularLote() {
-            const qtd = parseFloat(document.getElementById('qtdLote').value) || 50;
-            const custoTotalLote = parseFloat(document.getElementById('custoTotalLote').value) || 500;
-            const tempoTotal = parseFloat(document.getElementById('tempoTotalLote').value) || 10;
-            const custoUnitario = (custoTotalLote + (tempoTotal * 30)) / qtd;
-            const precoSugeridoLote = custoUnitario * 1.8;
-            atualizarDashboard('Produção em Lote (' + qtd + ' un)', custoUnitario, precoSugeridoLote, precoSugeridoLote - custoUnitario);
-        }
-
-        function calcularImportacao() {
-            const fob = parseFloat(document.getElementById('impFob').value) || 0;
-            const dolar = parseFloat(document.getElementById('impDolar').value) || 5.50;
-            const frete = parseFloat(document.getElementById('impFrete').value) || 0;
-            const taxasPct = parseFloat(document.getElementById('impTaxas').value) || 60;
-            const custoReais = (fob + frete) * dolar;
-            const custoFinal = custoReais * (1 + (taxasPct / 100));
-            document.getElementById('impResCustoFinal').innerText = 'R$ ' + custoFinal.toFixed(2).replace('.', ',');
-            atualizarDashboard('Landing Cost Importação', custoFinal, custoFinal * 2.2, custoFinal * 1.2);
-        }
-
-        function calcularMultiMarket() {
-            const custo = parseFloat(document.getElementById('multiCusto').value) || 70;
-            const margem = 0.5; // 50%
-            const pShopee = custo / (1 - (0.12 + margem));
-            const pMlClas = custo / (1 - (0.16 + margem));
-            const pMlPrem = custo / (1 - (0.19 + margem));
-            const pAmazon = custo / (1 - (0.15 + margem));
-            const pPix = custo / (1 - margem);
-
-            document.getElementById('multiShopee').innerText = 'R$ ' + pShopee.toFixed(2).replace('.', ',');
-            document.getElementById('multiMlClas').innerText = 'R$ ' + pMlClas.toFixed(2).replace('.', ',');
-            document.getElementById('multiMlPrem').innerText = 'R$ ' + pMlPrem.toFixed(2).replace('.', ',');
-            document.getElementById('multiAmazon').innerText = 'R$ ' + pAmazon.toFixed(2).replace('.', ',');
-            document.getElementById('multiPix').innerText = 'R$ ' + pPix.toFixed(2).replace('.', ',');
-            atualizarDashboard('Multi-Marketplaces', custo, pPix, pPix * margem);
-        }
-
-        function gerarPropostaB2b() {
-            document.getElementById('b2bPreview').classList.remove('hidden');
-            mostrarToast('Proposta B2B', 'Contrato gerado com reajuste por inflação!');
-        }
-
-        function executarAuditoria() {
-            document.getElementById('audResultado').classList.remove('hidden');
-            mostrarToast('Auditoria IA', 'Análise de concorrência concluída!');
-        }
-
-        function salvarPrecificacao() {
-            historicoPrecificacao.push({ ...modulosAtivosCalculados, data: new Date().toLocaleDateString('pt-PT') });
-            mostrarToast('Salvo', 'Cálculo salvo no Histórico com sucesso!');
-        }
-
-        function renderizarHistorico() {
-            const lista = document.getElementById('listaHistorico');
-            if(historicoPrecificacao.length === 0) {
-                lista.innerHTML = '<p class="text-xs text-slate-400 text-center py-4">Nenhum cálculo salvo ainda.</p>';
-                return;
-            }
-            lista.innerHTML = historicoPrecificacao.map(item => `
-                <div class="bg-[#0f1423] p-4 rounded-2xl border border-white/5 flex justify-between items-center text-xs shadow-inner">
-                    <div>
-                        <strong class="text-white block mb-1">${item.nome}</strong>
-                        <span class="text-slate-400">Custo: R$ ${item.custo.toFixed(2)} | Venda: <strong class="text-indigo-400">R$ ${item.preco.toFixed(2)}</strong></span>
-                    </div>
-                    <span class="text-[10px] text-slate-500 font-mono bg-[#050814] px-2 py-1 rounded">${item.data}</span>
-                </div>
-            `).join('');
-        }
-
-        function limparHistorico() {
-            historicoPrecificacao = [];
-            renderizarHistorico();
-            mostrarToast('Histórico', 'Histórico limpo.');
-        }
-
-        function copiarResumo() {
-            const texto = `Resumo Precifica:\nItem: ${modulosAtivosCalculados.nome}\nCusto Total: R$ ${modulosAtivosCalculados.custo.toFixed(2)}\nPreço Sugerido: R$ ${modulosAtivosCalculados.preco.toFixed(2)}\nLucro Líquido: R$ ${modulosAtivosCalculados.lucro.toFixed(2)}`;
-            navigator.clipboard.writeText(texto);
-            mostrarToast('WhatsApp', 'Resumo copiado para enviar no WhatsApp!');
-        }
-
-        function gerarPdfPro() {
-            mostrarToast('PDF', 'Relatório executivo PDF PRO gerado e descarregado!');
-        }
-
-        function realizarLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('authEmail').value;
-            const greet = document.getElementById('userGreeting');
-            if(greet) greet.innerText = 'Olá, ' + email.split('@')[0];
-            document.getElementById('telaAuth').classList.add('hidden');
-            mostrarToast('Bem-vindo', 'Sessão iniciada com sucesso!');
-        }
-
-        function esqueciSenha(e) {
-            e.preventDefault();
-            mostrarToast('Recuperação', 'Instruções enviadas para o seu e-mail.');
-        }
-
-        function fazerLogout() { document.getElementById('telaAuth').classList.remove('hidden'); }
-
-        function alternarModoAuth() {
-            const nomeDiv = document.getElementById('campoNomeDiv');
-            const titulo = document.getElementById('authTitulo');
-            const sub = document.getElementById('authSub');
-            const btn = document.getElementById('btnSubmitAuth');
-            const toggleText = document.getElementById('authToggleText');
-            const toggleBtn = document.getElementById('authToggleBtn');
-            const badgeTop = document.getElementById('authBadgeTop');
-
-            if(nomeDiv.classList.contains('hidden')) {
-                nomeDiv.classList.remove('hidden');
-                titulo.innerText = 'Criar sua conta';
-                sub.innerText = 'Comece a lucrar mais com precificação profissional.';
-                btn.innerHTML = '<i class="fa-solid fa-rocket mr-1"></i> Criar Conta Gratuita';
-                toggleText.innerText = 'Já possui uma conta?';
-                toggleBtn.innerText = 'Fazer login';
-                badgeTop.innerHTML = '<i class="fa-solid fa-bolt text-[9px]"></i> Início Imediato';
-            } else {
-                nomeDiv.classList.add('hidden');
-                titulo.innerText = 'Bem-vindo de volta';
-                sub.innerText = 'Aceda à sua conta para gerir os seus negócios.';
-                btn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket mr-1"></i> Aceder à Plataforma';
-                toggleText.innerText = "Ainda não tem uma conta?";
-                toggleBtn.innerText = 'Criar agora';
-                badgeTop.innerHTML = '<i class="fa-solid fa-lock text-[9px]"></i> Acesso Seguro';
-            }
-        }
-    </script>
-</body>
-</html>
+                            <span class="font-medium text-slate-300">Merc
