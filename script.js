@@ -82,8 +82,8 @@ function mudarCiclo(ciclo) {
     } else {
         btnM.className = "px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer";
         btnA.className = "px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer";
-        pPro.innerText = "R$ 19,90";
-        pPrem.innerText = "R$ 39,90";
+        pPro.innerText = "R$ 14,99";
+        pPrem.innerText = "R$ 29,99";
     }
 }
 
