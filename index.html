@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | Enterprise Pricing Suite</title>
+    <title>PrecificaFácil | SaaS Enterprise Suite</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome Pro Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,14 +16,78 @@
 </head>
 <body class="bg-[#05070e] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white antialiased">
 
-    <!-- Toast de Notificação Flutuante -->
+    <!-- Toast de Notificação -->
     <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-y-[-200%] opacity-0 transition-all duration-300 bg-slate-900 border border-slate-700 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
-        <div id="toastIcon" class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-check"></i>
+        <div id="toastIcon" class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-bell"></i>
         </div>
         <div>
-            <h4 id="toastTitle" class="text-xs font-bold uppercase tracking-wider">Sucesso</h4>
-            <p id="toastMessage" class="text-xs text-slate-400">Ação realizada com sucesso.</p>
+            <h4 id="toastTitle" class="text-xs font-bold uppercase tracking-wider">Aviso</h4>
+            <p id="toastMessage" class="text-xs text-slate-400">Mensagem do sistema.</p>
+        </div>
+    </div>
+
+    <!-- Modal de Login / Autenticação -->
+    <div id="modalAuth" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-12 -top-12 w-36 h-36 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center mx-auto mb-3 shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-calculator text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-white">Precifica<span class="text-indigo-400">Fácil</span></h3>
+                <p id="authSubtitle" class="text-xs text-slate-400 mt-1">Acesse sua conta para começar a precificar</p>
+            </div>
+
+            <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
+                <div id="campoNomeDiv" class="hidden">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Nome Completo</label>
+                    <input type="text" id="authNome" placeholder="Seu nome" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">E-mail Corporativo / Pessoal</label>
+                    <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Senha de Acesso</label>
+                    <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                </div>
+
+                <button type="submit" id="btnSubmitAuth" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-lg shadow-indigo-600/20 cursor-pointer">
+                    Entrar na Plataforma
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-xs text-slate-400">
+                <span id="authToggleText">Não tem uma conta?</span> 
+                <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta grátis</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Paywall / Upgrade PRO -->
+    <div id="modalPro" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gradient-to-b from-slate-900 to-indigo-950 border border-indigo-500/30 max-w-lg w-full rounded-3xl p-8 shadow-2xl relative">
+            <div class="text-center mb-6">
+                <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-500/30">Recurso Exclusivo PRO</span>
+                <h3 class="text-2xl font-black text-white mt-3">Desbloqueie o Poder Total</h3>
+                <p class="text-xs text-slate-300 mt-1">Sua conta atual é <strong class="text-amber-400">Plano Free (Limitado)</strong>. Faça upgrade para o PRO e acelere seu negócio.</p>
+            </div>
+
+            <div class="space-y-3 bg-slate-950/60 p-5 rounded-2xl border border-slate-800 mb-6 text-xs text-slate-300">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Histórico ilimitado na nuvem</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador de taxas de maquininhas e iFood/Shopee</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Geração de Orçamentos em PDF com sua Logo</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte prioritário via WhatsApp</div>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="ativarPlanoPro()" class="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs shadow-lg shadow-emerald-600/20 cursor-pointer">
+                    Assinar Plano PRO (R$ 29/mês)
+                </button>
+                <button onclick="fecharPro()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-3.5 rounded-xl text-xs font-bold cursor-pointer">Agora não</button>
+            </div>
         </div>
     </div>
 
@@ -37,18 +101,21 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
-                        <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/20 uppercase">Enterprise</span>
+                        <span id="badgePlanoNavbar" class="bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase">Free</span>
                     </div>
-                    <span class="block text-[11px] text-slate-400 font-medium">Plataforma de Inteligência Financeira e Precificação</span>
+                    <span class="block text-[11px] text-slate-400 font-medium" id="userGreeting">Olá, Visitante</span>
                 </div>
             </div>
             
             <div class="flex items-center gap-3">
                 <button onclick="abrirHistorico()" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 px-4 py-2.5 rounded-xl transition text-xs font-semibold flex items-center gap-2 cursor-pointer shadow-sm">
-                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico Salvo
+                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico
                 </button>
-                <button onclick="mostrarToast('Modo Enterprise Ativado', 'Todos os recursos de alta precisão estão operacionais.', 'info')" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-5 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-shield-halved text-emerald-300"></i> Sistema Validado
+                <button id="btnUpgradeNav" onclick="abrirPro()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white px-4 py-2.5 rounded-xl transition shadow-lg shadow-orange-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-crown"></i> Seja PRO
+                </button>
+                <button onclick="fazerLogout()" class="bg-slate-900 hover:bg-red-500/20 hover:text-red-400 border border-slate-800 text-slate-400 px-3 py-2.5 rounded-xl transition text-xs cursor-pointer" title="Sair">
+                    <i class="fa-solid fa-right-from-bracket"></i>
                 </button>
             </div>
         </div>
@@ -57,10 +124,8 @@
     <!-- Conteúdo Principal -->
     <main class="max-w-7xl mx-auto px-6 py-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Coluna Esquerda: Formulário de Custos (7 colunas) -->
+        <!-- Coluna Esquerda: Formulário de Custos -->
         <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
-
             <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
                 <div>
                     <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
@@ -77,92 +142,71 @@
             <form id="calcForm" class="space-y-5">
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Nome do Produto ou Serviço</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-tag text-xs"></i></span>
-                        <input type="text" id="nomeProduto" placeholder="Ex: Bolo de Casamento / Consultoria Estratégica"
-                            class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm">
-                    </div>
+                    <input type="text" id="nomeProduto" placeholder="Ex: Bolo de Casamento / Consultoria"
+                        class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo de Materiais / Insumos</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
-                            <input type="number" id="custoMateriais" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
-                                class="w-full pl-10 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
-                        </div>
+                        <input type="number" id="custoMateriais" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Embalagem / Frete</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
-                            <input type="number" id="custosFixos" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
-                                class="w-full pl-10 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
-                        </div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Frete</label>
+                        <input type="number" id="custosFixos" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo de Produção (Horas)</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-regular fa-clock text-xs"></i></span>
-                            <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 2.5" required oninput="calcularPreco()"
-                                class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
-                        </div>
+                        <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 2.5" required oninput="calcularPreco()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora de Trabalho</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
-                            <input type="number" id="valorHora" step="0.01" placeholder="Ex: 40,00" required oninput="calcularPreco()"
-                                class="w-full pl-10 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
-                        </div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora</label>
+                        <input type="number" id="valorHora" step="0.01" placeholder="Ex: 40,00" required oninput="calcularPreco()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-3 border-t border-slate-800/80">
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro Desejada</label>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro</label>
                             <span id="labelMargem" class="text-xs font-bold text-indigo-400 font-mono">60%</span>
                         </div>
-                        <input type="range" id="sliderMargem" min="10" max="300" step="5" value="60" oninput="sincronizarMargem('slider')"
+                        <input type="range" id="sliderMargem" min="10" max="300" step="5" value="60" oninput="sincronizarMargem()"
                             class="w-full accent-indigo-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Taxa de Maquininha / Cartão (%)</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-percent text-xs"></i></span>
-                            <input type="number" id="taxaCartao" step="0.5" value="3.99" placeholder="Ex: 3.99" oninput="calcularPreco()"
-                                class="w-full pl-11 pr-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none transition text-sm font-mono">
-                        </div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Taxa Maquininha / Cartão (%)</label>
+                        <input type="number" id="taxaCartao" step="0.5" value="3.99" oninput="checarRecursoPro(this)"
+                            class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
                 </div>
 
                 <button type="button" onclick="salvarPrecificacao()" 
-                    class="w-full mt-3 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/25 cursor-pointer flex items-center justify-center gap-2 text-sm tracking-wide">
-                    <i class="fa-solid fa-floppy-disk"></i> Salvar no Histórico Cloud
+                    class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
+                    <i class="fa-solid fa-floppy-disk mr-2"></i> Salvar no Histórico
                 </button>
             </form>
         </div>
 
-        <!-- Coluna Direita: Dashboard de Resultados (5 colunas) -->
+        <!-- Coluna Direita: Dashboard de Resultados -->
         <div class="lg:col-span-5 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl flex flex-col justify-between">
             <div>
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
                     <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
                         <span class="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">2</span>
-                        Dashboard Financeiro Pro
+                        Dashboard Financeiro
                     </h2>
-                    <span id="badgeSaude" class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Excelente
-                    </span>
+                    <span id="badgeSaude" class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Excelente</span>
                 </div>
 
                 <div class="space-y-4">
-                    <!-- Produto Ativo -->
                     <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Item Analisado</span>
@@ -171,17 +215,12 @@
                         <span id="resCustoTotal" class="text-xs font-mono font-bold text-slate-400">Custo: R$ 0,00</span>
                     </div>
 
-                    <!-- Preço Principal -->
-                    <div class="bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 p-6 rounded-2xl border border-indigo-500/40 shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 p-6 rounded-2xl border border-indigo-500/40 shadow-xl relative">
                         <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido (PIX / À Vista)</span>
-                        <div class="flex items-baseline gap-2">
-                            <span id="resPrecoVenda" class="text-4xl lg:text-5xl font-black font-mono text-white tracking-tight">R$ 0,00</span>
-                        </div>
+                        <span id="resPrecoVenda" class="text-4xl lg:text-5xl font-black font-mono text-white tracking-tight">R$ 0,00</span>
                         <span id="resPrecoCartao" class="text-xs text-indigo-400/90 mt-2 block font-medium">Cartão / Parcelado: R$ 0,00</span>
                     </div>
 
-                    <!-- Lucro Líquido -->
                     <div class="bg-emerald-950/30 p-5 rounded-2xl border border-emerald-500/20 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">Lucro Líquido Estimado</span>
@@ -189,36 +228,18 @@
                         </div>
                         <span id="resLucro" class="text-2xl font-mono font-black text-emerald-400">R$ 0,00</span>
                     </div>
-
-                    <!-- Barra de Proporção -->
-                    <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 space-y-2">
-                        <div class="flex justify-between text-[11px] font-bold text-slate-400">
-                            <span>Distribuição de Valores</span>
-                            <span id="txtMarkupEfetivo">Markup: 0x</span>
-                        </div>
-                        <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden flex">
-                            <div id="barraCusto" class="bg-slate-500 h-full transition-all duration-300" style="width: 50%"></div>
-                            <div id="barraLucro" class="bg-emerald-500 h-full transition-all duration-300" style="width: 50%"></div>
-                        </div>
-                        <div class="flex justify-between text-[10px] text-slate-500 pt-1">
-                            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-500 inline-block"></span> Custos: <strong id="valBarraCusto">R$ 0</strong></span>
-                            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Lucro: <strong id="valBarraLucro">R$ 0</strong></span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Botões de Ação Comercial -->
             <div class="mt-6 pt-5 border-t border-slate-800 flex gap-3">
-                <button onclick="copiarResumo()" class="flex-1 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <button onclick="copiarResumo()" class="flex-1 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer">
                     <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp
                 </button>
-                <button onclick="window.print()" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer shadow-sm" title="Imprimir Relatório">
-                    <i class="fa-solid fa-print text-indigo-400"></i> Relatório PDF
+                <button onclick="gerarPdfPro()" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer" title="Relatório PDF">
+                    <i class="fa-solid fa-file-pdf text-indigo-400"></i> PDF PRO
                 </button>
             </div>
         </div>
-
     </main>
 
     <!-- Modal de Histórico -->
@@ -226,28 +247,19 @@
         <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-3xl p-6 shadow-2xl relative">
             <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-800">
                 <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico Salvo na Nuvem Local
+                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico de Precificações
                 </h3>
                 <button onclick="fecharHistorico()" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <div id="listaHistorico" class="space-y-3 max-h-96 overflow-y-auto pr-2">
-                <!-- Itens carregados via JS -->
-            </div>
+            <div id="listaHistorico" class="space-y-3 max-h-96 overflow-y-auto pr-2"></div>
             <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between items-center">
-                <button onclick="limparHistorico()" class="text-xs text-red-400 hover:text-red-300 cursor-pointer flex items-center gap-1.5">
-                    <i class="fa-solid fa-trash"></i> Apagar Histórico
-                </button>
+                <button onclick="limparHistorico()" class="text-xs text-red-400 hover:text-red-300 cursor-pointer">Apagar Histórico</button>
                 <button onclick="fecharHistorico()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl text-xs font-bold cursor-pointer">Fechar</button>
             </div>
         </div>
     </div>
 
-    <!-- Rodapé -->
-    <footer class="border-t border-slate-800/60 bg-[#05070e] py-6 text-center text-xs text-slate-500 mt-12">
-        <p>&copy; 2026 PrecificaFácil Enterprise Suite. Todos os direitos reservados. Alta performance e precisão.</p>
-    </footer>
-
-    <!-- Script JavaScript Enterprise -->
+    <!-- Script Principal -->
     <script src="script.js"></script>
 </body>
 </html>
