@@ -52,7 +52,7 @@
                     </p>
                 </div>
 
-                <!-- Cards de Planos Estilo Portal Premium -->
+                <!-- Cards de Planos Padronizados (Esquerda) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     
                     <!-- Free -->
@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <!-- Modal de Planos & Assinaturas Completo -->
+    <!-- Modal de Planos & Assinaturas Padronizado -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
@@ -182,54 +182,64 @@
                 <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
                 <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para o seu momento</h2>
                 <p class="text-xs text-slate-400 mt-1">Comece grátis. Evolua conforme seus resultados crescem.</p>
-                
-                <!-- Toggle Mensal / Anual -->
-                <div class="inline-flex items-center bg-slate-950 p-1.5 rounded-full border border-slate-800 mt-6">
-                    <button onclick="mudarCiclo('mensal')" id="btnMensal" class="px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer">Mensal</button>
-                    <button onclick="mudarCiclo('anual')" id="btnAnual" class="px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer">Anual <span class="text-emerald-400 text-[10px] ml-1">-17%</span></button>
-                </div>
             </div>
 
-            <!-- Grid de Planos -->
+            <!-- Grid de Planos Padronizado (Modal) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Free -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-white font-bold text-lg">Free</h3>
-                        <p class="text-xs text-slate-400 mt-1">Para começar a precificar</p>
-                        <div class="my-6"><span class="text-4xl font-black text-white">R$ 0</span><span class="text-xs text-slate-500">/mês</span></div>
-                        <ul class="space-y-3 text-xs text-slate-300">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-bold text-lg">Free</h3>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">Para começar a precificar</p>
+                        <div class="my-6"><span class="text-4xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500">/mês</span></div>
+                        <ul class="space-y-3 text-xs text-slate-300 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano padrão de precificação</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 modelo de custo fixo</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Plano Atual</button>
                 </div>
 
-                <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-2xl">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider">Mais Escolhido</div>
+                <!-- Pro -->
+                <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border-2 border-indigo-500/70 flex flex-col justify-between relative shadow-2xl">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido</div>
                     <div>
-                        <h3 class="text-white font-bold text-lg">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
-                        <p class="text-xs text-slate-300 mt-1">Para negócios em crescimento</p>
-                        <div class="my-6"><span class="text-4xl font-black text-white" id="precoPro">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
-                        <ul class="space-y-3 text-xs text-slate-300">
+                        <div class="flex items-center justify-between mb-1 mt-1">
+                            <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
+                            <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
+                        </div>
+                        <p class="text-xs text-indigo-200 mb-4">Para negócios em expansão</p>
+                        <div class="my-6"><span class="text-4xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
+                        <ul class="space-y-3 text-xs text-slate-200 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 2 modelos de custo fixo</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada p/ formação de preços</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF PRO</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer">Assinar Pro</button>
+                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro</button>
                 </div>
 
+                <!-- Premium -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-white font-bold text-lg">Premium</h3>
-                        <p class="text-xs text-slate-400 mt-1">Operações sem limites</p>
-                        <div class="my-6"><span class="text-4xl font-black text-white" id="precoPremium">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
-                        <ul class="space-y-3 text-xs text-slate-300">
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte WhatsApp</li>
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-bold text-lg">Premium</h3>
+                            <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">Operações sem limites</p>
+                        <div class="my-6"><span class="text-4xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
+                        <ul class="space-y-3 text-xs text-slate-300 font-medium">
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 modelos de custos fixos</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada e Lotes</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -407,7 +417,7 @@
             </div>
         </div>
 
-        <!-- MÓDULO REFINADO: SIMULADOR DE MARKETPLACES -->
+        <!-- MÓDULO: SIMULADOR DE MARKETPLACES -->
         <div id="moduloMarketplaces" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -452,19 +462,6 @@
                                 <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
                                     class="w-full px-4 pr-10 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-indigo-500 transition">
                                 <span class="absolute inset-y-0 right-0 pr-4 flex items-center text-indigo-400 font-bold text-xs">%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mini card informativo de comissão -->
-                    <div class="bg-gradient-to-r from-indigo-950/40 via-slate-950/80 to-slate-950 p-4 rounded-2xl border border-indigo-500/30 flex items-center justify-between text-xs text-slate-300">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
-                                <i class="fa-solid fa-percent"></i>
-                            </div>
-                            <div>
-                                <span class="block font-bold text-white">Impacto Estimado da Comissão</span>
-                                <span class="text-[11px] text-slate-400">Calculado automaticamente com base na taxa do canal selecionado.</span>
                             </div>
                         </div>
                     </div>
@@ -686,7 +683,6 @@
             const custoBase = parseFloat(document.getElementById('custoBaseMarketplace').value) || 0;
             const margem = parseFloat(document.getElementById('margemMarketplace').value) || 50;
 
-            // Fórmula de markup reversa para comissão de marketplace
             const divisor = 1 - ((comissaoPct + margem) / 100);
             const precoVenda = divisor > 0 ? custoBase / divisor : custoBase * 2;
             const lucro = precoVenda * (margem / 100);
