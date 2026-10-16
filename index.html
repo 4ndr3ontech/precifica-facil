@@ -358,10 +358,9 @@
             </div>
         </div>
 
-        <!-- MÓDULO REFINADO: MODELOS DE CUSTOS FIXOS -->
+        <!-- MÓDULO: MODELOS DE CUSTOS FIXOS -->
         <div id="moduloCustosFixos" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
-                <!-- Efeito sutil de brilho de fundo -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-800/80 relative z-10">
@@ -378,13 +377,10 @@
                 </div>
                 
                 <div class="space-y-4 relative z-10">
-                    <!-- Cenário Ativo -->
                     <div class="bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-slate-950 p-5 rounded-2xl border border-indigo-500/40 shadow-lg relative">
                         <div class="flex justify-between items-center mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
-                                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                                </div>
+                                <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                                 <h4 class="text-sm font-extrabold text-white">Cenário 1: Operação Padrão</h4>
                             </div>
                             <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ativo</span>
@@ -395,13 +391,10 @@
                         </div>
                     </div>
 
-                    <!-- Cenário Bloqueado / Expandido -->
                     <div id="blocoExtraCustos" class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800/80 transition hover:border-slate-700">
                         <div class="flex justify-between items-center mb-2">
                             <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-xs">
-                                    <i class="fa-solid fa-lock text-amber-400"></i>
-                                </div>
+                                <div class="w-8 h-8 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-lock text-amber-400"></i></div>
                                 <h4 class="text-sm font-bold text-slate-300">Cenário 2: Estoque Expandido & Logística</h4>
                             </div>
                             <button onclick="abrirPlanos()" class="text-[11px] bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-extrabold px-3 py-1.5 rounded-xl uppercase tracking-wider transition cursor-pointer flex items-center gap-1.5">
@@ -410,50 +403,70 @@
                         </div>
                         <p class="text-xs text-slate-400 pl-10 font-medium">Evolua para o Plano Pro ou Premium para gerenciar até 30 modelos de cenários personalizados simultaneamente.</p>
                     </div>
-
-                    <!-- Banner de Benefício / Upgrade -->
-                    <div class="bg-gradient-to-r from-indigo-950/30 via-violet-950/30 to-slate-950/30 p-4 rounded-2xl border border-indigo-500/20 flex items-center justify-between text-xs text-slate-300">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-info text-indigo-400 text-base"></i>
-                            <span>Precisa de flexibilidade na estrutura de custos? Conheça nossos recursos profissionais.</span>
-                        </div>
-                        <button onclick="abrirPlanos()" class="text-indigo-400 font-bold hover:underline cursor-pointer shrink-0 ml-2">Ver Planos</button>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- MÓDULO 2: SIMULADOR DE MARKETPLACES -->
+        <!-- MÓDULO REFINADO: SIMULADOR DE MARKETPLACES -->
         <div id="moduloMarketplaces" class="hidden contents">
-            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
-                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80 relative z-10">
                     <div>
-                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-store"></i></span>
-                            Simulador de Comissões & Marketplaces
-                        </h2>
-                        <p class="text-xs text-slate-400 mt-1">Calcule exatamente o preço ideal para Shopee e Mercado Livre.</p>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Simulador de Comissões & Marketplaces</h2>
+                            <span class="bg-indigo-500/15 text-indigo-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-indigo-500/30 uppercase tracking-wide">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Simule o impacto de comissões na Shopee, Mercado Livre e canais diretos.</p>
                     </div>
                 </div>
-                <div class="space-y-5">
+
+                <div class="space-y-5 relative z-10">
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Canal de Venda</label>
-                        <select id="selectMarketplace" onchange="calcularMarketplace()" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="12">Shopee (Clássico ~14%)</option>
-                            <option value="18">Mercado Livre (Clássico ~11%)</option>
-                            <option value="20">Mercado Livre (Premium 12x ~17%)</option>
-                            <option value="5">WhatsApp / Instagram (PIX - 0%)</option>
-                        </select>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-indigo-400"><i class="fa-solid fa-store text-xs"></i></span>
+                            <select id="selectMarketplace" onchange="calcularMarketplace()" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition font-medium appearance-none">
+                                <option value="12">Shopee (Clássico ~14%)</option>
+                                <option value="18">Mercado Livre (Clássico ~11%)</option>
+                                <option value="20">Mercado Livre (Premium 12x ~17%)</option>
+                                <option value="5">WhatsApp / Instagram (PIX - 0%)</option>
+                            </select>
+                            <span class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base de Produção (R$)</label>
-                        <input type="number" id="custoBaseMarketplace" step="0.01" placeholder="Ex: 50,00" oninput="calcularMarketplace()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base de Produção (R$)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
+                                <input type="number" id="custoBaseMarketplace" step="0.01" placeholder="50,00" oninput="calcularMarketplace()"
+                                    class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-indigo-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem de Lucro Desejada (%)</label>
+                            <div class="relative">
+                                <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
+                                    class="w-full px-4 pr-10 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-indigo-500 transition">
+                                <span class="absolute inset-y-0 right-0 pr-4 flex items-center text-indigo-400 font-bold text-xs">%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem de Lucro Desejada (%)</label>
-                        <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+
+                    <!-- Mini card informativo de comissão -->
+                    <div class="bg-gradient-to-r from-indigo-950/40 via-slate-950/80 to-slate-950 p-4 rounded-2xl border border-indigo-500/30 flex items-center justify-between text-xs text-slate-300">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+                                <i class="fa-solid fa-percent"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-white">Impacto Estimado da Comissão</span>
+                                <span class="text-[11px] text-slate-400">Calculado automaticamente com base na taxa do canal selecionado.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -599,34 +612,9 @@
             if(plano === 'PRO') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/20 uppercase';
                 document.getElementById('tagModuloCustos').innerText = '2 Modelos';
-                document.getElementById('tagBadgeCustoTopo').innerText = 'Plano Pro: 2 Modelos Ativos';
-                document.getElementById('blocoExtraCustos').classList.remove('opacity-40', 'bg-slate-950/40');
-                document.getElementById('blocoExtraCustos').classList.add('bg-gradient-to-br', 'from-slate-950/90', 'via-slate-900/90', 'to-slate-950', 'border-indigo-500/40');
-                document.getElementById('blocoExtraCustos').innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                            <h4 class="text-sm font-extrabold text-white">Cenário 2: Estoque Expandido & Logística</h4>
-                        </div>
-                        <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ativo (Pro)</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-xs text-slate-300 pt-2 border-t border-slate-800/60 font-medium">
-                        <div>Armazém / Frete: <strong class="text-white font-mono text-sm ml-1">R$ 850,00</strong></div>
-                        <div>Marketing / Ads: <strong class="text-white font-mono text-sm ml-1">R$ 500,00</strong></div>
-                    </div>`;
             } else if(plano === 'PREMIUM') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase';
                 document.getElementById('tagModuloCustos').innerText = '30 Modelos';
-                document.getElementById('tagBadgeCustoTopo').innerText = 'Plano Premium: 30 Modelos Ilimitados';
-                document.getElementById('blocoExtraCustos').innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-boxes-stacked"></i></div>
-                            <h4 class="text-sm font-extrabold text-white">Cenários Corporativos Ilimitados (Até 30 Modelos)</h4>
-                        </div>
-                        <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ilimitado</span>
-                    </div>
-                    <p class="text-xs text-slate-300">Todos os 30 modelos setoriais configurados e sincronizados com aprecificação automatizada.</p>`;
             }
             mostrarToast('Sucesso', 'Plano atualizado para ' + plano + ' com sucesso!');
         }
@@ -691,6 +679,24 @@
             document.getElementById('resCustoTotal').innerText = 'Custo: R$ ' + custoTotal.toFixed(2).replace('.', ',');
             document.getElementById('resPrecoVenda').innerText = 'R$ ' + precoVenda.toFixed(2).replace('.', ',');
             document.getElementById('resLucro').innerText = 'R$ ' + lucro.toFixed(2).replace('.', ',');
+        }
+
+        function calcularMarketplace() {
+            const comissaoPct = parseFloat(document.getElementById('selectMarketplace').value) || 0;
+            const custoBase = parseFloat(document.getElementById('custoBaseMarketplace').value) || 0;
+            const margem = parseFloat(document.getElementById('margemMarketplace').value) || 50;
+
+            // Fórmula de markup reversa para comissão de marketplace
+            const divisor = 1 - ((comissaoPct + margem) / 100);
+            const precoVenda = divisor > 0 ? custoBase / divisor : custoBase * 2;
+            const lucro = precoVenda * (margem / 100);
+
+            if(custoBase > 0) {
+                document.getElementById('resNomeProduto').innerText = 'Simulação Marketplace';
+                document.getElementById('resCustoTotal').innerText = 'Base: R$ ' + custoBase.toFixed(2).replace('.', ',');
+                document.getElementById('resPrecoVenda').innerText = 'R$ ' + precoVenda.toFixed(2).replace('.', ',');
+                document.getElementById('resLucro').innerText = 'R$ ' + lucro.toFixed(2).replace('.', ',');
+            }
         }
 
         function sincronizarMargem() {
