@@ -27,56 +27,109 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação Split-Screen -->
+    <!-- Tela de Autenticação com Tabela de Planos Integrada -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row overflow-y-auto">
-        <div class="lg:w-1/2 bg-gradient-to-br from-indigo-950/40 via-[#050814] to-slate-950 p-10 lg:p-16 flex flex-col justify-between relative border-b lg:border-b-0 lg:border-r border-slate-800/80">
-            <div class="flex items-center gap-3 relative z-10">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-600/30">
-                    <i class="fa-solid fa-calculator text-white text-lg"></i>
+        
+        <!-- Lado Esquerdo: Apresentação e Tabela de Planos -->
+        <div class="lg:w-7/12 bg-gradient-to-br from-indigo-950/40 via-[#050814] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80">
+            <div>
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                        <i class="fa-solid fa-calculator text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
                 </div>
-                <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
-            </div>
-            <div class="my-auto py-12 relative z-10 max-w-lg">
-                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Plataforma Nacional de Precificação</span>
-                <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                    Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
-                </h1>
-                <p class="text-slate-400 text-sm lg:text-base mt-4 leading-relaxed">
-                    Ferramentas modulares para precificação unitária, simulador de marketplaces e operações sem limites.
-                </p>
-                <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-800/80">
-                    <div><h4 class="text-white font-extrabold text-base">Free</h4><p class="text-slate-500 text-[11px]">Para começar</p></div>
-                    <div><h4 class="text-white font-extrabold text-base">Pro</h4><p class="text-slate-500 text-[11px]">Crescimento</p></div>
-                    <div><h4 class="text-white font-extrabold text-base">Premium</h4><p class="text-slate-500 text-[11px]">Sem limites</p></div>
+
+                <div class="max-w-2xl mb-10">
+                    <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-4">Plataforma Nacional de Precificação</span>
+                    <h1 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                        Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
+                    </h1>
+                    <p class="text-slate-400 text-xs lg:text-sm mt-3 leading-relaxed">
+                        Ferramentas modulares para precificação unitária, simulador de marketplaces e operações sem limites. Conheça nossos planos abaixo:
+                    </p>
+                </div>
+
+                <!-- Tabela de Planos Integrada na Esquerda -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <!-- Free -->
+                    <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-white font-bold text-sm">Free</h3>
+                            <div class="my-3">
+                                <span class="text-2xl font-black text-white">R$ 0</span><span class="text-[10px] text-slate-500">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-[11px] text-slate-300">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 5 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 1 plano padrão</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Suporte por e-mail</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="bg-gradient-to-b from-indigo-950/80 to-slate-900/80 p-5 rounded-2xl border border-indigo-500/50 flex flex-col justify-between relative shadow-lg">
+                        <div class="absolute -top-2.5 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">Popular</div>
+                        <div>
+                            <h3 class="text-white font-bold text-sm flex items-center gap-1">Pro <i class="fa-solid fa-star text-amber-400 text-[10px]"></i></h3>
+                            <div class="my-3">
+                                <span class="text-2xl font-black text-white">R$ 19,90</span><span class="text-[10px] text-indigo-300">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-[11px] text-slate-300">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 100 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Simulador Marketplaces</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Exportação PDF</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Premium -->
+                    <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-white font-bold text-sm">Premium</h3>
+                            <div class="my-3">
+                                <span class="text-2xl font-black text-white">R$ 39,90</span><span class="text-[10px] text-slate-500">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-[11px] text-slate-300">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 3.000 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Produção em Lotes</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Suporte WhatsApp</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="text-xs text-slate-500 relative z-10">&copy; 2026 PrecificaFácil Corporation.</div>
+
+            <div class="text-xs text-slate-500">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
         </div>
 
-        <div class="lg:w-1/2 bg-[#03050b] p-8 lg:p-24 flex items-center justify-center relative">
-            <div class="max-w-md w-full bg-slate-900/50 border border-slate-800/80 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-xl">
-                <div class="mb-8">
+        <!-- Lado Direito: Formulário de Login / Cadastro -->
+        <div class="lg:w-5/12 bg-[#03050b] p-8 lg:p-16 flex items-center justify-center relative">
+            <div class="max-w-md w-full bg-slate-900/50 border border-slate-800/80 p-8 rounded-3xl shadow-2xl backdrop-blur-xl">
+                <div class="mb-6">
                     <h3 id="authTitulo" class="text-2xl font-black text-white tracking-tight">Bem-vindo de volta</h3>
                     <p id="authSub" class="text-xs text-slate-400 mt-1">Acesse sua conta para gerenciar seus negócios</p>
                 </div>
+                
                 <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
                     <div id="campoNomeDiv" class="hidden">
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Nome ou Marca</label>
-                        <input type="text" id="authNome" placeholder="Sua Empresa" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Nome ou Marca</label>
+                        <input type="text" id="authNome" placeholder="Sua Empresa" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">E-mail Profissional</label>
-                        <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">E-mail Profissional</label>
+                        <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Senha de Acesso</label>
-                        <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Senha de Acesso</label>
+                        <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
-                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
+                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-3.5 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
                         Acessar Plataforma
                     </button>
                 </form>
-                <div class="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400">
+
+                <div class="mt-6 pt-5 border-t border-slate-800/80 text-center text-xs text-slate-400">
                     <span id="authToggleText">Ainda não tem uma conta?</span> 
                     <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta gratuita</button>
                 </div>
@@ -84,77 +137,49 @@
         </div>
     </div>
 
-    <!-- Modal de Planos & Assinaturas (Pricing Table Profissional) -->
+    <!-- Modal de Planos & Assinaturas (Caso o usuário queira trocar de plano logado) -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
-            
             <div class="text-center mb-8">
                 <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
                 <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para o seu momento</h2>
-                <p class="text-xs text-slate-400 mt-1">Comece grátis. Evolua conforme seus resultados crescem.</p>
-                
-                <!-- Toggle Mensal / Anual -->
-                <div class="inline-flex items-center bg-slate-950 p-1.5 rounded-full border border-slate-800 mt-6">
-                    <button onclick="mudarCiclo('mensal')" id="btnMensal" class="px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer">Mensal</button>
-                    <button onclick="mudarCiclo('anual')" id="btnAnual" class="px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer">Anual <span class="text-emerald-400 text-[10px] ml-1">-17%</span></button>
-                </div>
             </div>
-
-            <!-- Grid de Planos -->
+            <!-- Grid de Planos do Modal -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Plano Free -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
                         <h3 class="text-white font-bold text-lg">Free</h3>
-                        <p class="text-xs text-slate-400 mt-1">Para começar a precificar</p>
-                        <div class="my-6">
-                            <span class="text-4xl font-black text-white">R$ 0</span><span class="text-xs text-slate-500">/mês</span>
-                        </div>
+                        <div class="my-6"><span class="text-4xl font-black text-white">R$ 0</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 5 produtos cadastrados</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 1 plano padrão de precificação</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 1 modelo de custo fixo</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte por e-mail</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano padrão de precificação</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Seu Plano Atual</button>
+                    <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Plano Atual</button>
                 </div>
-
-                <!-- Plano Pro (Mais Escolhido) -->
-                <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-2xl shadow-indigo-600/10">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow">Mais Escolhido</div>
+                <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-2xl">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider">Mais Escolhido</div>
                     <div>
-                        <h3 class="text-white font-bold text-lg flex items-center gap-2">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
-                        <p class="text-xs text-slate-300 mt-1">Para negócios em crescimento</p>
-                        <div class="my-6">
-                            <span class="text-4xl font-black text-white" id="precoPro">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span>
-                        </div>
+                        <h3 class="text-white font-bold text-lg">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
+                        <div class="my-6"><span class="text-4xl font-black text-white">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 100 produtos cadastrados</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 2 modelos de custo fixo / cenários</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador de Marketplaces (Shopee/ML)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação de relatórios em PDF</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte por e-mail</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs shadow-lg shadow-indigo-600/25 cursor-pointer">Assinar Pro</button>
+                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer">Assinar Pro</button>
                 </div>
-
-                <!-- Plano Premium -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
                         <h3 class="text-white font-bold text-lg">Premium</h3>
-                        <p class="text-xs text-slate-400 mt-1">Operações sem limites</p>
-                        <div class="my-6">
-                            <span class="text-4xl font-black text-white" id="precoPremium">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span>
-                        </div>
+                        <div class="my-6"><span class="text-4xl font-black text-white">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 3.000 produtos cadastrados</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 30 modelos de custos fixos</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calculadora de Produção em Lotes</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação ilimitada em PDF</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte prioritário via WhatsApp</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos cadastrados</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte WhatsApp</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -163,7 +188,7 @@
         </div>
     </div>
 
-    <!-- Navbar Modular Enterprise -->
+    <!-- Navbar Principal (Quando Logado) -->
     <header class="border-b border-slate-800/60 bg-[#03050b]/90 backdrop-blur-xl sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -208,7 +233,7 @@
         </div>
     </div>
 
-    <!-- Conteúdo Principal Dinâmico por Módulo -->
+    <!-- Conteúdo Principal -->
     <main class="max-w-7xl mx-auto px-6 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- MÓDULO 1: PRECIFICAÇÃO UNITÁRIA -->
