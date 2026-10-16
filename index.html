@@ -115,85 +115,84 @@
                     </p>
                 </div>
 
-                <!-- Cards de Planos - Grid Melhorado e Alinhado -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-                    
-                    <!-- Card Free -->
-                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide">Free</h3>
-                                <span class="bg-slate-800 text-slate-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Start</span>
-                            </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500 font-medium">/mês</span>
-                            </div>
-                            <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Até 5 produtos base</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">1 Estrutura de Custo Fixo</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <button onclick="assinarPlano('FREE')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Começar Grátis</button>
-                    </div>
-
-                    <!-- Card Pro (Destaque) -->
-                    <div class="bg-gradient-to-b from-indigo-900/50 to-[#03050b] p-6 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)] hover:-translate-y-1.5 transition-transform duration-300 mt-0 md:-mt-4 mb-0 md:-mb-4 z-10">
-                        <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)] whitespace-nowrap tracking-wider">MAIS ESCOLHIDO</div>
-                        
-                        <div class="pt-2">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
-                                <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Top ROI</span>
-                            </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-4xl font-black text-white font-mono drop-shadow-md">14,99</span><span class="text-xs text-indigo-300 font-medium">/mês</span>
-                            </div>
-                            <ul class="space-y-3 mb-6 text-[11px] text-slate-200 font-medium">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug"><strong>Até 100 produtos</strong> no portfólio</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">Marketplaces & Break-Even</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-bolt text-amber-400 mt-0.5"></i> <span class="leading-snug">Impostos, Comissões e Portes Grátis</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <button onclick="assinarPlano('PRO')" class="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-black py-3.5 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
-                    </div>
-
-                    <!-- Card Premium -->
-                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-white font-black text-base tracking-wide">Premium</h3>
-                                <span class="bg-emerald-500/20 text-emerald-400 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Escala</span>
-                            </div>
-                            <div class="mb-5 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">29,99</span><span class="text-xs text-slate-500 font-medium">/mês</span>
-                            </div>
-                            <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-infinity text-emerald-500 mt-0.5"></i> <span class="leading-snug"><strong>Produtos Ilimitados</strong></span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Produção Lotes & Importação</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Curva ABC, B2B & Auditoria IA</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <button onclick="assinarPlano('PREMIUM')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Ativar Premium</button>
-                    </div>
-
-                </div>
+              <!-- Cards de Planos - Grid Melhorado e Alinhado -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+    
+    <!-- Card Free -->
+    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-white font-black text-base tracking-wide">Free</h3>
+                <span class="bg-slate-800 text-slate-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Start</span>
             </div>
+            <div class="mb-5 flex items-baseline gap-1">
+                <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500 font-medium">/mês</span>
+            </div>
+            <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Precificação Unitária</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Gestão de Custos Fixos</span>
+                </li>
+            </ul>
+        </div>
+        <button onclick="assinarPlano('FREE')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Começar Grátis</button>
+    </div>
+
+    <!-- Card Pro (Destaque) -->
+    <div class="bg-gradient-to-b from-indigo-900/50 to-[#03050b] p-6 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)] hover:-translate-y-1.5 transition-transform duration-300 mt-0 md:-mt-4 mb-0 md:-mb-4 z-10">
+        <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)] whitespace-nowrap tracking-wider">MAIS ESCOLHIDO</div>
+        
+        <div class="pt-2">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-white font-black text-base tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
+                <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Top ROI</span>
+            </div>
+            <div class="mb-5 flex items-baseline gap-1">
+                <span class="text-4xl font-black text-white font-mono drop-shadow-md">14,99</span><span class="text-xs text-indigo-300 font-medium">/mês</span>
+            </div>
+            <ul class="space-y-3 mb-6 text-[11px] text-slate-200 font-medium">
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">Marketplaces, Descontos e Break-Even</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span class="leading-snug">IA Precificação e Antecipação</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-bolt text-amber-400 mt-0.5"></i> <span class="leading-snug">Impostos, Elasticidade, Comissões e Frete Grátis</span>
+                </li>
+            </ul>
+        </div>
+        <button onclick="assinarPlano('PRO')" class="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-black py-3.5 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
+    </div>
+
+    <!-- Card Premium -->
+    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-white font-black text-base tracking-wide">Premium</h3>
+                <span class="bg-emerald-500/20 text-emerald-400 text-[9px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">Escala</span>
+            </div>
+            <div class="mb-5 flex items-baseline gap-1">
+                <span class="text-3xl font-black text-white font-mono">29,99</span><span class="text-xs text-slate-500 font-medium">/mês</span>
+            </div>
+            <ul class="space-y-3 mb-6 text-[11px] text-slate-300 font-medium">
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-infinity text-emerald-500 mt-0.5"></i> <span class="leading-snug">Lotes, Importação e Curva ABC</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Comparador Multi-Market</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span class="leading-snug">Propostas B2B e Auditoria IA</span>
+                </li>
+            </ul>
+        </div>
+        <button onclick="assinarPlano('PREMIUM')" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Ativar Premium</button>
+    </div>
+
+</div>
 
             <!-- Rodapé da Coluna Esquerda -->
             <div class="relative z-10 max-w-3xl mx-auto w-full mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 font-medium border-t border-slate-800/50 gap-4">
