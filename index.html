@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | Suíte Executiva de Precificação</title>
+    <title>Precifica | Suíte Executiva de Precificação</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -39,7 +39,7 @@
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
                     </div>
-                    <span class="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
+                    <span class="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">Precifica</span>
                 </div>
 
                 <div class="mb-8">
@@ -125,7 +125,7 @@
 
             <!-- Rodapé Fixo na Base da Coluna Esquerda -->
             <div class="relative z-10 max-w-2xl mx-auto w-full pt-6">
-                <div class="text-xs text-slate-400 font-medium">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
+                <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
 
@@ -200,7 +200,6 @@
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano padrão de precificação</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 modelo de custo fixo</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
@@ -215,9 +214,8 @@
                         <div class="my-6"><span class="text-4xl font-black text-white" id="precoPro">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 2 modelos de custo fixo</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada p/ precificação</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF PRO</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer">Assinar Pro</button>
@@ -230,9 +228,8 @@
                         <div class="my-6"><span class="text-4xl font-black text-white" id="precoPremium">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 modelos de custos fixos</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada e Lotes</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte WhatsApp</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -250,7 +247,7 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
+                        <span class="text-xl font-extrabold tracking-tight text-white">Precifica</span>
                         <span id="badgePlanoNavbar" class="bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase">Free</span>
                     </div>
                     <span class="block text-[11px] text-slate-400 font-medium" id="userGreeting">Olá, Visitante</span>
@@ -361,35 +358,66 @@
             </div>
         </div>
 
-        <!-- MÓDULO: MODELOS DE CUSTOS FIXOS -->
+        <!-- MÓDULO REFINADO: MODELOS DE CUSTOS FIXOS -->
         <div id="moduloCustosFixos" class="hidden contents">
-            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
-                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+                <!-- Efeito sutil de brilho de fundo -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-800/80 relative z-10">
                     <div>
-                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-sliders"></i></span>
-                            Modelos de Custos Fixos <span id="limiteCustosText" class="text-xs text-indigo-400 ml-2 font-normal">(Plano Free: 1 Modelo)</span>
-                        </h2>
-                        <p class="text-xs text-slate-400 mt-1">Gerencie diferentes cenários de aluguel, internet, pro-labore e taxas.</p>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Modelos de Custos Fixos</h2>
+                            <span id="tagBadgeCustoTopo" class="bg-indigo-500/15 text-indigo-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-indigo-500/30 uppercase tracking-wide">Plano Free: 1 Modelo</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Gerencie múltiplos cenários de despesas operacionais e estruturas de taxa.</p>
                     </div>
+                    <button onclick="abrirPlanos()" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/20 flex items-center gap-2 cursor-pointer shrink-0">
+                        <i class="fa-solid fa-plus"></i> Novo Cenário
+                    </button>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-indigo-500/40">
+                
+                <div class="space-y-4 relative z-10">
+                    <!-- Cenário Ativo -->
+                    <div class="bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-slate-950 p-5 rounded-2xl border border-indigo-500/40 shadow-lg relative">
                         <div class="flex justify-between items-center mb-3">
-                            <h4 class="text-sm font-bold text-white"><i class="fa-solid fa-file-invoice-dollar text-indigo-400 mr-2"></i> Cenário 1: Operação Padrão</h4>
-                            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Ativo</span>
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <h4 class="text-sm font-extrabold text-white">Cenário 1: Operação Padrão</h4>
+                            </div>
+                            <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ativo</span>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-xs text-slate-300">
-                            <div>Aluguel / Espaço: <strong class="text-white font-mono">R$ 1.200,00</strong></div>
-                            <div>Energia / Internet: <strong class="text-white font-mono">R$ 350,00</strong></div>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-slate-300 pt-2 border-t border-slate-800/60 font-medium">
+                            <div>Aluguel / Espaço: <strong class="text-white font-mono text-sm ml-1">R$ 1.200,00</strong></div>
+                            <div>Energia / Internet: <strong class="text-white font-mono text-sm ml-1">R$ 350,00</strong></div>
                         </div>
                     </div>
-                    <div id="blocoExtraCustos" class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800 opacity-60">
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="text-sm font-bold text-slate-400"><i class="fa-solid fa-lock text-amber-400 mr-2"></i> Cenário 2: Estoque Expandido (Pro / Premium)</h4>
-                            <button onclick="abrirPlanos()" class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-3 py-1 rounded-full uppercase hover:bg-amber-500/30 transition">Desbloquear</button>
+
+                    <!-- Cenário Bloqueado / Expandido -->
+                    <div id="blocoExtraCustos" class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800/80 transition hover:border-slate-700">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-xs">
+                                    <i class="fa-solid fa-lock text-amber-400"></i>
+                                </div>
+                                <h4 class="text-sm font-bold text-slate-300">Cenário 2: Estoque Expandido & Logística</h4>
+                            </div>
+                            <button onclick="abrirPlanos()" class="text-[11px] bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-extrabold px-3 py-1.5 rounded-xl uppercase tracking-wider transition cursor-pointer flex items-center gap-1.5">
+                                <i class="fa-solid fa-crown text-amber-400"></i> Desbloquear Pro
+                            </button>
                         </div>
-                        <p class="text-xs text-slate-500">Disponível a partir do plano Pro para gerenciar até 30 modelos de cenários operacionais.</p>
+                        <p class="text-xs text-slate-400 pl-10 font-medium">Evolua para o Plano Pro ou Premium para gerenciar até 30 modelos de cenários personalizados simultaneamente.</p>
+                    </div>
+
+                    <!-- Banner de Benefício / Upgrade -->
+                    <div class="bg-gradient-to-r from-indigo-950/30 via-violet-950/30 to-slate-950/30 p-4 rounded-2xl border border-indigo-500/20 flex items-center justify-between text-xs text-slate-300">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-info text-indigo-400 text-base"></i>
+                            <span>Precisa de flexibilidade na estrutura de custos? Conheça nossos recursos profissionais.</span>
+                        </div>
+                        <button onclick="abrirPlanos()" class="text-indigo-400 font-bold hover:underline cursor-pointer shrink-0 ml-2">Ver Planos</button>
                     </div>
                 </div>
             </div>
@@ -539,7 +567,7 @@
     </main>
 
     <!-- Widget Flutuante do WhatsApp -->
-    <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Olá! Preciso de ajuda com a plataforma PrecificaFácil." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-105 cursor-pointer" title="Fale conosco no WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Olá! Preciso de ajuda com a plataforma Precifica." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-105 cursor-pointer" title="Fale conosco no WhatsApp">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
     </a>
 
@@ -571,13 +599,34 @@
             if(plano === 'PRO') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/20 uppercase';
                 document.getElementById('tagModuloCustos').innerText = '2 Modelos';
-                document.getElementById('blocoExtraCustos').classList.remove('opacity-60');
-                document.getElementById('blocoExtraCustos').innerHTML = '<div class="flex justify-between items-center mb-3"><h4 class="text-sm font-bold text-white"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Cenário 2: Estoque Expandido</h4><span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Liberado (Pro)</span></div>';
+                document.getElementById('tagBadgeCustoTopo').innerText = 'Plano Pro: 2 Modelos Ativos';
+                document.getElementById('blocoExtraCustos').classList.remove('opacity-40', 'bg-slate-950/40');
+                document.getElementById('blocoExtraCustos').classList.add('bg-gradient-to-br', 'from-slate-950/90', 'via-slate-900/90', 'to-slate-950', 'border-indigo-500/40');
+                document.getElementById('blocoExtraCustos').innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                            <h4 class="text-sm font-extrabold text-white">Cenário 2: Estoque Expandido & Logística</h4>
+                        </div>
+                        <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ativo (Pro)</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-xs text-slate-300 pt-2 border-t border-slate-800/60 font-medium">
+                        <div>Armazém / Frete: <strong class="text-white font-mono text-sm ml-1">R$ 850,00</strong></div>
+                        <div>Marketing / Ads: <strong class="text-white font-mono text-sm ml-1">R$ 500,00</strong></div>
+                    </div>`;
             } else if(plano === 'PREMIUM') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase';
                 document.getElementById('tagModuloCustos').innerText = '30 Modelos';
-                document.getElementById('blocoExtraCustos').classList.remove('opacity-60');
-                document.getElementById('blocoExtraCustos').innerHTML = '<div class="flex justify-between items-center mb-3"><h4 class="text-sm font-bold text-white"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 Modelos de Custos Fixos em Lote</h4><span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Ilimitado (Premium)</span></div>';
+                document.getElementById('tagBadgeCustoTopo').innerText = 'Plano Premium: 30 Modelos Ilimitados';
+                document.getElementById('blocoExtraCustos').innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            <h4 class="text-sm font-extrabold text-white">Cenários Corporativos Ilimitados (Até 30 Modelos)</h4>
+                        </div>
+                        <span class="bg-emerald-500/15 text-emerald-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/30">Ilimitado</span>
+                    </div>
+                    <p class="text-xs text-slate-300">Todos os 30 modelos setoriais configurados e sincronizados com aprecificação automatizada.</p>`;
             }
             mostrarToast('Sucesso', 'Plano atualizado para ' + plano + ' com sucesso!');
         }
@@ -592,7 +641,6 @@
                 }
             });
 
-            // Validação de acesso por plano
             if((modulo === 'marketplaces' || modulo === 'ia') && planoAtual === 'FREE') {
                 abrirPlanos();
                 mostrarToast('Aviso', 'Este módulo exige o Plano PRO ou superior.');
@@ -674,7 +722,7 @@
             if(nomeDiv.classList.contains('hidden')) {
                 nomeDiv.classList.remove('hidden');
                 titulo.innerText = 'Criar sua conta';
-                sub.innerText = 'Comece a lucrar mais comprecificação profissional.';
+                sub.innerText = 'Comece a lucrar mais com precificação profissional.';
                 btn.innerText = 'Cadastrar Gratuitamente';
                 toggleText.innerText = 'Já possui uma conta?';
                 toggleBtn.innerText = 'Fazer login';
