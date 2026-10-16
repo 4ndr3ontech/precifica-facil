@@ -27,13 +27,13 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen) -->
-    <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row overflow-y-auto">
-        <!-- Lado Esquerdo: Branding & Preview dos Planos -->
-        <div class="lg:w-7/12 bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
+    <!-- Tela de Autenticação World-Class (Split-Screen Centralizada) -->
+    <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
+        <!-- Lado Esquerdo: Branding & Preview dos Planos (Centralizado Verticalmente) -->
+        <div class="lg:w-7/12 min-h-full bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-8 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
             <div class="absolute -left-20 -top-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="relative z-10">
+            <div class="relative z-10 max-w-2xl mx-auto w-full">
                 <div class="flex items-center gap-3.5 mb-8">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 ring-1 ring-white/10">
                         <i class="fa-solid fa-calculator text-white text-lg"></i>
@@ -105,13 +105,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-xs text-slate-500 relative z-10 pt-2">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
+                <div class="text-xs text-slate-500 pt-2">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
+            </div>
         </div>
 
-        <!-- Lado Direito: Formulário de Autenticação -->
-        <div class="lg:w-5/12 bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
+        <!-- Lado Direito: Formulário de Autenticação (Centralizado) -->
+        <div class="lg:w-5/12 min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
             <div class="max-w-md w-full bg-slate-900/60 border border-slate-800/90 p-8 rounded-3xl shadow-2xl backdrop-blur-xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
