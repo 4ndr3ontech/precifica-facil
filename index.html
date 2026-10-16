@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | Enterprise Pricing Suite</title>
+    <title>PrecificaFácil | Modular Enterprise Suite</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -27,88 +27,55 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen) -->
+    <!-- Tela de Autenticação Split-Screen -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row overflow-y-auto">
-        
-        <!-- Lado Esquerdo: Branding & Valor SaaS -->
         <div class="lg:w-1/2 bg-gradient-to-br from-indigo-950/40 via-[#050814] to-slate-950 p-10 lg:p-16 flex flex-col justify-between relative border-b lg:border-b-0 lg:border-r border-slate-800/80">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(99,102,241,0.08),transparent_50%)] pointer-events-none"></div>
-            
             <div class="flex items-center gap-3 relative z-10">
                 <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-600/30">
                     <i class="fa-solid fa-calculator text-white text-lg"></i>
                 </div>
                 <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
             </div>
-
             <div class="my-auto py-12 relative z-10 max-w-lg">
-                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Plataforma Nacional de Precificação</span>
+                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Ecossistema Modular SaaS</span>
                 <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                    Transforme o seu <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">lucro criativo</span> com inteligência de ponta.
+                    Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
                 </h1>
                 <p class="text-slate-400 text-sm lg:text-base mt-4 leading-relaxed">
-                    A suíte definitiva para artesãos, confeiteiros e empreendedores calcularem custos, garantirem margens reais e eliminarem prejuízos com taxas de cartão.
+                    Ferramentas avançadas para precificação unitária, simulação de marketplaces e controle financeiro de nível industrial.
                 </p>
-
-                <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-800/80">
-                    <div>
-                        <h4 class="text-white font-extrabold text-lg">+12.000</h4>
-                        <p class="text-slate-500 text-xs">Cálculos processados</p>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-extrabold text-lg">100% Seguro</h4>
-                        <p class="text-slate-500 text-xs">Dados sincronizados</p>
-                    </div>
+                <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-800/80">
+                    <div><h4 class="text-white font-extrabold text-base">Unitário</h4><p class="text-slate-500 text-[11px]">Precisão exata</p></div>
+                    <div><h4 class="text-white font-extrabold text-base">Marketplaces</h4><p class="text-slate-500 text-[11px]">Shopee & ML</p></div>
+                    <div><h4 class="text-white font-extrabold text-base">Lotes</h4><p class="text-slate-500 text-[11px]">Escala comercial</p></div>
                 </div>
             </div>
-
-            <div class="text-xs text-slate-500 relative z-10">
-                &copy; 2026 PrecificaFácil Corporation. O padrão ouro em tecnologia.
-            </div>
+            <div class="text-xs text-slate-500 relative z-10">&copy; 2026 PrecificaFácil Corporation.</div>
         </div>
 
-        <!-- Lado Direito: Formulário de Login / Cadastro -->
         <div class="lg:w-1/2 bg-[#03050b] p-8 lg:p-24 flex items-center justify-center relative">
             <div class="max-w-md w-full bg-slate-900/50 border border-slate-800/80 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-xl">
-                
                 <div class="mb-8">
                     <h3 id="authTitulo" class="text-2xl font-black text-white tracking-tight">Bem-vindo de volta</h3>
-                    <p id="authSub" class="text-xs text-slate-400 mt-1">Insira suas credenciais para gerenciar seus produtos</p>
+                    <p id="authSub" class="text-xs text-slate-400 mt-1">Acesse sua conta para gerenciar seus negócios</p>
                 </div>
-
                 <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
                     <div id="campoNomeDiv" class="hidden">
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Nome Completo</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-user text-xs"></i></span>
-                            <input type="text" id="authNome" placeholder="Seu nome ou marca" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
-                        </div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Nome ou Marca</label>
+                        <input type="text" id="authNome" placeholder="Sua Empresa" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
-
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">E-mail Profissional</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-envelope text-xs"></i></span>
-                            <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
-                        </div>
+                        <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
-
                     <div>
-                        <div class="flex justify-between items-center mb-1.5">
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Senha de Acesso</label>
-                            <a href="#" onclick="alert('Instruções de recuperação enviadas para o e-mail cadastrado.')" class="text-[11px] text-indigo-400 hover:underline">Esqueceu?</a>
-                        </div>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-lock text-xs"></i></span>
-                            <input type="password" id="authSenha" required placeholder="••••••••" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
-                        </div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Senha de Acesso</label>
+                        <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
                     </div>
-
-                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm tracking-wide">
+                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
                         Acessar Plataforma
                     </button>
                 </form>
-
                 <div class="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400">
                     <span id="authToggleText">Ainda não tem uma conta?</span> 
                     <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta gratuita</button>
@@ -117,22 +84,20 @@
         </div>
     </div>
 
-    <!-- Modal de Upgrade PRO -->
+    <!-- Modal de Paywall PRO Avançado -->
     <div id="modalPro" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
         <div class="bg-gradient-to-b from-slate-900 to-indigo-950 border border-indigo-500/30 max-w-lg w-full rounded-3xl p-8 shadow-2xl relative">
             <div class="text-center mb-6">
-                <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-500/30">Recurso Exclusivo PRO</span>
-                <h3 class="text-2xl font-black text-white mt-3">Desbloqueie o Poder Total</h3>
-                <p class="text-xs text-slate-300 mt-1">Sua conta atual é <strong class="text-amber-400">Plano Free (Limitado)</strong>. Faça upgrade para o PRO e acelere seu negócio.</p>
+                <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-500/30">Módulo Exclusivo PRO</span>
+                <h3 class="text-2xl font-black text-white mt-3">Eleve Seu Negócio ao Nível Profissional</h3>
+                <p class="text-xs text-slate-300 mt-1">Este recurso avançado está disponível apenas no <strong class="text-amber-400">Plano PRO</strong>.</p>
             </div>
-
             <div class="space-y-3 bg-slate-950/60 p-5 rounded-2xl border border-slate-800 mb-6 text-xs text-slate-300">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Histórico ilimitado na nuvem</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador de taxas de maquininhas e iFood/Shopee</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Geração de Orçamentos em PDF com sua Logo</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte prioritário via WhatsApp</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador completo de taxas de Marketplaces (Shopee, ML, iFood)</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calculadora de Lotes e Produção em Escala</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação de Orçamentos Profissionais em PDF com Logo</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Histórico ilimitado sincronizado na nuvem</div>
             </div>
-
             <div class="flex gap-3">
                 <button onclick="ativarPlanoPro()" class="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs shadow-lg shadow-emerald-600/20 cursor-pointer">
                     Assinar Plano PRO (R$ 29/mês)
@@ -142,7 +107,7 @@
         </div>
     </div>
 
-    <!-- Navbar Enterprise -->
+    <!-- Navbar Modular Enterprise -->
     <header class="border-b border-slate-800/60 bg-[#03050b]/90 backdrop-blur-xl sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -172,81 +137,176 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="max-w-7xl mx-auto px-6 py-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- Seletor de Módulos da Plataforma -->
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-2">
+        <div class="flex gap-3 overflow-x-auto pb-2 border-b border-slate-800/80">
+            <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
+                <i class="fa-solid fa-calculator"></i> Precificação Unitária
+            </button>
+            <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-boxes-stacked text-indigo-400"></i> Produção em Lote <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal Dinâmico por Módulo -->
+    <main class="max-w-7xl mx-auto px-6 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Coluna Esquerda: Formulário de Custos -->
-        <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-            <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
-                <div>
-                    <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
-                        <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold">1</span>
-                        Composição de Custos & Canais
-                    </h2>
-                    <p class="text-xs text-slate-400 mt-1">Preencha os dados com precisão para calcular o retorno ideal.</p>
+        <!-- MÓDULO 1: PRECIFICAÇÃO UNITÁRIA -->
+        <div id="moduloUnitario" class="contents">
+            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+                    <div>
+                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold">1</span>
+                            Parâmetros do Produto
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Insira os gastos exatos para garantir margem real.</p>
+                    </div>
+                    <button onclick="limparFormulario()" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1.5 bg-slate-800/40 px-3.5 py-2 rounded-xl border border-slate-700/60 cursor-pointer">
+                        <i class="fa-solid fa-rotate-right"></i> Redefinir
+                    </button>
                 </div>
-                <button onclick="limparFormulario()" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1.5 bg-slate-800/40 hover:bg-slate-800 px-3.5 py-2 rounded-xl border border-slate-700/60 cursor-pointer">
-                    <i class="fa-solid fa-rotate-right"></i> Redefinir
-                </button>
-            </div>
-            
-            <form id="calcForm" class="space-y-5">
-                <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Nome do Produto ou Serviço</label>
-                    <input type="text" id="nomeProduto" placeholder="Ex: Bolo de Casamento / Consultoria"
-                        class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
-                </div>
+                
+                <form id="calcForm" class="space-y-5">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Nome do Produto ou Serviço</label>
+                        <input type="text" id="nomeProduto" placeholder="Ex: Luminária LED Artesanal / Bolo Gourmet"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo de Materiais / Insumos</label>
-                        <input type="number" id="custoMateriais" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo de Materiais / Insumos (R$)</label>
+                            <input type="number" id="custoMateriais" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Embalagem (R$)</label>
+                            <input type="number" id="custosFixos" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Frete</label>
-                        <input type="number" id="custosFixos" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                    </div>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo de Produção (Horas)</label>
-                        <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 2.5" required oninput="calcularPreco()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Gasto (Horas)</label>
+                            <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 2.5" required oninput="calcularPreco()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora (R$/h)</label>
+                            <input type="number" id="valorHora" step="0.01" placeholder="Ex: 35,00" required oninput="calcularPreco()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora</label>
-                        <input type="number" id="valorHora" step="0.01" placeholder="Ex: 40,00" required oninput="calcularPreco()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                    </div>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-3 border-t border-slate-800/80">
-                    <div>
+                    <div class="pt-3 border-t border-slate-800/80">
                         <div class="flex justify-between items-center mb-2">
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro</label>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro Desejada</label>
                             <span id="labelMargem" class="text-xs font-bold text-indigo-400 font-mono">60%</span>
                         </div>
                         <input type="range" id="sliderMargem" min="10" max="300" step="5" value="60" oninput="sincronizarMargem()"
                             class="w-full accent-indigo-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
                     </div>
+
+                    <button type="button" onclick="salvarPrecificacao()" 
+                        class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i> Salvar no Histórico
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- MÓDULO 2: SIMULADOR DE MARKETPLACES (Oculto inicialmente) -->
+        <div id="moduloMarketplaces" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Taxa Maquininha / Cartão (%)</label>
-                        <input type="number" id="taxaCartao" step="0.5" value="3.99" oninput="checarRecursoPro(this)"
-                            class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-store"></i></span>
+                            Simulador de Comissões & Marketplaces
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Calcule exatamente o preço ideal para Shopee, Mercado Livre e iFood sem prejuízo.</p>
                     </div>
                 </div>
 
-                <button type="button" onclick="salvarPrecificacao()" 
-                    class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm">
-                    <i class="fa-solid fa-floppy-disk mr-2"></i> Salvar no Histórico
-                </button>
-            </form>
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Escolha o Canal de Venda</label>
+                        <select id="selectMarketplace" onchange="calcularMarketplace()" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="12">Shopee (Clássico / Comissão ~14% + Fixa)</option>
+                            <option value="18">Mercado Livre (Clássico ~11%)</option>
+                            <option value="20">Mercado Livre (Premium / 12x Sem Juros ~17%)</option>
+                            <option value="25">iFood (Delivery ~23% com Entrega)</option>
+                            <option value="5">Instagram / WhatsApp Direto (PIX - Sem Taxa)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base de Produção (Insumos + Mão de Obra)</label>
+                        <input type="number" id="custoBaseMarketplace" step="0.01" placeholder="Ex: 50,00" oninput="calcularMarketplace()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem de Lucro Desejada (%)</label>
+                        <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-indigo-500/30 space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-indigo-400 font-bold block">Preço de Venda Recomendado no Canal</span>
+                        <h3 id="resPrecoMarketplace" class="text-3xl font-black font-mono text-white">R$ 0,00</h3>
+                        <p id="resDetalheMarketplace" class="text-xs text-slate-400">Inclui repasse de comissão e taxa fixa do marketplace.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Coluna Direita: Dashboard de Resultados -->
+        <!-- MÓDULO 3: PRODUÇÃO EM LOTE (Oculto inicialmente) -->
+        <div id="moduloLotes" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+                    <div>
+                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-boxes-stacked"></i></span>
+                            Calculadora de Produção em Lote (Escala)
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Descubra o custo por unidade ao fabricar em grande volume.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Quantidade de Itens no Lote</label>
+                        <input type="number" id="qtdLote" value="50" min="1" oninput="calcularLote()"
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Total de Matéria-Prima do Lote (R$)</label>
+                            <input type="number" id="custoTotalLote" step="0.01" placeholder="Ex: 500,00" oninput="calcularLote()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Total Gasto no Lote (Horas)</label>
+                            <input type="number" id="tempoTotalLote" step="0.5" placeholder="Ex: 10" oninput="calcularLote()"
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold block">Custo Unitário Efetivo por Peça</span>
+                        <h3 id="resCustoUnitarioLote" class="text-3xl font-black font-mono text-white">R$ 0,00</h3>
+                        <p class="text-xs text-slate-400">Inclui rateio proporcional de insumos e tempo de produção.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna Direita: Dashboard de Resultados (Comum a todos) -->
         <div class="lg:col-span-5 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl flex flex-col justify-between">
             <div>
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
@@ -267,9 +327,8 @@
                     </div>
 
                     <div class="bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 p-6 rounded-2xl border border-indigo-500/40 shadow-xl relative">
-                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido (PIX / À Vista)</span>
+                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido (À Vista)</span>
                         <span id="resPrecoVenda" class="text-4xl lg:text-5xl font-black font-mono text-white tracking-tight">R$ 0,00</span>
-                        <span id="resPrecoCartao" class="text-xs text-indigo-400/90 mt-2 block font-medium">Cartão / Parcelado: R$ 0,00</span>
                     </div>
 
                     <div class="bg-emerald-950/30 p-5 rounded-2xl border border-emerald-500/20 flex items-center justify-between">
@@ -310,7 +369,7 @@
         </div>
     </div>
 
-    <!-- Script Principal -->
+    <!-- Script Principal Modular -->
     <script src="script.js"></script>
 </body>
 </html>
