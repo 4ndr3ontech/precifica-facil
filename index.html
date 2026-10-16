@@ -27,14 +27,14 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen Ajustada para 58% na Esquerda) -->
+    <!-- Tela de Autenticação World-Class (Split-Screen Simétrica e Centralizada) -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
         
-        <!-- Lado Esquerdo: Portal Enterprise Ampliado -->
-        <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
+        <!-- Lado Esquerdo: Portal Enterprise com Alta Conversão -->
+        <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-12 flex flex-col justify-between items-center border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-3xl mx-auto w-full my-auto">
+            <div class="relative z-10 max-w-3xl w-full my-auto flex flex-col justify-center">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
@@ -45,14 +45,14 @@
                 <div class="mb-8">
                     <span class="bg-indigo-500/10 text-indigo-300 text-xs font-extrabold px-4 py-1.5 rounded-full border border-indigo-500/30 uppercase tracking-widest inline-block mb-3 shadow-md">Plataforma Nacional de Precificação</span>
                     <h1 class="text-3xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
-                        Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
+                        Elimine o prejuízo e <span class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent">escale seu lucro real</span>.
                     </h1>
                     <p class="text-slate-300 text-sm lg:text-base mt-4 leading-relaxed font-normal">
-                        A suíte executiva definitiva com inteligência artificial para precificação unitária, simulação de marketplaces e operações em escala industrial.
+                        A suíte executiva definitiva com inteligência artificial para precificação unitária, simulação de marketplaces, ponto de equilíbrio e escala industrial.
                     </p>
                 </div>
 
-                <!-- Cards de Planos Ajustados -->
+                <!-- Cards de Planos Otimizados para Conversão -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     
                     <!-- Free -->
@@ -62,39 +62,37 @@
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Free</h3>
                                 <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-3 font-medium">Para começar a precificar</p>
+                            <p class="text-xs text-slate-400 mb-3 font-medium">Para testar a ferramenta</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
-                            <button onclick="assinarPlano('FREE')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Criar conta</button>
+                            <button onclick="assinarPlano('FREE')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Criar conta grátis</button>
                             <ul class="space-y-2 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 5 produtos cadastrados</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 1 plano padrão de precificação</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 1 modelo de custo fixo</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte por e-mail</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Pro -->
+                    <!-- Pro (Destaque Principal) -->
                     <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-4 xl:p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais escolhido</div>
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido • ROI Garantido</div>
                         <div>
                             <div class="flex items-center justify-between mb-1 mt-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
                                 <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
                             </div>
-                            <p class="text-xs text-indigo-200 mb-3 font-medium">Para negócios em expansão</p>
+                            <p class="text-xs text-indigo-200 mb-3 font-medium">Para negócios que faturam alto</p>
                             <div class="mb-4 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">R$14,99</span><span class="text-xs text-indigo-300">/mês</span>
+                                <span class="text-3xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span>
                             </div>
-                            <button onclick="assinarPlano('PRO')" class="w-full mb-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 cursor-pointer">Assinar Pro</button>
+                            <button onclick="assinarPlano('PRO')" class="w-full mb-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 cursor-pointer">Assinar Pro Agora</button>
                             <ul class="space-y-2 text-xs text-slate-200 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 100 produtos cadastrados</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 2 modelos de custo fixo</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> IA avançada p/ formação de preços</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Marketplaces</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Descontos</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Exportação em PDF PRO</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte por e-mail</li>
                             </ul>
                         </div>
                     </div>
@@ -106,15 +104,14 @@
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Premium</h3>
                                 <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-3 font-medium">Operações sem limites</p>
+                            <p class="text-xs text-slate-400 mb-3 font-medium">Operações industriais</p>
                             <div class="mb-4 flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-white font-mono">R$29,99</span><span class="text-xs text-slate-400">/mês</span>
+                                <span class="text-3xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
                             <button onclick="assinarPlano('PREMIUM')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Assinar Premium</button>
                             <ul class="space-y-2 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 3.000 produtos</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 30 modelos de custos fixos</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> IA avançada e Lotes</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Produção em Lotes (Escala)</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte VIP WhatsApp</li>
                             </ul>
                         </div>
@@ -124,14 +121,14 @@
             </div>
 
             <!-- Rodapé Fixo na Base da Coluna Esquerda -->
-            <div class="relative z-10 max-w-3xl mx-auto w-full pt-6">
+            <div class="relative z-10 max-w-3xl mx-auto w-full pt-6 text-center lg:text-left">
                 <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
 
-        <!-- Lado Direito: Formulário de Autenticação (42%) -->
+        <!-- Lado Direito: Formulário de Autenticação Centralizado -->
         <div class="lg:w-[42%] min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
-            <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+            <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden my-auto">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="mb-6">
@@ -174,16 +171,17 @@
         </div>
     </div>
 
-    <!-- Modal de Planos & Assinaturas Padronizado -->
+    <!-- Modal Interativo de Comparação de Planos (Ferramenta de Conversão) -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
             <div class="text-center mb-8">
-                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
-                <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para o seu momento</h2>
-                <p class="text-xs text-slate-400 mt-1">Comece grátis. Evolua conforme seus resultados crescem.</p>
+                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Comparativo Executivo</span>
+                <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para blindar sua margem</h2>
+                <p class="text-xs text-slate-400 mt-1">Recursos avançados para empresários que não aceitam vender com prejuízo.</p>
             </div>
 
+            <!-- Grid de Planos Detalhado -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Free -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
@@ -192,13 +190,14 @@
                             <h3 class="text-white font-bold text-lg">Free</h3>
                             <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4">Para começar a precificar</p>
+                        <p class="text-xs text-slate-400 mb-4">Para testes iniciais</p>
                         <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano padrão de precificação</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 modelo de custo fixo</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano de precificação</li>
+                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Simulador de Marketplaces</li>
+                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Simulador de Descontos</li>
+                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Relatório PDF PRO</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Plano Atual</button>
@@ -206,23 +205,22 @@
 
                 <!-- Pro -->
                 <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border-2 border-indigo-500/70 flex flex-col justify-between relative shadow-2xl">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido</div>
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Vendido • Maior ROI</div>
                     <div>
                         <div class="flex items-center justify-between mb-1 mt-1">
                             <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
                             <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
                         </div>
-                        <p class="text-xs text-indigo-200 mb-4">Para negócios em expansão</p>
-                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$29,99</span><span class="text-xs text-indigo-300">/mês</span></div>
+                        <p class="text-xs text-indigo-200 mb-4">Para e-commerce e prestadores</p>
+                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-200 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 2 modelos de custo fixo</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada p/ formação de preços</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF PRO</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces (Shopee/ML)</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Descontos & Promoções</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Relatório Executivo em PDF PRO</li>
                         </ul>
                     </div>
-                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro</button>
+                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
                 </div>
 
                 <!-- Premium -->
@@ -232,13 +230,13 @@
                             <h3 class="text-white font-bold text-lg">Premium</h3>
                             <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4">Operações sem limites</p>
-                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$29,99</span><span class="text-xs text-slate-500">/mês</span></div>
+                        <p class="text-xs text-slate-400 mb-4">Escala industrial</p>
+                        <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300 font-medium">
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 modelos de custos fixos</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada e Lotes</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos cadastrados</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes (Custo Unitário)</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA Avançada de Precificação</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp Prioritário</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -289,11 +287,14 @@
             <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
+            <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-tags text-emerald-400"></i> Simulador Descontos <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            </button>
             <button onclick="mudarModulo('ia')" id="tabIa" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
             <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-boxes-stacked text-emerald-400"></i> Produção em Lote <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
+                <i class="fa-solid fa-boxes-stacked text-indigo-300"></i> Produção em Lote <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
             </button>
         </div>
     </div>
@@ -468,6 +469,54 @@
             </div>
         </div>
 
+        <!-- MÓDULO NOVO: SIMULADOR DE DESCONTOS E PROMOÇÕES (PRO) -->
+        <div id="moduloDescontos" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80 relative z-10">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Simulador de Descontos & Promoções</h2>
+                            <span class="bg-emerald-500/15 text-emerald-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/30 uppercase tracking-wide">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Simule campanhas de Black Friday e queima de estoque sem destruir sua margem.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-5 relative z-10">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Preço Cheio Atual de Venda (R$)</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
+                            <input type="number" id="precoCheioPromo" step="0.01" placeholder="100,00" oninput="calcularDescontoPromo()"
+                                class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-emerald-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Desconto Oferecido (%)</label>
+                            <span id="labelDescontoPromo" class="text-xs font-bold text-emerald-400 font-mono">15%</span>
+                        </div>
+                        <input type="range" id="sliderDesconto" min="0" max="60" step="5" value="15" oninput="sincronizarDesconto()"
+                            class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div class="bg-gradient-to-r from-emerald-950/40 via-slate-950/80 to-slate-950 p-5 rounded-2xl border border-emerald-500/30 grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <span class="text-slate-400 block mb-1">Novo Preço Promocional:</span>
+                            <strong id="resNovoPrecoPromo" class="text-white font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block mb-1">Status da Margem:</span>
+                            <span id="resStatusPromo" class="text-emerald-400 font-extrabold uppercase">Saudável</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MÓDULO: IA PRECIFICAÇÃO -->
         <div id="moduloIa" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
@@ -544,7 +593,7 @@
                     <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Item Analisado</span>
-                            <span id="resNomeProduto" class="text-sm font-bold text-white tracking-tight block max-w-[190px] truncate">-</span>
+                            <span id="resNomeProduto" class="text-sm font-bold text-white tracking-tight block max-w-[190px] truncate">Produto sem nome</span>
                         </div>
                         <span id="resCustoTotal" class="text-xs font-mono font-bold text-slate-400">Custo: R$ 0,00</span>
                     </div>
@@ -574,6 +623,11 @@
             </div>
         </div>
     </main>
+
+    <!-- Rodapé Pinned -->
+    <footer class="max-w-7xl mx-auto px-6 py-6 w-full text-center text-xs text-slate-500 font-medium">
+        &copy; 2026 Precifica Corporation. Todos os direitos reservados.
+    </footer>
 
     <!-- Widget Flutuante do WhatsApp -->
     <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Olá! Preciso de ajuda com a plataforma Precifica." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-105 cursor-pointer" title="Fale conosco no WhatsApp">
@@ -616,7 +670,7 @@
         }
 
         function mudarModulo(modulo) {
-            ['unitario', 'custosFixos', 'marketplaces', 'ia', 'lotes'].forEach(m => {
+            ['unitario', 'custosFixos', 'marketplaces', 'descontos', 'ia', 'lotes'].forEach(m => {
                 const el = document.getElementById('modulo' + m.charAt(0).toUpperCase() + m.slice(1));
                 if(el) el.classList.add('hidden');
                 const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
@@ -625,9 +679,9 @@
                 }
             });
 
-            if((modulo === 'marketplaces' || modulo === 'ia') && planoAtual === 'FREE') {
+            if((modulo === 'marketplaces' || modulo === 'descontos' || modulo === 'ia') && planoAtual === 'FREE') {
                 abrirPlanos();
-                mostrarToast('Aviso', 'Este módulo exige o Plano PRO ou superior.');
+                mostrarToast('Aviso', 'Este módulo exclusivo exige o Plano PRO ou superior.');
                 return;
             }
             if(modulo === 'lotes' && planoAtual !== 'PREMIUM') {
@@ -694,10 +748,32 @@
             }
         }
 
+        function calcularDescontoPromo() {
+            const precoCheio = parseFloat(document.getElementById('precoCheioPromo').value) || 0;
+            const descontoPct = parseFloat(document.getElementById('sliderDesconto').value) || 0;
+            const novoPreco = precoCheio * (1 - (descontoPct / 100));
+
+            document.getElementById('resNovoPrecoPromo').innerText = 'R$ ' + novoPreco.toFixed(2).replace('.', ',');
+            const statusEl = document.getElementById('resStatusPromo');
+            if(descontoPct > 30) {
+                statusEl.innerText = 'Atenção: Margem Baixa';
+                statusEl.className = 'text-amber-400 font-extrabold uppercase';
+            } else {
+                statusEl.innerText = 'Saudável & Lucrativo';
+                statusEl.className = 'text-emerald-400 font-extrabold uppercase';
+            }
+        }
+
         function sincronizarMargem() {
             const val = document.getElementById('sliderMargem').value;
             document.getElementById('labelMargem').innerText = val + '%';
             calcularPreco();
+        }
+
+        function sincronizarDesconto() {
+            const val = document.getElementById('sliderDesconto').value;
+            document.getElementById('labelDescontoPromo').innerText = val + '%';
+            calcularDescontoPromo();
         }
 
         function realizarLogin(e) {
@@ -743,7 +819,7 @@
                 mostrarToast('Recurso PRO', 'A exportação de relatórios em PDF exige o Plano PRO.');
                 return;
             }
-            mostrarToast('PDF', 'Relatório gerado e baixado com sucesso!');
+            mostrarToast('PDF', 'Relatório executivo gerado e baixado com sucesso!');
         }
 
         function executarIa() {
