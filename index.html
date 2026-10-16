@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | Enterprise Pricing Suite</title>
+    <title>PrecificaFácil Nacional | Inteligência Comercial & Precificação Avançada</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Pro Icons -->
@@ -14,21 +14,21 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white antialiased">
+<body class="bg-[#070a14] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white antialiased">
 
-    <!-- Navbar Enterprise -->
-    <header class="border-b border-slate-800/60 bg-[#090d16]/80 backdrop-blur-xl sticky top-0 z-50">
+    <!-- Navbar Enterprise Nacional -->
+    <header class="border-b border-slate-800/80 bg-[#070a14]/90 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/20">
-                    <i class="fa-solid fa-chart-pie text-white text-lg"></i>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-pink-600 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/20">
+                    <i class="fa-solid fa-rocket text-white text-lg"></i>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
                         <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
-                        <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-indigo-500/20">ELITE</span>
+                        <span class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">Brasil</span>
                     </div>
-                    <span class="block text-[11px] text-slate-400 font-medium tracking-wide">Inteligência Financeira para Negócios Criativos</span>
+                    <span class="block text-[11px] text-slate-400 font-medium">Plataforma Nacional de Precificação Inteligente</span>
                 </div>
             </div>
             
@@ -36,8 +36,8 @@
                 <button onclick="abrirHistorico()" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-4 py-2.5 rounded-xl transition text-xs font-semibold flex items-center gap-2 cursor-pointer shadow-sm">
                     <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico Salvo
                 </button>
-                <button onclick="alert('Ambiente Elite Ativado: Todos os recursos avançados de precificação estão liberados.')" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-5 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-bolt text-amber-300"></i> Modo Cloud Pro
+                <button onclick="alert('PrecificaFácil Brasil v3.0 - Ferramenta homologada para apoiar micro e pequenos empreendedores em todo o território nacional.')" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-5 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-shield-heart text-pink-300"></i> Selo de Qualidade
                 </button>
             </div>
         </div>
@@ -46,17 +46,17 @@
     <!-- Conteúdo Principal -->
     <main class="max-w-7xl mx-auto px-6 py-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Coluna Esquerda: Inputs e Configurações (7 colunas) -->
-        <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Coluna Esquerda: Formulário de Custos & Taxas (7 colunas) -->
+        <div class="lg:col-span-7 bg-slate-900/50 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
                 <div>
                     <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
                         <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold">1</span>
-                        Composição de Custos & Produção
+                        Composição de Custos & Canal de Venda
                     </h2>
-                    <p class="text-xs text-slate-400 mt-1">Insira com precisão os parâmetros para gerar o preço ideal.</p>
+                    <p class="text-xs text-slate-400 mt-1">Insira os gastos e configure taxas de maquininha ou plataformas.</p>
                 </div>
                 <button onclick="limparFormulario()" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1.5 bg-slate-800/50 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700/60 cursor-pointer">
                     <i class="fa-solid fa-rotate-right"></i> Redefinir
@@ -65,10 +65,10 @@
             
             <form id="calcForm" class="space-y-5">
                 <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Identificação do Produto ou Serviço</label>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Nome do Produto ou Serviço</label>
                     <div class="relative">
                         <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-tag text-xs"></i></span>
-                        <input type="text" id="nomeProduto" placeholder="Ex: Bolo Gourmet de Pistache / Arranjo Floral Premium"
+                        <input type="text" id="nomeProduto" placeholder="Ex: Panetone Trufado Artesanal / Projeto de Design"
                             class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm">
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Embalagem</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custos Fixos / Embalagem / Frete</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
                             <input type="number" id="custosFixos" step="0.01" placeholder="0,00" required oninput="calcularPreco()"
@@ -94,52 +94,60 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Gasto (Horas)</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Gasto de Produção (Horas)</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-regular fa-clock text-xs"></i></span>
-                            <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 2.5" required oninput="calcularPreco()"
+                            <input type="number" id="horasTrabalho" step="0.5" placeholder="Ex: 3.0" required oninput="calcularPreco()"
                                 class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora (R$/h)</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor da sua Hora de Trabalho</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-mono text-xs">R$</span>
-                            <input type="number" id="valorHora" step="0.01" placeholder="Ex: 30,00" required oninput="calcularPreco()"
+                            <input type="number" id="valorHora" step="0.01" placeholder="Ex: 35,00" required oninput="calcularPreco()"
                                 class="w-full pl-10 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-sm font-mono">
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro Desejada (%)</label>
-                        <span id="labelMargem" class="text-xs font-bold text-indigo-400 font-mono">50%</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-slate-800/80">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Margem de Lucro Desejada</label>
+                            <span id="labelMargem" class="text-xs font-bold text-indigo-400 font-mono">50%</span>
+                        </div>
+                        <input type="range" id="sliderMargem" min="10" max="250" step="5" value="50" oninput="sincronizarMargem('slider')"
+                            class="w-full accent-indigo-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
                     </div>
-                    <input type="range" id="sliderMargem" min="10" max="300" step="5" value="50" oninput="sincronizarMargem('slider')"
-                        class="w-full accent-indigo-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
-                    <div class="mt-2">
-                        <input type="number" id="margemLucro" value="50" oninput="sincronizarMargem('input')"
-                            class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Taxa de Maquininha / Marketplace (%)</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-percent text-xs"></i></span>
+                            <input type="number" id="taxaCartao" step="0.5" value="0" placeholder="Ex: 4.99" oninput="calcularPreco()"
+                                class="w-full pl-11 pr-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none transition text-sm font-mono">
+                        </div>
                     </div>
                 </div>
 
                 <button type="button" onclick="salvarPrecificacao()" 
                     class="w-full mt-2 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/25 cursor-pointer flex items-center justify-center gap-2 text-sm tracking-wide">
-                    <i class="fa-solid fa-floppy-disk"></i> Salvar e Registrar no Histórico
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Salvar no Histórico Nacional
                 </button>
             </form>
         </div>
 
-        <!-- Coluna Direita: Dashboard de Resultados Executivos (5 colunas) -->
-        <div class="lg:col-span-5 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl flex flex-col justify-between">
+        <!-- Coluna Direita: Dashboard Executivo Avançado (5 colunas) -->
+        <div class="lg:col-span-5 bg-slate-900/50 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl flex flex-col justify-between">
             <div>
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
                     <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
                         <span class="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">2</span>
-                        Dashboard Financeiro
+                        Dashboard Financeiro Brasil
                     </h2>
-                    <span id="badgeStatus" class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">Tempo Real</span>
+                    <span id="badgeSaude" class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Saudável
+                    </span>
                 </div>
 
                 <div class="space-y-4">
@@ -147,26 +155,26 @@
                     <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Item Analisado</span>
-                            <span id="resNomeProduto" class="text-sm font-bold text-white tracking-tight block max-w-[200px] truncate">-</span>
+                            <span id="resNomeProduto" class="text-sm font-bold text-white tracking-tight block max-w-[180px] truncate">-</span>
                         </div>
-                        <span id="resCustoTotal" class="text-sm font-mono font-bold text-slate-400">Custo: R$ 0,00</span>
+                        <span id="resCustoTotal" class="text-xs font-mono font-bold text-slate-400">Custo: R$ 0,00</span>
                     </div>
 
-                    <!-- Preço de Venda (Destaque Principal Elite) -->
+                    <!-- Preço Sugerido Principal -->
                     <div class="bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 p-6 rounded-2xl border border-indigo-500/40 shadow-xl relative overflow-hidden">
                         <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none"></div>
-                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido de Venda</span>
+                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido de Venda (PIX / À Vista)</span>
                         <div class="flex items-baseline gap-2">
                             <span id="resPrecoVenda" class="text-4xl lg:text-5xl font-black font-mono text-white tracking-tight">R$ 0,00</span>
                         </div>
-                        <span class="text-[11px] text-indigo-400/80 mt-2 block font-medium">Recomendado para cobrir taxas e garantir caixa.</span>
+                        <span id="resPrecoCartao" class="text-xs text-indigo-400/90 mt-2 block font-medium">No Cartão/Plataforma: R$ 0,00 (Taxas embutidas)</span>
                     </div>
 
                     <!-- Lucro Líquido -->
                     <div class="bg-emerald-950/30 p-5 rounded-2xl border border-emerald-500/20 flex items-center justify-between">
                         <div>
-                            <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">Lucro Líquido Estimado</span>
-                            <span class="text-[11px] text-emerald-600/80">Margem limpa por unidade vendida</span>
+                            <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">Lucro Líquido no Bolso</span>
+                            <span class="text-[11px] text-emerald-600/80">Margem real livre de impostos/taxas</span>
                         </div>
                         <span id="resLucro" class="text-2xl font-mono font-black text-emerald-400">R$ 0,00</span>
                     </div>
@@ -174,12 +182,12 @@
                     <!-- Barra de Proporção Visual -->
                     <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 space-y-2">
                         <div class="flex justify-between text-[11px] font-bold text-slate-400">
-                            <span>Composição do Preço</span>
+                            <span>Divisão do Valor</span>
                             <span id="txtMarkupEfetivo">Markup: 0x</span>
                         </div>
                         <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden flex">
-                            <div id="barraCusto" class="bg-slate-500 h-full transition-all duration-300" style="width: 50%" title="Custos Totais"></div>
-                            <div id="barraLucro" class="bg-emerald-500 h-full transition-all duration-300" style="width: 50%" title="Lucro Líquido"></div>
+                            <div id="barraCusto" class="bg-slate-500 h-full transition-all duration-300" style="width: 50%" title="Custos"></div>
+                            <div id="barraLucro" class="bg-emerald-500 h-full transition-all duration-300" style="width: 50%" title="Lucro"></div>
                         </div>
                         <div class="flex justify-between text-[10px] text-slate-500 pt-1">
                             <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-500 inline-block"></span> Custos: <strong id="valBarraCusto">R$ 0</strong></span>
@@ -189,10 +197,10 @@
                 </div>
             </div>
 
-            <!-- Botões de Ação Comercial Elite -->
+            <!-- Botões de Ação Comercial Nacional -->
             <div class="mt-6 pt-5 border-t border-slate-800 flex gap-3">
                 <button onclick="copiarResumo()" class="flex-1 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-                    <i class="fa-regular fa-copy text-indigo-400"></i> Copiar Resumo WhatsApp
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> Enviar Orçamento WhatsApp
                 </button>
                 <button onclick="window.print()" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 cursor-pointer shadow-sm" title="Imprimir Relatório">
                     <i class="fa-solid fa-print text-indigo-400"></i>
@@ -202,21 +210,21 @@
 
     </main>
 
-    <!-- Modal de Histórico Salvo -->
+    <!-- Modal de Histórico -->
     <div id="modalHistorico" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-3xl p-6 shadow-2xl relative">
             <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-800">
                 <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico de Precificações Salvas
+                    <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico de Produtos Precificados
                 </h3>
                 <button onclick="fecharHistorico()" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <div id="listaHistorico" class="space-y-3 max-h-96 overflow-y-auto pr-2">
-                <!-- Itens injetados via JS -->
+                <!-- Injetado via JS -->
             </div>
             <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between items-center">
                 <button onclick="limparHistorico()" class="text-xs text-red-400 hover:text-red-300 cursor-pointer flex items-center gap-1.5">
-                    <i class="fa-solid fa-trash"></i> Apagar Histórico
+                    <i class="fa-solid fa-trash"></i> Limpar Histórico
                 </button>
                 <button onclick="fecharHistorico()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl text-xs font-bold cursor-pointer">Fechar</button>
             </div>
@@ -224,11 +232,11 @@
     </div>
 
     <!-- Rodapé -->
-    <footer class="border-t border-slate-800/60 bg-[#090d16] py-6 text-center text-xs text-slate-500 mt-12">
-        <p>&copy; 2026 PrecificaFácil Enterprise Suite. Todos os direitos reservados. O padrão ouro em precificação criativa.</p>
+    <footer class="border-t border-slate-800/80 bg-[#070a14] py-6 text-center text-xs text-slate-500 mt-12">
+        <p>&copy; 2026 PrecificaFácil Brasil. Impulsionando a economia criativa de ponta a ponta no país.</p>
     </footer>
 
-    <!-- Script JavaScript Elite -->
+    <!-- Script JavaScript Revolucionário -->
     <script src="script.js"></script>
 </body>
 </html>
