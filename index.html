@@ -29,88 +29,97 @@
 
     <!-- Tela de Autenticação World-Class (Split-Screen 50/50 Centralizada) -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
-        <!-- Lado Esquerdo: Branding & Preview dos Planos (Exatamente 50%) -->
-        <div class="lg:w-1/2 min-h-full bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-8 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
+        
+        <!-- Lado Esquerdo: Branding & Preview Completo dos Planos (50%) -->
+        <div class="lg:w-1/2 min-h-full bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-6 lg:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
             <div class="absolute -left-20 -top-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-xl mx-auto w-full">
-                <div class="flex items-center gap-3.5 mb-8">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 ring-1 ring-white/10">
-                        <i class="fa-solid fa-calculator text-white text-lg"></i>
+            <div class="relative z-10 max-w-2xl mx-auto w-full">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 ring-1 ring-white/10">
+                            <i class="fa-solid fa-calculator text-white text-base"></i>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
                     </div>
-                    <span class="text-2xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
                 </div>
 
-                <div class="mb-8">
-                    <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-4 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-3 shadow-sm">Plataforma Nacional de Precificação</span>
-                    <h1 class="text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.15]">
+                <div class="mb-4">
+                    <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-3 py-1 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-2 shadow-sm">Plataforma Nacional de Precificação</span>
+                    <h1 class="text-2xl lg:text-3xl font-black text-white tracking-tight leading-[1.15]">
                         Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
                     </h1>
-                    <p class="text-slate-400 text-xs lg:text-sm mt-3 leading-relaxed">
-                        Ferramentas inteligentes para precificação unitária, simulação de marketplaces e operações em escala industrial.
-                    </p>
                 </div>
 
-                <!-- Cards de Planos Estilizados -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                <!-- Cards de Planos Detalhados (Esquerda) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+                    
                     <!-- Free -->
-                    <div class="bg-slate-900/40 p-3.5 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
+                    <div class="bg-slate-900/50 p-3.5 rounded-2xl border border-slate-800 backdrop-blur-md flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <h3 class="text-white font-bold text-xs tracking-wide">Free</h3>
-                                <span class="text-[9px] text-slate-500 font-mono uppercase">Iniciante</span>
+                            <h3 class="text-white font-bold text-xs">Free</h3>
+                            <p class="text-[10px] text-slate-400 mb-2">Para começar a precificar</p>
+                            <div class="mb-3">
+                                <span class="text-xl font-black text-white font-mono">R$ 0</span><span class="text-[9px] text-slate-500">/mês</span>
                             </div>
-                            <div class="mb-2">
-                                <span class="text-xl font-black text-white font-mono">R$ 0</span><span class="text-[10px] text-slate-400">/mês</span>
-                            </div>
-                            <ul class="space-y-1 text-[10px] text-slate-300">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 5 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> 1 plano padrão</li>
+                            <button onclick="assinarPlano('FREE')" class="w-full mb-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-1.5 rounded-lg text-[10px] transition cursor-pointer">Criar conta</button>
+                            <ul class="space-y-1.5 text-[10px] text-slate-300">
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Até 5 produtos cadastrados</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> 1 plano padrão de precificação</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> 1 modelo de custo fixo</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Suporte por e-mail</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Pro -->
-                    <div class="bg-gradient-to-b from-indigo-950/60 via-slate-900/60 to-slate-950 p-3.5 rounded-2xl border border-indigo-500/40 backdrop-blur-md flex flex-col justify-between relative shadow-xl shadow-indigo-600/10">
-                        <div class="absolute -top-2.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[9px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-widest shadow">Popular</div>
+                    <div class="bg-gradient-to-b from-indigo-950/70 via-slate-900/70 to-slate-950 p-3.5 rounded-2xl border border-indigo-500/50 backdrop-blur-md flex flex-col justify-between relative shadow-xl shadow-indigo-600/10">
+                        <div class="absolute -top-2.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">Mais escolhido</div>
                         <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <h3 class="text-white font-bold text-xs tracking-wide flex items-center gap-1">Pro <i class="fa-solid fa-star text-amber-400 text-[9px]"></i></h3>
-                                <span class="text-[9px] text-indigo-300 font-mono uppercase">Crescimento</span>
+                            <h3 class="text-white font-bold text-xs flex items-center gap-1">Pro <i class="fa-solid fa-star text-amber-400 text-[10px]"></i></h3>
+                            <p class="text-[10px] text-indigo-300 mb-2">Para negócios em crescimento</p>
+                            <div class="mb-3">
+                                <span class="text-xl font-black text-white font-mono">R$ 19,90</span><span class="text-[9px] text-indigo-300">/mês</span>
                             </div>
-                            <div class="mb-2">
-                                <span class="text-xl font-black text-white font-mono">R$ 19,90</span><span class="text-[10px] text-indigo-300">/mês</span>
-                            </div>
-                            <ul class="space-y-1 text-[10px] text-slate-200">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 100 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Simulador Marketplaces</li>
+                            <button onclick="assinarPlano('PRO')" class="w-full mb-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold py-1.5 rounded-lg text-[10px] transition cursor-pointer shadow">Assinar Pro</button>
+                            <ul class="space-y-1.5 text-[10px] text-slate-200">
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Até 100 produtos cadastrados</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> 2 modelos de custo fixo p/ diferentes cenários</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> IA avançada p/ auxiliar na formação de preços</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Exportação de relatórios em PDF</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Plano Padrão de precificação</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Suporte por e-mail</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Premium -->
-                    <div class="bg-slate-900/40 p-3.5 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
+                    <div class="bg-slate-900/50 p-3.5 rounded-2xl border border-slate-800 backdrop-blur-md flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <h3 class="text-white font-bold text-xs tracking-wide">Premium</h3>
-                                <span class="text-[9px] text-emerald-400 font-mono uppercase">Ilimitado</span>
+                            <h3 class="text-white font-bold text-xs">Premium</h3>
+                            <p class="text-[10px] text-slate-400 mb-2">Operações sem limites</p>
+                            <div class="mb-3">
+                                <span class="text-xl font-black text-white font-mono">R$ 39,90</span><span class="text-[9px] text-slate-500">/mês</span>
                             </div>
-                            <div class="mb-2">
-                                <span class="text-xl font-black text-white font-mono">R$ 39,90</span><span class="text-[10px] text-slate-400">/mês</span>
-                            </div>
-                            <ul class="space-y-1 text-[10px] text-slate-300">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 3.000 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Produção em Lotes</li>
+                            <button onclick="assinarPlano('PREMIUM')" class="w-full mb-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-1.5 rounded-lg text-[10px] transition cursor-pointer">Assinar Premium</button>
+                            <ul class="space-y-1.5 text-[10px] text-slate-300">
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Até 3.000 produtos cadastrados</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> 30 modelos de custos fixos p/ diferentes cenários</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> IA avançada p/ auxiliar na formação de preços</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Exportação de relatórios em PDF</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Plano Padrão de precificação</li>
+                                <li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Suporte prioritário por WhatsApp e e-mail</li>
                             </ul>
                         </div>
                     </div>
+
                 </div>
 
-                <div class="text-xs text-slate-500 pt-2">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
+                <div class="text-[10px] text-slate-500">&copy; 2026 PrecificaFácil Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
 
-        <!-- Lado Direito: Formulário de Autenticação (Exatamente 50%) -->
+        <!-- Lado Direito: Formulário de Autenticação (50%) -->
         <div class="lg:w-1/2 min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
             <div class="max-w-md w-full bg-slate-900/60 border border-slate-800/90 p-8 rounded-3xl shadow-2xl backdrop-blur-xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
