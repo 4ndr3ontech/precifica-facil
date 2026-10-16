@@ -1,6 +1,10 @@
 let usuarioAtual = JSON.parse(localStorage.getItem('precifica_user')) || null;
 let cicloAtual = 'mensal';
 
+// Definição das listas de ferramentas restritas
+const modulosPro = ['marketplaces', 'descontos', 'breakeven', 'ia', 'antecipacao', 'impostos', 'elasticidade', 'comissoes', 'freteGratis'];
+const modulosPremium = ['lotes', 'importacao', 'curvaAbc', 'multiMarketplace', 'propostasB2b', 'auditoria'];
+
 window.onload = () => {
     verificarAutenticacao();
     calcularPreco();
@@ -32,6 +36,7 @@ function realizarLogin(event) {
     const email = document.getElementById('authEmail').value;
     const nome = modoCadastro ? document.getElementById('authNome').value || "Usuário" : email.split('@')[0];
     
+    // Força a criação do utilizador sempre com o plano FREE inicialmente
     usuarioAtual = { email, nome, plano: 'FREE' };
     localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
     
@@ -93,40 +98,52 @@ function assinarPlano(plano) {
         localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
         atualizarBadgePlano();
         fecharPlanos();
-        mostrarToast('Parabéns!', `Sua conta foi atualizada para o plano ${plano}!`, 'success');
+        mostrarToast('Parabéns!', `Sua conta foi atualizada para o plano ${plano}!`);
     }
 }
 
-// Navegação por Módulos com Validação de Plano
+// Navegação por Módulos com Validação Global de Plano
 function mudarModulo(modulo) {
-    if (modulo === 'marketplaces' && usuarioAtual && usuarioAtual.plano === 'FREE') {
+    // Regra: Bloquear contas FREE que tentam acessar ferramentas PRO
+    if (modulosPro.includes(modulo) && usuarioAtual && usuarioAtual.plano === 'FREE') {
         abrirPlanos();
-        return;
-    }
-    if (modulo === 'lotes' && usuarioAtual && usuarioAtual.plano !== 'PREMIUM') {
-        abrirPlanos();
-        return;
+        mostrarToast('Acesso Restrito', 'Este recurso exige o Plano Pro ou superior.');
+        return; 
     }
 
-    document.getElementById('tabUnitario').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
-    document.getElementById('tabMarketplaces').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
-    document.getElementById('tabLotes').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
+    // Regra: Bloquear contas FREE e PRO que tentam acessar ferramentas PREMIUM
+    if (modulosPremium.includes(modulo) && usuarioAtual && usuarioAtual.plano !== 'PREMIUM') {
+        abrirPlanos();
+        mostrarToast('Acesso Restrito', 'Este recurso é exclusivo do Plano Premium.');
+        return; 
+    }
 
-    document.getElementById('moduloUnitario').classList.add('hidden');
-    document.getElementById('moduloMarketplaces').classList.add('hidden');
-    document.getElementById('moduloLotes').classList.add('hidden');
+    // Classes de estilo para as abas
+    const tabInativa = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
+    const tabAtiva = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
 
+    // Reseta visualmente as abas presentes no seu layout atual
+    if (document.getElementById('tabUnitario')) document.getElementById('tabUnitario').className = tabInativa;
+    if (document.getElementById('tabMarketplaces')) document.getElementById('tabMarketplaces').className = tabInativa;
+    if (document.getElementById('tabLotes')) document.getElementById('tabLotes').className = tabInativa;
+
+    // Oculta todos os módulos do layout atual
+    if (document.getElementById('moduloUnitario')) document.getElementById('moduloUnitario').classList.add('hidden');
+    if (document.getElementById('moduloMarketplaces')) document.getElementById('moduloMarketplaces').classList.add('hidden');
+    if (document.getElementById('moduloLotes')) document.getElementById('moduloLotes').classList.add('hidden');
+
+    // Ativa apenas a aba e o módulo selecionado
     if (modulo === 'unitario') {
-        document.getElementById('tabUnitario').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
-        document.getElementById('moduloUnitario').classList.remove('hidden');
+        if (document.getElementById('tabUnitario')) document.getElementById('tabUnitario').className = tabAtiva;
+        if (document.getElementById('moduloUnitario')) document.getElementById('moduloUnitario').classList.remove('hidden');
         calcularPreco();
     } else if (modulo === 'marketplaces') {
-        document.getElementById('tabMarketplaces').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
-        document.getElementById('moduloMarketplaces').classList.remove('hidden');
+        if (document.getElementById('tabMarketplaces')) document.getElementById('tabMarketplaces').className = tabAtiva;
+        if (document.getElementById('moduloMarketplaces')) document.getElementById('moduloMarketplaces').classList.remove('hidden');
         calcularMarketplace();
     } else if (modulo === 'lotes') {
-        document.getElementById('tabLotes').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
-        document.getElementById('moduloLotes').classList.remove('hidden');
+        if (document.getElementById('tabLotes')) document.getElementById('tabLotes').className = tabAtiva;
+        if (document.getElementById('moduloLotes')) document.getElementById('moduloLotes').classList.remove('hidden');
         calcularLote();
     }
 }
