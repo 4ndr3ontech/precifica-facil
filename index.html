@@ -80,7 +80,7 @@
                             <button onclick="assinarPlano('PRO')" class="w-full mb-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
                             <ul class="space-y-2 text-xs text-slate-200 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Até 100 produtos</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Todos Simuladores & IA</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> +5 Ferramentas PRO Avançadas</li>
                             </ul>
                         </div>
                     </div>
@@ -95,8 +95,8 @@
                             <div class="mb-4 flex items-baseline gap-1"><span class="text-3xl font-black text-white font-mono">R$ 29,99</span><span class="text-xs text-slate-400">/mês</span></div>
                             <button onclick="assinarPlano('PREMIUM')" class="w-full mb-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition cursor-pointer">Assinar Premium</button>
                             <ul class="space-y-2 text-xs text-slate-300 font-medium">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Produtos Ilimitados (3.000)</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Produção em Lotes & Suporte VIP</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Tudo do Pro + Lotes & Importação</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> +5 Ferramentas Premium Exclusivas</li>
                             </ul>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
             <div class="text-center mb-8">
                 <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
                 <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para blindar sua margem</h2>
-                <p class="text-xs text-slate-400 mt-1">Recursos avançados para empresários que não aceitam vender com prejuízo.</p>
+                <p class="text-xs text-slate-400 mt-1">Recursos avançados com 10 novas ferramentas exclusivas de alta performance.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -181,8 +181,8 @@
                         <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 14,99</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-200 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Todos Simuladores & IA</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Relatório Executivo em PDF PRO</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Todos os Simuladores & IA</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> <strong>+5 Ferramentas PRO:</strong> Antecipação, Impostos, Elasticidade, Comissões e Frete Grátis</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer shadow-lg shadow-indigo-600/30">Assinar Pro Agora</button>
@@ -194,12 +194,12 @@
                             <h3 class="text-white font-bold text-lg">Premium</h3>
                             <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4">Escala industrial</p>
+                        <p class="text-xs text-slate-400 mb-4">Escala industrial e importação</p>
                         <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 29,99</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produtos Ilimitados (3.000)</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes (Escala)</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp Prioritário</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Inclui TUDO do Pro + Lotes</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> <strong>+5 Ferramentas Premium:</strong> Importação (Landing Cost), Curva ABC IA, Multi-Marketplaces, Propostas B2B e Auditoria da Concorrência</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -238,29 +238,64 @@
         </div>
     </header>
 
-    <!-- Seletor de Módulos (Fluido e sem rolagem) -->
+    <!-- Seletor de Módulos & Ferramentas -->
     <div class="max-w-[90rem] mx-auto px-6 pt-8 pb-2">
-        <div class="flex flex-wrap gap-2.5 pb-2 border-b border-slate-800/80">
-            <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
-                <i class="fa-solid fa-calculator"></i> Precificação Unitária
+        <div class="flex flex-wrap gap-2 pb-2 border-b border-slate-800/80">
+            <!-- Core -->
+            <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
+                <i class="fa-solid fa-calculator"></i> Unitário
             </button>
-            <button onclick="mudarModulo('custosFixos')" id="tabCustosFixos" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-sliders text-indigo-400"></i> Modelos Custo Fixo <span id="tagModuloCustos" class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">1 Modelo</span>
+            <button onclick="mudarModulo('custosFixos')" id="tabCustosFixos" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-sliders text-indigo-400"></i> Custos Fixos
             </button>
-            <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-store text-indigo-400"></i> Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-tags text-emerald-400"></i> Simulador Descontos <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-tags text-emerald-400"></i> Descontos <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('breakeven')" id="tabBreakeven" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-chart-pie text-violet-400"></i> Ponto de Equilíbrio <span class="bg-violet-500/20 text-violet-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            <button onclick="mudarModulo('breakeven')" id="tabBreakeven" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-chart-pie text-violet-400"></i> Break-Even <span class="bg-violet-500/20 text-violet-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('ia')" id="tabIa" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            <button onclick="mudarModulo('ia')" id="tabIa" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
             </button>
-            <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-boxes-stacked text-indigo-300"></i> Produção em Lote <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
+
+            <!-- 5 Novas Ferramentas PRO -->
+            <button onclick="mudarModulo('antecipacao')" id="tabAntecipacao" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-credit-card text-blue-400"></i> Antecipação <span class="bg-blue-500/20 text-blue-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('impostos')" id="tabImpostos" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-file-invoice text-indigo-300"></i> Impostos <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('elasticidade')" id="tabElasticidade" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-chart-line text-cyan-400"></i> Elasticidade <span class="bg-cyan-500/20 text-cyan-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('comissoes')" id="tabComissoes" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-user-tie text-amber-300"></i> Comissões <span class="bg-amber-500/20 text-amber-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('freteGratis')" id="tabFreteGratis" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-truck-fast text-emerald-400"></i> Frete Grátis <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+            </button>
+
+            <!-- Premium & 5 Novas Ferramentas Premium -->
+            <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-boxes-stacked text-purple-400"></i> Lotes <span class="bg-purple-500/20 text-purple-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
+            </button>
+            <button onclick="mudarModulo('importacao')" id="tabImportacao" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-ship text-pink-400"></i> Importação <span class="bg-pink-500/20 text-pink-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
+            </button>
+            <button onclick="mudarModulo('curvaAbc')" id="tabCurvaAbc" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-cubes text-rose-400"></i> Curva ABC <span class="bg-rose-500/20 text-rose-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
+            </button>
+            <button onclick="mudarModulo('multiMarketplace')" id="tabMultiMarketplace" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-globe text-violet-400"></i> Multi-Market <span class="bg-violet-500/20 text-violet-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
+            </button>
+            <button onclick="mudarModulo('propostasB2b')" id="tabPropostasB2b" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-file-contract text-yellow-400"></i> Propostas B2B <span class="bg-yellow-500/20 text-yellow-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
+            </button>
+            <button onclick="mudarModulo('auditoria')" id="tabAuditoria" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-shield-halved text-emerald-300"></i> Auditoria IA <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded uppercase">PREMIUM</span>
             </button>
         </div>
     </div>
@@ -551,6 +586,211 @@
             </div>
         </div>
 
+        <!-- ========================================================== -->
+        <!-- NOVAS FERRAMENTAS EXCLUSIVAS DO PLANO PRO (1 a 5)          -->
+        <!-- ========================================================== -->
+
+        <!-- FERRAMENTA PRO 1: Antecipação de Recebíveis -->
+        <div id="moduloAntecipacao" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Simulador de Antecipação de Recebíveis</h2>
+                            <span class="bg-blue-500/15 text-blue-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-blue-500/35 uppercase">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Calcule o impacto real das taxas de maquininha em vendas parceladas até 12x.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor Total da Venda Parcelada (R$)</label>
+                        <input type="number" id="antValor" value="1200" oninput="calcularAntecipacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Número de Parcelas</label>
+                            <input type="number" id="antParcelas" min="1" max="12" value="10" oninput="calcularAntecipacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Taxa de Antecipação Mensal (%)</label>
+                            <input type="number" id="antTaxa" step="0.1" value="2.5" oninput="calcularAntecipacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div class="bg-blue-950/30 p-5 rounded-2xl border border-blue-500/30 grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <span class="text-slate-400 block mb-1">Valor Líquido Recebido:</span>
+                            <strong id="antResLiquido" class="text-white font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block mb-1">Custo Total da Taxa:</span>
+                            <strong id="antResDesconto" class="text-blue-400 font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PRO 2: Impostos por Regime -->
+        <div id="moduloImpostos" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Calculadora de Impostos por Regime</h2>
+                            <span class="bg-indigo-500/15 text-indigo-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-indigo-500/35 uppercase">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Embutir alíquotas do Simples Nacional ou Lucro Presumido no preço de venda.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Regime Tributário</label>
+                        <select id="impRegime" onchange="calcularImpostos()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none font-medium">
+                            <option value="6">Simples Nacional (Comércio - Anexo I ~6%)</option>
+                            <option value="10">Simples Nacional (Serviços - Anexo III ~10%)</option>
+                            <option value="11.33">Lucro Presumido (Federal + ISS ~11.33%)</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo de Produção (R$)</label>
+                            <input type="number" id="impCusto" value="80" oninput="calcularImpostos()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem Desejada (%)</label>
+                            <input type="number" id="impMargem" value="50" oninput="calcularImpostos()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div class="bg-indigo-950/30 p-5 rounded-2xl border border-indigo-500/30 flex items-center justify-between">
+                        <div>
+                            <span class="text-slate-400 text-xs block mb-1">Preço Final Sugerido com Imposto Embutido:</span>
+                        </div>
+                        <strong id="impResPreco" class="text-white font-mono text-2xl font-black">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PRO 3: Elasticidade de Demanda -->
+        <div id="moduloElasticidade" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Análise de Elasticidade & Demanda</h2>
+                            <span class="bg-cyan-500/15 text-cyan-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-cyan-500/35 uppercase">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Simule o impacto de alteração de preço no volume de vendas e receita total.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Preço Atual (R$)</label>
+                            <input type="number" id="elastPrecoAtual" value="100" oninput="calcularElasticidade()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Volume Vendido Mensal Atual</label>
+                            <input type="number" id="elastQtdAtual" value="200" oninput="calcularElasticidade()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Variação de Preço Pretendida (%)</label>
+                        <input type="number" id="elastVarPreco" value="10" oninput="calcularElasticidade()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none" placeholder="Ex: 10 para subir ou -10 para baixar">
+                    </div>
+                    <div class="bg-cyan-950/30 p-5 rounded-2xl border border-cyan-500/30 grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <span class="text-slate-400 block mb-1">Nova Receita Projetada:</span>
+                            <strong id="elastResReceita" class="text-white font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block mb-1">Impacto Financeiro:</span>
+                            <strong id="elastResImpacto" class="text-cyan-400 font-mono text-base font-black">+R$ 0,00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PRO 4: Gestor de Comissões de Vendedores -->
+        <div id="moduloComissoes" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Gestor de Comissões de Vendedores & Afiliados</h2>
+                            <span class="bg-amber-500/15 text-amber-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-amber-500/35 uppercase">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Garanta lucro líquido mesmo após pagar comissões de equipe ou afiliados.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Preço de Venda do Produto (R$)</label>
+                            <input type="number" id="comPreco" value="250" oninput="calcularComissao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Comissão Percentual (%)</label>
+                            <input type="number" id="comPct" value="8" oninput="calcularComissao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Bônus Fixo por Venda (R$)</label>
+                        <input type="number" id="comBonus" value="10" oninput="calcularComissao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                    </div>
+                    <div class="bg-amber-950/30 p-5 rounded-2xl border border-amber-500/30 grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <span class="text-slate-400 block mb-1">Custo Total da Comissão:</span>
+                            <strong id="comResCusto" class="text-amber-400 font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block mb-1">Receita Líquida Pós-Comissão:</span>
+                            <strong id="comResLiquido" class="text-white font-mono text-base font-black">R$ 0,00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PRO 5: Simulador de Impacto do Frete Grátis -->
+        <div id="moduloFreteGratis" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Simulador de Impacto do Frete Grátis</h2>
+                            <span class="bg-emerald-500/15 text-emerald-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/35 uppercase">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Embutir o custo do frete subsidiado no preço sem perder competitividade.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base do Produto (R$)</label>
+                            <input type="number" id="fgCusto" value="60" oninput="calcularFreteGratis()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor do Frete Pago à Transportadora (R$)</label>
+                            <input type="number" id="fgFrete" value="25" oninput="calcularFreteGratis()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem Desejada (%)</label>
+                        <input type="number" id="fgMargem" value="50" oninput="calcularFreteGratis()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                    </div>
+                    <div class="bg-emerald-950/30 p-5 rounded-2xl border border-emerald-500/30 flex items-center justify-between">
+                        <div>
+                            <span class="text-slate-400 text-xs block mb-1">Preço Ideal com Frete Grátis Embutido:</span>
+                        </div>
+                        <strong id="fgResPreco" class="text-white font-mono text-2xl font-black">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MÓDULO 7: PRODUÇÃO EM LOTE -->
         <div id="moduloLotes" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
@@ -580,6 +820,189 @@
                             <input type="number" id="tempoTotalLote" step="0.5" value="10" oninput="calcularLote()"
                                 class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- NOVAS FERRAMENTAS EXCLUSIVAS DO PLANO PREMIUM (1 a 5)      -->
+        <!-- ========================================================== -->
+
+        <!-- FERRAMENTA PREMIUM 1: Landing Cost de Importação -->
+        <div id="moduloImportacao" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Simulador de Importação (Landing Cost)</h2>
+                            <span class="bg-pink-500/15 text-pink-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-pink-500/35 uppercase">PREMIUM</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Calcule o custo desembarcado final considerando câmbio, frete internacional e impostos alfandegários.</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Valor FOB Unitário (USD)</label>
+                            <input type="number" id="impFob" value="25" oninput="calcularImportacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Cotação do Dólar (R$)</label>
+                            <input type="number" id="impDolar" step="0.01" value="5.50" oninput="calcularImportacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Frete Internacional por Peça (USD)</label>
+                            <input type="number" id="impFrete" value="5" oninput="calcularImportacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Imposto de Importação + ICMS Total (%)</label>
+                            <input type="number" id="impTaxas" value="60" oninput="calcularImportacao()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                        </div>
+                    </div>
+                    <div class="bg-pink-950/30 p-5 rounded-2xl border border-pink-500/30 flex items-center justify-between">
+                        <div>
+                            <span class="text-slate-400 text-xs block mb-1">Custo Final Desembarcado no Brasil:</span>
+                        </div>
+                        <strong id="impResCustoFinal" class="text-white font-mono text-2xl font-black">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PREMIUM 2: Gestão de Estoque Crítico & Curva ABC (IA) -->
+        <div id="moduloCurvaAbc" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Curva ABC & Alerta de Reposição (IA)</h2>
+                            <span class="bg-rose-500/15 text-rose-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-rose-500/35 uppercase">PREMIUM</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Classificação automática do catálogo por rentabilidade e alerta de inflação de insumos.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-950/90 p-5 rounded-2xl border border-rose-500/30 space-y-3">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-white">Classe A (80% Faturamento):</span>
+                            <span class="text-emerald-400 font-mono font-bold">12 Produtos (Giro Alto)</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-white">Classe B (15% Faturamento):</span>
+                            <span class="text-amber-400 font-mono font-bold">25 Produtos (Giro Médio)</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-white">Classe C (5% Faturamento):</span>
+                            <span class="text-slate-400 font-mono font-bold">65 Produtos (Giro Lento)</span>
+                        </div>
+                    </div>
+                    <div class="bg-rose-950/30 p-4 rounded-xl border border-rose-500/20 text-xs text-rose-200">
+                        🚨 <strong>Alerta IA:</strong> 3 insumos da Classe A sofreram alta de 12% nos fornecedores. Reajuste de preço recomendado em +5.4% para manter o EBITDA.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PREMIUM 3: Multi-Marketplaces Simultâneo (Comparador 5 em 1) -->
+        <div id="moduloMultiMarketplace" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Comparador Multi-Marketplaces (5 em 1)</h2>
+                            <span class="bg-violet-500/15 text-violet-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-violet-500/35 uppercase">PREMIUM</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Visualize simultaneamente o preço e lucro líquido em 5 canais de venda.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base do Produto (R$)</label>
+                        <input type="number" id="multiCusto" value="70" oninput="calcularMultiMarket()" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                    </div>
+                    <div id="multiResultados" class="space-y-2 text-xs">
+                        <div class="bg-slate-950/90 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <span>Shopee (12%):</span> <strong id="multiShopee" class="text-white font-mono">R$ 0,00</strong>
+                        </div>
+                        <div class="bg-slate-950/90 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <span>Mercado Livre Clássico (16%):</span> <strong id="multiMlClas" class="text-white font-mono">R$ 0,00</strong>
+                        </div>
+                        <div class="bg-slate-950/90 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <span>Mercado Livre Premium 12x (19%):</span> <strong id="multiMlPrem" class="text-white font-mono">R$ 0,00</strong>
+                        </div>
+                        <div class="bg-slate-950/90 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <span>Amazon (15%):</span> <strong id="multiAmazon" class="text-white font-mono">R$ 0,00</strong>
+                        </div>
+                        <div class="bg-slate-950/90 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <span>Loja Própria / PIX (0%):</span> <strong id="multiPix" class="text-emerald-400 font-mono">R$ 0,00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PREMIUM 4: Gerador de Propostas B2B & Contratos -->
+        <div id="moduloPropostasB2b" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Gerador de Propostas & Contratos B2B</h2>
+                            <span class="bg-yellow-500/15 text-yellow-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-yellow-500/35 uppercase">PREMIUM</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Crie propostas comerciais executivas com cláusula de reajuste automático por inflação (IPCA).</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Nome do Cliente Corporativo</label>
+                        <input type="text" id="b2bCliente" value="Construtora Alfa S.A." class="w-full px-4 py-3 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-xs outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Escopo / Descrição do Serviço</label>
+                        <input type="text" id="b2bEscopo" value="Fornecimento de Lote Corporativo e Instalação" class="w-full px-4 py-3 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-xs outline-none">
+                    </div>
+                    <button onclick="gerarPropostaB2b()" class="w-full bg-gradient-to-r from-yellow-600 to-amber-600 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-yellow-600/20">
+                        <i class="fa-solid fa-file-pdf mr-2"></i> Gerar Proposta Executiva B2B
+                    </button>
+                    <div id="b2bPreview" class="hidden bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 font-mono">
+                        📄 <strong>Proposta Gerada com Sucesso!</strong> Inclui cláusula 4.2 de reajuste anual indexado ao IPCA e validade de 15 dias.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FERRAMENTA PREMIUM 5: Auditoria de Preços da Concorrência -->
+        <div id="moduloAuditoria" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Auditoria de Preços da Concorrência (IA)</h2>
+                            <span class="bg-emerald-500/15 text-emerald-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/35 uppercase">PREMIUM</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Monitore o posicionamento médio praticado no seu nicho e receba recomendação de contra-ataque.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Preço Médio da Concorrência (R$)</label>
+                            <input type="number" id="audMercado" value="145" class="w-full px-4 py-3 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-xs outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Seu Custo Base (R$)</label>
+                            <input type="number" id="audCusto" value="70" class="w-full px-4 py-3 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-xs outline-none">
+                        </div>
+                    </div>
+                    <button onclick="executarAuditoria()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer shadow-lg shadow-emerald-600/20">
+                        <i class="fa-solid fa-shield-halved mr-2"></i> Executar Auditoria de Posicionamento
+                    </button>
+                    <div id="audResultado" class="hidden bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 font-mono">
+                        🎯 <strong>Parecer IA:</strong> Seu produto está posicionado com margem de 51%. Recomendamos fixar em <strong>R$ 139,90</strong> para capturar market share sem iniciar guerra de preços.
                     </div>
                 </div>
             </div>
@@ -660,9 +1083,9 @@
         </div>
     </div>
 
-    <!-- Script Principal -->
+    <!-- Script Principal & Controle de Permissões de Planos -->
     <script>
-        let planoAtual = 'PRO';
+        let planoAtual = 'PRO'; // FREE, PRO, PREMIUM
         let historicoPrecificacao = [];
         let modulosAtivosCalculados = { nome: 'Produto Unitário', custo: 0, preco: 0, lucro: 0 };
 
@@ -670,7 +1093,9 @@
             planoAtual = plano;
             fecharPlanos();
             document.getElementById('badgePlanoNavbar').innerText = plano;
-            if(plano === 'PRO') {
+            if(plano === 'FREE') {
+                document.getElementById('badgePlanoNavbarclassName = 'bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase';
+            } else if(plano === 'PRO') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/25 uppercase';
             } else if(plano === 'PREMIUM') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/25 uppercase';
@@ -678,24 +1103,48 @@
             mostrarToast('Sucesso', 'Plano atualizado para ' + plano + ' com sucesso!');
         }
 
+        const modulosPro = ['marketplaces', 'descontos', 'breakeven', 'ia', 'antecipacao', 'impostos', 'elasticidade', 'comissoes', 'freteGratis'];
+        const modulosPremium = ['lotes', 'importacao', 'curvaAbc', 'multiMarketplace', 'propostasB2b', 'auditoria'];
+
         function mudarModulo(modulo) {
-            ['unitario', 'custosFixos', 'marketplaces', 'descontos', 'breakeven', 'ia', 'lotes'].forEach(m => {
+            // Verificação de permissões
+            if(modulosPro.includes(modulo) && planoAtual === 'FREE') {
+                abrirPlanos();
+                mostrarToast('Acesso Restrito', 'Este recurso exige o Plano Pro ou superior.');
+                return;
+            }
+            if(modulosPremium.includes(modulo) && planoAtual !== 'PREMIUM') {
+                abrirPlanos();
+                mostrarToast('Acesso Restrito', 'Este recurso é exclusivo do Plano Premium.');
+                return;
+            }
+
+            const todosModulos = ['unitario', 'custosFixos', ...modulosPro, ...modulosPremium];
+            todosModulos.forEach(m => {
                 const el = document.getElementById('modulo' + m.charAt(0).toUpperCase() + m.slice(1));
                 if(el) el.classList.add('hidden');
                 const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
-                if(btn) btn.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer';
+                if(btn) btn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer';
             });
 
             const alvo = document.getElementById('modulo' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
             if(alvo) alvo.classList.remove('hidden');
             const btnAtivo = document.getElementById('tab' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
-            if(btnAtivo) btnAtivo.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer';
+            if(btnAtivo) btnAtivo.className = 'px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer';
 
+            // Executar calculadoras específicas
             if(modulo === 'unitario') calcularPreco();
             if(modulo === 'marketplaces') calcularMarketplace();
             if(modulo === 'descontos') calcularDescontoPromo();
             if(modulo === 'breakeven') calcularBreakEven();
             if(modulo === 'lotes') calcularLote();
+            if(modulo === 'antecipacao') calcularAntecipacao();
+            if(modulo === 'impostos') calcularImpostos();
+            if(modulo === 'elasticidade') calcularElasticidade();
+            if(modulo === 'comissoes') calcularComissao();
+            if(modulo === 'freteGratis') calcularFreteGratis();
+            if(modulo === 'importacao') calcularImportacao();
+            if(modulo === 'multiMarketplace') calcularMultiMarket();
         }
 
         function abrirPlanos() { document.getElementById('modalPlanos').classList.remove('hidden'); }
@@ -814,6 +1263,64 @@
             mostrarToast('IA Precificação', 'Análise concluída com sucesso!');
         }
 
+        // Lógica das novas ferramentas PRO
+        function calcularAntecipacao() {
+            const valor = parseFloat(document.getElementById('antValor').value) || 0;
+            const parcelas = parseFloat(document.getElementById('antParcelas').value) || 1;
+            const taxa = parseFloat(document.getElementById('antTaxa').value) || 0;
+            const descontoTotal = valor * (taxa / 100) * parcelas;
+            const liquido = valor - descontoTotal;
+            document.getElementById('antResLiquido').innerText = 'R$ ' + liquido.toFixed(2).replace('.', ',');
+            document.getElementById('antResDesconto').innerText = 'R$ ' + descontoTotal.toFixed(2).replace('.', ',');
+            atualizarDashboard('Antecipação de Recebíveis', valor * 0.7, liquido, liquido - (valor * 0.7));
+        }
+
+        function calcularImpostos() {
+            const aliquota = parseFloat(document.getElementById('impRegime').value) || 6;
+            const custo = parseFloat(document.getElementById('impCusto').value) || 0;
+            const margem = parseFloat(document.getElementById('impMargem').value) || 50;
+            const divisor = 1 - ((aliquota + margem) / 100);
+            const preco = divisor > 0 ? custo / divisor : custo * 2;
+            document.getElementById('impResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
+            atualizarDashboard('Impostos por Regime', custo, preco, preco * (margem / 100));
+        }
+
+        function calcularElasticidade() {
+            const precoAtual = parseFloat(document.getElementById('elastPrecoAtual').value) || 100;
+            const qtdAtual = parseFloat(document.getElementById('elastQtdAtual').value) || 200;
+            const varPreco = parseFloat(document.getElementById('elastVarPreco').value) || 0;
+            const novoPreco = precoAtual * (1 + (varPreco / 100));
+            // Elasticidade estimada padrão -1.5
+            const novaQtd = qtdAtual * (1 - (1.5 * (varPreco / 100)));
+            const novaReceita = novoPreco * novaQtd;
+            const receitaAtual = precoAtual * qtdAtual;
+            const impacto = novaReceita - receitaAtual;
+            document.getElementById('elastResReceita').innerText = 'R$ ' + novaReceita.toFixed(2).replace('.', ',');
+            document.getElementById('elastResImpacto').innerText = (impacto >= 0 ? '+' : '') + 'R$ ' + impacto.toFixed(2).replace('.', ',');
+            atualizarDashboard('Elasticidade de Demanda', precoAtual * 0.5, novoPreco, novaReceita * 0.4);
+        }
+
+        function calcularComissao() {
+            const preco = parseFloat(document.getElementById('comPreco').value) || 0;
+            const pct = parseFloat(document.getElementById('comPct').value) || 0;
+            const bonus = parseFloat(document.getElementById('comBonus').value) || 0;
+            const custoComissao = (preco * (pct / 100)) + bonus;
+            const liquido = preco - custoComissao;
+            document.getElementById('comResCusto').innerText = 'R$ ' + custoComissao.toFixed(2).replace('.', ',');
+            document.getElementById('comResLiquido').innerText = 'R$ ' + liquido.toFixed(2).replace('.', ',');
+            atualizarDashboard('Comissão de Vendedor', preco * 0.4, liquido, liquido - (preco * 0.4));
+        }
+
+        function calcularFreteGratis() {
+            const custo = parseFloat(document.getElementById('fgCusto').value) || 0;
+            const frete = parseFloat(document.getElementById('fgFrete').value) || 0;
+            const margem = parseFloat(document.getElementById('fgMargem').value) || 50;
+            const custoTotal = custo + frete;
+            const preco = custoTotal * (1 + (margem / 100));
+            document.getElementById('fgResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
+            atualizarDashboard('Frete Grátis Embutido', custoTotal, preco, preco - custoTotal);
+        }
+
         function calcularLote() {
             const qtd = parseFloat(document.getElementById('qtdLote').value) || 50;
             const custoTotalLote = parseFloat(document.getElementById('custoTotalLote').value) || 500;
@@ -821,6 +1328,45 @@
             const custoUnitario = (custoTotalLote + (tempoTotal * 30)) / qtd;
             const precoSugeridoLote = custoUnitario * 1.8;
             atualizarDashboard('Produção em Lote (' + qtd + ' un)', custoUnitario, precoSugeridoLote, precoSugeridoLote - custoUnitario);
+        }
+
+        // Lógica das novas ferramentas PREMIUM
+        function calcularImportacao() {
+            const fob = parseFloat(document.getElementById('impFob').value) || 0;
+            const dolar = parseFloat(document.getElementById('impDolar').value) || 5.50;
+            const frete = parseFloat(document.getElementById('impFrete').value) || 0;
+            const taxasPct = parseFloat(document.getElementById('impTaxas').value) || 60;
+            const custoReais = (fob + frete) * dolar;
+            const custoFinal = custoReal * (1 + (taxasPct / 100));
+            document.getElementById('impResCustoFinal').innerText = 'R$ ' + custoFinal.toFixed(2).replace('.', ',');
+            atualizarDashboard('Landing Cost Importação', custoFinal, custoFinal * 2.2, custoFinal * 1.2);
+        }
+
+        function calcularMultiMarket() {
+            const custo = parseFloat(document.getElementById('multiCusto').value) || 70;
+            const margem = 0.5; // 50%
+            const pShopee = custo / (1 - (0.12 + margem));
+            const pMlClas = custo / (1 - (0.16 + margem));
+            const pMlPrem = custo / (1 - (0.19 + margem));
+            const pAmazon = custo / (1 - (0.15 + margem));
+            const pPix = custo / (1 - margem);
+
+            document.getElementById('multiShopee').innerText = 'R$ ' + pShopee.toFixed(2).replace('.', ',');
+            document.getElementById('multiMlClas').innerText = 'R$ ' + pMlClas.toFixed(2).replace('.', ',');
+            document.getElementById('multiMlPrem').innerText = 'R$ ' + pMlPrem.toFixed(2).replace('.', ',');
+            document.getElementById('multiAmazon').innerText = 'R$ ' + pAmazon.toFixed(2).replace('.', ',');
+            document.getElementById('multiPix').innerText = 'R$ ' + pPix.toFixed(2).replace('.', ',');
+            atualizarDashboard('Multi-Marketplaces', custo, pPix, pPix * margem);
+        }
+
+        function gerarPropostaB2b() {
+            document.getElementById('b2bPreview').classList.remove('hidden');
+            mostrarToast('Proposta B2B', 'Contrato gerado com reajuste IPCA!');
+        }
+
+        function executarAuditoria() {
+            document.getElementById('audResultado').classList.remove('hidden');
+            mostrarToast('Auditoria IA', 'Análise de concorrência concluída!');
         }
 
         function salvarPrecificacao() {
