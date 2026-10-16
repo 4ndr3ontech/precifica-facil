@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | SaaS Enterprise Suite</title>
+    <title>PrecificaFácil | Enterprise Pricing Suite</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -14,7 +14,7 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-[#05070e] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white antialiased">
+<body class="bg-[#03050b] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white antialiased">
 
     <!-- Toast de Notificação -->
     <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-y-[-200%] opacity-0 transition-all duration-300 bg-slate-900 border border-slate-700 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
@@ -27,46 +27,97 @@
         </div>
     </div>
 
-    <!-- Modal de Login / Autenticação -->
-    <div id="modalAuth" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-12 -top-12 w-36 h-36 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Tela de Autenticação World-Class (Split-Screen) -->
+    <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row overflow-y-auto">
+        
+        <!-- Lado Esquerdo: Branding & Valor SaaS -->
+        <div class="lg:w-1/2 bg-gradient-to-br from-indigo-950/40 via-[#050814] to-slate-950 p-10 lg:p-16 flex flex-col justify-between relative border-b lg:border-b-0 lg:border-r border-slate-800/80">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(99,102,241,0.08),transparent_50%)] pointer-events-none"></div>
             
-            <div class="text-center mb-6">
-                <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center mx-auto mb-3 shadow-lg shadow-indigo-600/30">
-                    <i class="fa-solid fa-calculator text-white text-xl"></i>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-calculator text-white text-lg"></i>
                 </div>
-                <h3 class="text-xl font-extrabold text-white">Precifica<span class="text-indigo-400">Fácil</span></h3>
-                <p id="authSubtitle" class="text-xs text-slate-400 mt-1">Acesse sua conta para começar a precificar</p>
+                <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
             </div>
 
-            <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
-                <div id="campoNomeDiv" class="hidden">
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Nome Completo</label>
-                    <input type="text" id="authNome" placeholder="Seu nome" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+            <div class="my-auto py-12 relative z-10 max-w-lg">
+                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Plataforma Nacional de Precificação</span>
+                <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Transforme o seu <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">lucro criativo</span> com inteligência de ponta.
+                </h1>
+                <p class="text-slate-400 text-sm lg:text-base mt-4 leading-relaxed">
+                    A suíte definitiva para artesãos, confeiteiros e empreendedores calcularem custos, garantirem margens reais e eliminarem prejuízos com taxas de cartão.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-800/80">
+                    <div>
+                        <h4 class="text-white font-extrabold text-lg">+12.000</h4>
+                        <p class="text-slate-500 text-xs">Cálculos processados</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-extrabold text-lg">100% Seguro</h4>
+                        <p class="text-slate-500 text-xs">Dados sincronizados</p>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">E-mail Corporativo / Pessoal</label>
-                    <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
-                </div>
-                <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Senha de Acesso</label>
-                    <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+            </div>
+
+            <div class="text-xs text-slate-500 relative z-10">
+                &copy; 2026 PrecificaFácil Corporation. O padrão ouro em tecnologia.
+            </div>
+        </div>
+
+        <!-- Lado Direito: Formulário de Login / Cadastro -->
+        <div class="lg:w-1/2 bg-[#03050b] p-8 lg:p-24 flex items-center justify-center relative">
+            <div class="max-w-md w-full bg-slate-900/50 border border-slate-800/80 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-xl">
+                
+                <div class="mb-8">
+                    <h3 id="authTitulo" class="text-2xl font-black text-white tracking-tight">Bem-vindo de volta</h3>
+                    <p id="authSub" class="text-xs text-slate-400 mt-1">Insira suas credenciais para gerenciar seus produtos</p>
                 </div>
 
-                <button type="submit" id="btnSubmitAuth" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-lg shadow-indigo-600/20 cursor-pointer">
-                    Entrar na Plataforma
-                </button>
-            </form>
+                <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
+                    <div id="campoNomeDiv" class="hidden">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Nome Completo</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-user text-xs"></i></span>
+                            <input type="text" id="authNome" placeholder="Seu nome ou marca" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
+                    </div>
 
-            <div class="mt-6 text-center text-xs text-slate-400">
-                <span id="authToggleText">Não tem uma conta?</span> 
-                <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta grátis</button>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">E-mail Profissional</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-envelope text-xs"></i></span>
+                            <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Senha de Acesso</label>
+                            <a href="#" onclick="alert('Instruções de recuperação enviadas para o e-mail cadastrado.')" class="text-[11px] text-indigo-400 hover:underline">Esqueceu?</a>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-lock text-xs"></i></span>
+                            <input type="password" id="authSenha" required placeholder="••••••••" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-indigo-600/25 cursor-pointer text-sm tracking-wide">
+                        Acessar Plataforma
+                    </button>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400">
+                    <span id="authToggleText">Ainda não tem uma conta?</span> 
+                    <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta gratuita</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal de Paywall / Upgrade PRO -->
+    <!-- Modal de Upgrade PRO -->
     <div id="modalPro" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
         <div class="bg-gradient-to-b from-slate-900 to-indigo-950 border border-indigo-500/30 max-w-lg w-full rounded-3xl p-8 shadow-2xl relative">
             <div class="text-center mb-6">
@@ -92,7 +143,7 @@
     </div>
 
     <!-- Navbar Enterprise -->
-    <header class="border-b border-slate-800/60 bg-[#05070e]/90 backdrop-blur-xl sticky top-0 z-40">
+    <header class="border-b border-slate-800/60 bg-[#03050b]/90 backdrop-blur-xl sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/10">
