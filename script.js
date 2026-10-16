@@ -1,4 +1,5 @@
 let usuarioAtual = JSON.parse(localStorage.getItem('precifica_user')) || null;
+let cicloAtual = 'mensal';
 
 window.onload = () => {
     verificarAutenticacao();
@@ -47,8 +48,8 @@ function fazerLogout() {
 function atualizarBadgePlano() {
     const badge = document.getElementById('badgePlanoNavbar');
     const btnNav = document.getElementById('btnUpgradeNav');
-    if (usuarioAtual && usuarioAtual.plano === 'PRO') {
-        badge.innerText = "PRO";
+    if (usuarioAtual && usuarioAtual.plano !== 'FREE') {
+        badge.innerText = usuarioAtual.plano;
         badge.className = "bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase";
         btnNav.classList.add('hidden');
     } else {
@@ -58,37 +59,59 @@ function atualizarBadgePlano() {
     }
 }
 
-function abrirPro() {
-    document.getElementById('modalPro').classList.remove('hidden');
+function abrirPlanos() {
+    document.getElementById('modalPlanos').classList.remove('hidden');
 }
 
-function fecharPro() {
-    document.getElementById('modalPro').classList.add('hidden');
+function fecharPlanos() {
+    document.getElementById('modalPlanos').classList.add('hidden');
 }
 
-function ativarPlanoPro() {
-    if (usuarioAtual) {
-        usuarioAtual.plano = 'PRO';
-        localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
-        atualizarBadgePlano();
-        fecharPro();
-        mostrarToast('Parabéns!', 'Sua conta foi atualizada para o Plano PRO!', 'success');
+function mudarCiclo(ciclo) {
+    cicloAtual = ciclo;
+    const btnM = document.getElementById('btnMensal');
+    const btnA = document.getElementById('btnAnual');
+    const pPro = document.getElementById('precoPro');
+    const pPrem = document.getElementById('precoPremium');
+
+    if (ciclo === 'anual') {
+        btnA.className = "px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer";
+        btnM.className = "px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer";
+        pPro.innerText = "R$ 16,50";
+        pPrem.innerText = "R$ 33,10";
+    } else {
+        btnM.className = "px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer";
+        btnA.className = "px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer";
+        pPro.innerText = "R$ 19,90";
+        pPrem.innerText = "R$ 39,90";
     }
 }
 
-// Navegação entre Módulos com Paywall Estratégico
+function assinarPlano(plano) {
+    if (usuarioAtual) {
+        usuarioAtual.plano = plano;
+        localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
+        atualizarBadgePlano();
+        fecharPlanos();
+        mostrarToast('Parabéns!', `Sua conta foi atualizada para o plano ${plano}!`, 'success');
+    }
+}
+
+// Navegação por Módulos com Validação de Plano
 function mudarModulo(modulo) {
-    if (modulo !== 'unitario' && usuarioAtual && usuarioAtual.plano !== 'PRO') {
-        abrirPro();
+    if (modulo === 'marketplaces' && usuarioAtual && usuarioAtual.plano === 'FREE') {
+        abrirPlanos();
+        return;
+    }
+    if (modulo === 'lotes' && usuarioAtual && usuarioAtual.plano !== 'PREMIUM') {
+        abrirPlanos();
         return;
     }
 
-    // Resetar abas
     document.getElementById('tabUnitario').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
     document.getElementById('tabMarketplaces').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
     document.getElementById('tabLotes').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
 
-    // Ocultar módulos
     document.getElementById('moduloUnitario').classList.add('hidden');
     document.getElementById('moduloMarketplaces').classList.add('hidden');
     document.getElementById('moduloLotes').classList.add('hidden');
@@ -136,19 +159,16 @@ function calcularMarketplace() {
     const precoFinal = comissao > 0 ? precoBase / (1 - (comissao / 100)) : precoBase;
     const lucro = precoFinal - custo - (precoFinal * (comissao / 100));
 
-    document.getElementById('resPrecoMarketplace').innerText = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('resPrecoVenda').innerText = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('resCustoTotal').innerText = `Custo Base: ${custo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+    document.getElementById('resPrecoVenda').innerText = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('resLucro').innerText = lucro.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
 function calcularLote() {
     const qtd = parseInt(document.getElementById('qtdLote').value) || 1;
     const custoTotalLote = parseFloat(document.getElementById('custoTotalLote').value) || 0;
-    const tempoLote = parseFloat(document.getElementById('tempoTotalLote').value) || 0;
-
     const custoUnitario = qtd > 0 ? custoTotalLote / qtd : 0;
-    document.getElementById('resCustoUnitarioLote').innerText = custoUnitario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
     document.getElementById('resCustoTotal').innerText = `Lote (${qtd} un): ${custoTotalLote.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
     document.getElementById('resPrecoVenda').innerText = (custoUnitario * 1.6).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('resLucro').innerText = (custoUnitario * 0.6).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -168,10 +188,10 @@ function limparFormulario() {
 }
 
 function salvarPrecificacao() {
-    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
+    if (usuarioAtual && usuarioAtual.plano === 'FREE') {
         let historico = JSON.parse(localStorage.getItem('precifica_historico_user')) || [];
-        if (historico.length >= 3) {
-            abrirPro();
+        if (historico.length >= 5) {
+            abrirPlanos();
             return;
         }
     }
@@ -221,8 +241,8 @@ function limparHistorico() {
 }
 
 function gerarPdfPro() {
-    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
-        abrirPro();
+    if (usuarioAtual && usuarioAtual.plano === 'FREE') {
+        abrirPlanos();
     } else {
         window.print();
     }
@@ -231,7 +251,6 @@ function gerarPdfPro() {
 function copiarResumo() {
     const nome = document.getElementById('resNomeProduto').innerText;
     const preco = document.getElementById('resPrecoVenda').innerText;
-    const lucro = document.getElementById('resLucro').innerText;
     const texto = `🛍️ *Orçamento*\n📌 ${nome}\n💰 ${preco}\n✨ Qualidade garantida.`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`, '_blank');
 }
