@@ -34,7 +34,6 @@
         <div class="lg:w-1/2 min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
-            <!-- Topo / Conteúdo Centralizado do Lado Esquerdo -->
             <div class="relative z-10 max-w-2xl mx-auto w-full my-auto">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
@@ -201,6 +200,7 @@
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano padrão de precificação</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 modelo de custo fixo</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
@@ -215,8 +215,9 @@
                         <div class="my-6"><span class="text-4xl font-black text-white" id="precoPro">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 2 modelos de custo fixo</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada p/ precificação</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exportação em PDF PRO</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold py-3.5 rounded-xl transition text-xs cursor-pointer">Assinar Pro</button>
@@ -229,8 +230,9 @@
                         <div class="my-6"><span class="text-4xl font-black text-white" id="precoPremium">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-300">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 3.000 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Produção em Lotes</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte WhatsApp</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 modelos de custos fixos</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IA avançada e Lotes</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte VIP WhatsApp</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
@@ -275,11 +277,17 @@
             <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
                 <i class="fa-solid fa-calculator"></i> Precificação Unitária
             </button>
+            <button onclick="mudarModulo('custosFixos')" id="tabCustosFixos" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-sliders text-indigo-400"></i> Modelos Custo Fixo <span id="tagModuloCustos" class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">1 Modelo</span>
+            </button>
             <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
+            <button onclick="mudarModulo('ia')" id="tabIa" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            </button>
             <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-boxes-stacked text-indigo-400"></i> Produção em Lote <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
+                <i class="fa-solid fa-boxes-stacked text-emerald-400"></i> Produção em Lote <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
             </button>
         </div>
     </div>
@@ -353,6 +361,40 @@
             </div>
         </div>
 
+        <!-- MÓDULO: MODELOS DE CUSTOS FIXOS -->
+        <div id="moduloCustosFixos" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+                    <div>
+                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-sliders"></i></span>
+                            Modelos de Custos Fixos <span id="limiteCustosText" class="text-xs text-indigo-400 ml-2 font-normal">(Plano Free: 1 Modelo)</span>
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Gerencie diferentes cenários de aluguel, internet, pro-labore e taxas.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-indigo-500/40">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="text-sm font-bold text-white"><i class="fa-solid fa-file-invoice-dollar text-indigo-400 mr-2"></i> Cenário 1: Operação Padrão</h4>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Ativo</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-slate-300">
+                            <div>Aluguel / Espaço: <strong class="text-white font-mono">R$ 1.200,00</strong></div>
+                            <div>Energia / Internet: <strong class="text-white font-mono">R$ 350,00</strong></div>
+                        </div>
+                    </div>
+                    <div id="blocoExtraCustos" class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800 opacity-60">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="text-sm font-bold text-slate-400"><i class="fa-solid fa-lock text-amber-400 mr-2"></i> Cenário 2: Estoque Expandido (Pro / Premium)</h4>
+                            <button onclick="abrirPlanos()" class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-3 py-1 rounded-full uppercase hover:bg-amber-500/30 transition">Desbloquear</button>
+                        </div>
+                        <p class="text-xs text-slate-500">Disponível a partir do plano Pro para gerenciar até 30 modelos de cenários operacionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MÓDULO 2: SIMULADOR DE MARKETPLACES -->
         <div id="moduloMarketplaces" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
@@ -384,6 +426,33 @@
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem de Lucro Desejada (%)</label>
                         <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
                             class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MÓDULO: IA PRECIFICAÇÃO -->
+        <div id="moduloIa" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+                    <div>
+                        <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            Assistente de IA para Precificação
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Análise inteligente de concorrência e recomendação automatizada de preço.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-amber-950/30 to-indigo-950/30 p-5 rounded-2xl border border-amber-500/30">
+                        <h4 class="text-sm font-bold text-white mb-1"><i class="fa-solid fa-brain text-amber-400 mr-2"></i> Sugestão por Inteligência Artificial</h4>
+                        <p class="text-xs text-slate-300 mb-4">A IA analisa o histórico do seu nicho e sugere o melhor patamar competitivo.</p>
+                        <button onclick="executarIa()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition shadow-lg shadow-orange-600/20 cursor-pointer">
+                            <i class="fa-solid fa-bolt mr-1"></i> Analisar Preço com IA
+                        </button>
+                    </div>
+                    <div id="resultadoIaBox" class="hidden bg-slate-950/90 p-4 rounded-2xl border border-slate-800 text-xs text-slate-300 font-mono">
+                        🤖 <strong>Relatório IA:</strong> O preço ideal sugerido para maximizar conversão e giro de estoque é <strong>R$ 148,90</strong> com elasticidade de demanda otimizada.
                     </div>
                 </div>
             </div>
@@ -491,7 +560,147 @@
         </div>
     </div>
 
-    <!-- Script Principal -->
-    <script src="script.js"></script>
+    <!-- Script Principal com Controle de Módulos e Planos -->
+    <script>
+        let planoAtual = 'FREE';
+
+        function assinarPlano(plano) {
+            planoAtual = plano;
+            fecharPlanos();
+            document.getElementById('badgePlanoNavbar').innerText = plano;
+            if(plano === 'PRO') {
+                document.getElementById('badgePlanoNavbar').className = 'bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/20 uppercase';
+                document.getElementById('tagModuloCustos').innerText = '2 Modelos';
+                document.getElementById('blocoExtraCustos').classList.remove('opacity-60');
+                document.getElementById('blocoExtraCustos').innerHTML = '<div class="flex justify-between items-center mb-3"><h4 class="text-sm font-bold text-white"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Cenário 2: Estoque Expandido</h4><span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Liberado (Pro)</span></div>';
+            } else if(plano === 'PREMIUM') {
+                document.getElementById('badgePlanoNavbar').className = 'bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase';
+                document.getElementById('tagModuloCustos').innerText = '30 Modelos';
+                document.getElementById('blocoExtraCustos').classList.remove('opacity-60');
+                document.getElementById('blocoExtraCustos').innerHTML = '<div class="flex justify-between items-center mb-3"><h4 class="text-sm font-bold text-white"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 30 Modelos de Custos Fixos em Lote</h4><span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Ilimitado (Premium)</span></div>';
+            }
+            mostrarToast('Sucesso', 'Plano atualizado para ' + plano + ' com sucesso!');
+        }
+
+        function mudarModulo(modulo) {
+            ['unitario', 'custosFixos', 'marketplaces', 'ia', 'lotes'].forEach(m => {
+                const el = document.getElementById('modulo' + m.charAt(0).toUpperCase() + m.slice(1));
+                if(el) el.classList.add('hidden');
+                const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
+                if(btn) {
+                    btn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer';
+                }
+            });
+
+            // Validação de acesso por plano
+            if((modulo === 'marketplaces' || modulo === 'ia') && planoAtual === 'FREE') {
+                abrirPlanos();
+                mostrarToast('Aviso', 'Este módulo exige o Plano PRO ou superior.');
+                return;
+            }
+            if(modulo === 'lotes' && planoAtual !== 'PREMIUM') {
+                abrirPlanos();
+                mostrarToast('Aviso', 'O módulo de Produção em Lotes exige o Plano PREMIUM.');
+                return;
+            }
+
+            const alvo = document.getElementById('modulo' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
+            if(alvo) alvo.classList.remove('hidden');
+            const btnAtivo = document.getElementById('tab' + modulo.charAt(0).toUpperCase() + modulo.slice(1));
+            if(btnAtivo) {
+                btnAtivo.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer';
+            }
+        }
+
+        function abrirPlanos() { document.getElementById('modalPlanos').classList.remove('hidden'); }
+        function fecharPlanos() { document.getElementById('modalPlanos').classList.add('hidden'); }
+        function abrirHistorico() { document.getElementById('modalHistorico').classList.remove('hidden'); }
+        function fecharHistorico() { document.getElementById('modalHistorico').classList.add('hidden'); }
+
+        function mostrarToast(titulo, mensagem) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').innerText = titulo;
+            document.getElementById('toastMessage').innerText = mensagem;
+            toast.classList.remove('translate-y-[-200%]', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-[-200%]', 'opacity-0');
+            }, 3500);
+        }
+
+        function calcularPreco() {
+            const materiais = parseFloat(document.getElementById('custoMateriais').value) || 0;
+            const fixos = parseFloat(document.getElementById('custosFixos').value) || 0;
+            const horas = parseFloat(document.getElementById('horasTrabalho').value) || 0;
+            const valorHora = parseFloat(document.getElementById('valorHora').value) || 0;
+            const margem = parseFloat(document.getElementById('sliderMargem').value) || 60;
+            const nome = document.getElementById('nomeProduto').value || 'Produto sem nome';
+
+            const custoTotal = materiais + fixos + (horas * valorHora);
+            const lucro = custoTotal * (margem / 100);
+            const precoVenda = custoTotal + lucro;
+
+            document.getElementById('resNomeProduto').innerText = nome;
+            document.getElementById('resCustoTotal').innerText = 'Custo: R$ ' + custoTotal.toFixed(2).replace('.', ',');
+            document.getElementById('resPrecoVenda').innerText = 'R$ ' + precoVenda.toFixed(2).replace('.', ',');
+            document.getElementById('resLucro').innerText = 'R$ ' + lucro.toFixed(2).replace('.', ',');
+        }
+
+        function sincronizarMargem() {
+            const val = document.getElementById('sliderMargem').value;
+            document.getElementById('labelMargem').innerText = val + '%';
+            calcularPreco();
+        }
+
+        function realizarLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('authEmail').value;
+            document.getElementById('userGreeting').innerText = 'Olá, ' + email.split('@')[0];
+            document.getElementById('telaAuth').classList.add('hidden');
+            mostrarToast('Bem-vindo', 'Sessão iniciada com sucesso!');
+        }
+
+        function fazerLogout() {
+            document.getElementById('telaAuth').classList.remove('hidden');
+        }
+
+        function alternarModoAuth() {
+            const nomeDiv = document.getElementById('campoNomeDiv');
+            const titulo = document.getElementById('authTitulo');
+            const sub = document.getElementById('authSub');
+            const btn = document.getElementById('btnSubmitAuth');
+            const toggleText = document.getElementById('authToggleText');
+            const toggleBtn = document.getElementById('authToggleBtn');
+
+            if(nomeDiv.classList.contains('hidden')) {
+                nomeDiv.classList.remove('hidden');
+                titulo.innerText = 'Criar sua conta';
+                sub.innerText = 'Comece a lucrar mais comprecificação profissional.';
+                btn.innerText = 'Cadastrar Gratuitamente';
+                toggleText.innerText = 'Já possui uma conta?';
+                toggleBtn.innerText = 'Fazer login';
+            } else {
+                nomeDiv.classList.add('hidden');
+                titulo.innerText = 'Bem-vindo de volta';
+                sub.innerText = 'Acesse sua conta para gerenciar seus negócios.';
+                btn.innerText = 'Acessar Plataforma';
+                toggleText.innerText = "Ainda não tem uma conta?";
+                toggleBtn.innerText = 'Criar conta gratuita';
+            }
+        }
+
+        function gerarPdfPro() {
+            if(planoAtual === 'FREE') {
+                abrirPlanos();
+                mostrarToast('Recurso PRO', 'A exportação de relatórios em PDF exige o Plano PRO.');
+                return;
+            }
+            mostrarToast('PDF', 'Relatório gerado e baixado com sucesso!');
+        }
+
+        function executarIa() {
+            document.getElementById('resultadoIaBox').classList.remove('hidden');
+            mostrarToast('IA Precificação', 'Análise de mercado concluída!');
+        }
+    </script>
 </body>
 </html>
