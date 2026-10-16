@@ -27,14 +27,14 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen Simétrica e Centralizada) -->
+    <!-- Tela de Autenticação World-Class (Split-Screen Simétrica e Profissional) -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
         
         <!-- Lado Esquerdo: Portal Enterprise com Alta Conversão -->
-        <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-12 flex flex-col justify-between items-center border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
+        <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-3xl w-full my-auto flex flex-col justify-center">
+            <div class="relative z-10 max-w-3xl mx-auto w-full my-auto py-6">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
@@ -52,22 +52,22 @@
                     </p>
                 </div>
 
-                <!-- Cards de Planos Otimizados para Conversão -->
+                <!-- Cards de Planos Profissionais Otimizados -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     
                     <!-- Free -->
-                    <div class="bg-slate-900/60 p-4 xl:p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
+                    <div class="bg-slate-900/60 p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
                         <div>
                             <div class="flex items-center justify-between mb-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Free</h3>
                                 <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-3 font-medium">Para testar a ferramenta</p>
+                            <p class="text-xs text-slate-400 mb-4 font-medium">Para testes iniciais</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
                             <button onclick="assinarPlano('FREE')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Criar conta grátis</button>
-                            <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                            <ul class="space-y-2.5 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 5 produtos cadastrados</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 1 plano padrão de precificação</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte por e-mail</li>
@@ -75,20 +75,20 @@
                         </div>
                     </div>
 
-                    <!-- Pro (Destaque Principal) -->
-                    <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-4 xl:p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido • ROI Garantido</div>
+                    <!-- Pro (Destaque Principal Corrigido) -->
+                    <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20 pt-7">
+                        <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg whitespace-nowrap">Mais Escolhido • ROI Garantido</div>
                         <div>
                             <div class="flex items-center justify-between mb-1 mt-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
                                 <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
                             </div>
-                            <p class="text-xs text-indigo-200 mb-3 font-medium">Para negócios que faturam alto</p>
+                            <p class="text-xs text-indigo-200 mb-4 font-medium">Para negócios que faturam alto</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span>
                             </div>
                             <button onclick="assinarPlano('PRO')" class="w-full mb-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 cursor-pointer">Assinar Pro Agora</button>
-                            <ul class="space-y-2 text-xs text-slate-200 font-medium">
+                            <ul class="space-y-2.5 text-xs text-slate-200 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 100 produtos cadastrados</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Marketplaces</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Descontos</li>
@@ -98,18 +98,18 @@
                     </div>
 
                     <!-- Premium -->
-                    <div class="bg-slate-900/60 p-4 xl:p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
+                    <div class="bg-slate-900/60 p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
                         <div>
                             <div class="flex items-center justify-between mb-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Premium</h3>
                                 <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-3 font-medium">Operações industriais</p>
+                            <p class="text-xs text-slate-400 mb-4 font-medium">Operações industriais</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
                             <button onclick="assinarPlano('PREMIUM')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Assinar Premium</button>
-                            <ul class="space-y-2 text-xs text-slate-300 font-medium">
+                            <ul class="space-y-2.5 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 3.000 produtos</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Produção em Lotes (Escala)</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte VIP WhatsApp</li>
@@ -121,14 +121,14 @@
             </div>
 
             <!-- Rodapé Fixo na Base da Coluna Esquerda -->
-            <div class="relative z-10 max-w-3xl mx-auto w-full pt-6 text-center lg:text-left">
+            <div class="relative z-10 max-w-3xl mx-auto w-full pt-4">
                 <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
 
         <!-- Lado Direito: Formulário de Autenticação Centralizado -->
         <div class="lg:w-[42%] min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
-            <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden my-auto">
+            <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="mb-6">
@@ -171,17 +171,16 @@
         </div>
     </div>
 
-    <!-- Modal Interativo de Comparação de Planos (Ferramenta de Conversão) -->
+    <!-- Modal de Planos & Assinaturas Interativo -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
             <div class="text-center mb-8">
-                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Comparativo Executivo</span>
+                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
                 <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para blindar sua margem</h2>
-                <p class="text-xs text-slate-400 mt-1">Recursos avançados para empresários que não aceitam vender com prejuízo.</p>
+                <p class="text-xs text-slate-400 mt-1">Comece grátis ou evolua para recursos ilimitados.</p>
             </div>
 
-            <!-- Grid de Planos Detalhado -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Free -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
@@ -195,9 +194,7 @@
                         <ul class="space-y-3 text-xs text-slate-300 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 5 produtos cadastrados</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> 1 plano de precificação</li>
-                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Simulador de Marketplaces</li>
-                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Simulador de Descontos</li>
-                            <li class="text-slate-600"><i class="fa-solid fa-xmark text-red-400 mr-2"></i> Relatório PDF PRO</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Suporte por e-mail</li>
                         </ul>
                     </div>
                     <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Plano Atual</button>
@@ -205,7 +202,7 @@
 
                 <!-- Pro -->
                 <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border-2 border-indigo-500/70 flex flex-col justify-between relative shadow-2xl">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Vendido • Maior ROI</div>
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido</div>
                     <div>
                         <div class="flex items-center justify-between mb-1 mt-1">
                             <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
@@ -215,8 +212,8 @@
                         <div class="my-6 flex items-baseline gap-1"><span class="text-4xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span></div>
                         <ul class="space-y-3 text-xs text-slate-200 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces (Shopee/ML)</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Descontos & Promoções</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Descontos</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Relatório Executivo em PDF PRO</li>
                         </ul>
                     </div>
@@ -469,7 +466,7 @@
             </div>
         </div>
 
-        <!-- MÓDULO NOVO: SIMULADOR DE DESCONTOS E PROMOÇÕES (PRO) -->
+        <!-- MÓDULO: SIMULADOR DE DESCONTOS E PROMOÇÕES (PRO) -->
         <div id="moduloDescontos" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
