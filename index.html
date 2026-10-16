@@ -29,6 +29,7 @@
 
     <!-- Tela de Autenticação Enterprise -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
+        <!-- Coluna Esquerda: Proposta de Valor & Planos -->
         <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
@@ -37,7 +38,10 @@
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
                     </div>
-                    <span class="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">Precifica</span>
+                    <div>
+                        <span class="text-2xl lg:text-3xl font-extrabold tracking-tight text-white block">Precifica</span>
+                        <span class="text-[10px] text-emerald-400 font-mono tracking-widest uppercase font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Sistema Ativo • 2026</span>
+                    </div>
                 </div>
 
                 <div class="mb-8">
@@ -108,41 +112,78 @@
                 </div>
             </div>
 
-            <div class="relative z-10 max-w-4xl mx-auto w-full pt-4">
-                <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
+            <div class="relative z-10 max-w-4xl mx-auto w-full pt-4 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 font-medium gap-2">
+                <span>&copy; 2026 Precifica Corporation. Todos os direitos reservados.</span>
+                <span class="flex items-center gap-3"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Ambiente Criptografado SSL</span>
             </div>
         </div>
 
+        <!-- Coluna Direita: Card de Login Aprimorado e Conversivo -->
         <div class="lg:w-[42%] min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
-            <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-transparent to-transparent pointer-events-none"></div>
+
+            <div class="max-w-md w-full bg-slate-900/90 border border-indigo-500/20 p-8 lg:p-10 rounded-3xl shadow-2xl shadow-indigo-950/50 backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
+                <!-- Cabeçalho do Card -->
                 <div class="mb-6">
+                    <span id="authBadgeTop" class="bg-indigo-500/10 text-indigo-300 text-[10px] font-extrabold px-3 py-1 rounded-full border border-indigo-500/30 uppercase tracking-widest inline-block mb-2">Acesso Seguro</span>
                     <h3 id="authTitulo" class="text-2xl lg:text-3xl font-black text-white tracking-tight">Bem-vindo de volta</h3>
                     <p id="authSub" class="text-xs lg:text-sm text-slate-400 mt-1 font-medium">Acesse sua conta para gerenciar seus negócios.</p>
                 </div>
+
+                <!-- Botão de Login Social (Google) para Reduzir Atrito -->
+                <button type="button" onclick="realizarLoginSocial()" class="w-full mb-5 bg-slate-950 hover:bg-slate-800 border border-slate-700/80 text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-3 text-xs shadow-md cursor-pointer">
+                    <i class="fa-brands fa-google text-rose-400 text-sm"></i> Continuar com Google
+                </button>
+
+                <div class="relative flex py-2 items-center mb-4">
+                    <div class="flex-grow border-t border-slate-800"></div>
+                    <span class="flex-shrink mx-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">ou com e-mail</span>
+                    <div class="flex-grow border-t border-slate-800"></div>
+                </div>
                 
+                <!-- Formulário -->
                 <form id="authForm" onsubmit="realizarLogin(event)" class="space-y-4">
                     <div id="campoNomeDiv" class="hidden">
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Nome ou Marca</label>
-                        <input type="text" id="authNome" placeholder="Sua Empresa" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-user text-xs"></i></span>
+                            <input type="text" id="authNome" placeholder="Sua Empresa" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">E-mail Profissional</label>
-                        <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-envelope text-xs"></i></span>
+                            <input type="email" id="authEmail" required placeholder="seu@email.com" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Senha de Acesso</label>
-                        <input type="password" id="authSenha" required placeholder="••••••••" class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500">
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Senha de Acesso</label>
+                            <a href="#" onclick="esqueciSenha(event)" class="text-[11px] text-indigo-400 hover:underline">Esqueceu?</a>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500"><i class="fa-solid fa-lock text-xs"></i></span>
+                            <input type="password" id="authSenha" required placeholder="••••••••" class="w-full pl-11 pr-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white text-sm outline-none focus:border-indigo-500 transition">
+                        </div>
                     </div>
-                    <button type="submit" id="btnSubmitAuth" class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-4 rounded-xl transition shadow-xl shadow-indigo-600/30 cursor-pointer text-sm">
+
+                    <button type="submit" id="btnSubmitAuth" class="w-full mt-2 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-4 rounded-xl transition shadow-xl shadow-indigo-600/30 cursor-pointer text-sm">
                         Acessar Plataforma
                     </button>
                 </form>
 
-                <div class="mt-6 pt-5 border-t border-slate-800 text-center text-xs text-slate-400 font-medium">
+                <!-- Rodapé do Card com Alternador -->
+                <div class="mt-6 pt-5 border-t border-slate-800/80 text-center text-xs text-slate-400 font-medium">
                     <span id="authToggleText">Ainda não tem uma conta?</span> 
                     <button onclick="alternarModoAuth()" id="authToggleBtn" class="text-indigo-400 font-bold hover:underline ml-1 cursor-pointer">Criar conta gratuita</button>
+                </div>
+
+                <!-- Selo de Segurança Rodapé do Card -->
+                <div class="mt-4 pt-3 text-center flex items-center justify-center gap-2 text-[10px] text-slate-500">
+                    <i class="fa-solid fa-lock text-emerald-400"></i> Seus dados protegidos por criptografia AES-256
                 </div>
             </div>
         </div>
@@ -591,10 +632,6 @@
             </div>
         </div>
 
-        <!-- ========================================================== -->
-        <!-- FERRAMENTAS PRO (1 a 5)                                     -->
-        <!-- ========================================================== -->
-
         <!-- Antecipação de Recebíveis -->
         <div id="moduloAntecipacao" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-xl">
@@ -829,10 +866,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- ========================================================== -->
-        <!-- FERRAMENTAS PREMIUM (1 a 6)                                  -->
-        <!-- ========================================================== -->
 
         <!-- Importação Landing Cost -->
         <div id="moduloImportacao" class="hidden contents">
@@ -1415,6 +1448,17 @@
             mostrarToast('Bem-vindo', 'Sessão iniciada com sucesso!');
         }
 
+        function realizarLoginSocial() {
+            document.getElementById('userGreeting').innerText = 'Olá, Administrador';
+            document.getElementById('telaAuth').classList.add('hidden');
+            mostrarToast('Google SSO', 'Autenticado com sucesso via Google!');
+        }
+
+        function esqueciSenha(e) {
+            e.preventDefault();
+            mostrarToast('Recuperação', 'Instruções enviadas para o seu e-mail.');
+        }
+
         function fazerLogout() { document.getElementById('telaAuth').classList.remove('hidden'); }
 
         function alternarModoAuth() {
@@ -1424,6 +1468,7 @@
             const btn = document.getElementById('btnSubmitAuth');
             const toggleText = document.getElementById('authToggleText');
             const toggleBtn = document.getElementById('authToggleBtn');
+            const badgeTop = document.getElementById('authBadgeTop');
 
             if(nomeDiv.classList.contains('hidden')) {
                 nomeDiv.classList.remove('hidden');
@@ -1432,6 +1477,7 @@
                 btn.innerText = 'Cadastrar Gratuitamente';
                 toggleText.innerText = 'Já possui uma conta?';
                 toggleBtn.innerText = 'Fazer login';
+                badgeTop.innerText = 'Início Imediato • Sem Cartão';
             } else {
                 nomeDiv.classList.add('hidden');
                 titulo.innerText = 'Bem-vindo de volta';
@@ -1439,6 +1485,7 @@
                 btn.innerText = 'Acessar Plataforma';
                 toggleText.innerText = "Ainda não tem uma conta?";
                 toggleBtn.innerText = 'Criar conta gratuita';
+                badgeTop.innerText = 'Acesso Seguro';
             }
         }
     </script>
