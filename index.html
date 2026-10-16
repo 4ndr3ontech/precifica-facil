@@ -1094,7 +1094,7 @@
             fecharPlanos();
             document.getElementById('badgePlanoNavbar').innerText = plano;
             if(plano === 'FREE') {
-                document.getElementById('badgePlanoNavbarclassName = 'bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase';
+                document.getElementById('badgePlanoNavbar').className = 'bg-amber-500/10 text-amber-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/20 uppercase';
             } else if(plano === 'PRO') {
                 document.getElementById('badgePlanoNavbar').className = 'bg-indigo-500/10 text-indigo-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-indigo-500/25 uppercase';
             } else if(plano === 'PREMIUM') {
@@ -1290,7 +1290,6 @@
             const qtdAtual = parseFloat(document.getElementById('elastQtdAtual').value) || 200;
             const varPreco = parseFloat(document.getElementById('elastVarPreco').value) || 0;
             const novoPreco = precoAtual * (1 + (varPreco / 100));
-            // Elasticidade estimada padrão -1.5
             const novaQtd = qtdAtual * (1 - (1.5 * (varPreco / 100)));
             const novaReceita = novoPreco * novaQtd;
             const receitaAtual = precoAtual * qtdAtual;
@@ -1337,7 +1336,7 @@
             const frete = parseFloat(document.getElementById('impFrete').value) || 0;
             const taxasPct = parseFloat(document.getElementById('impTaxas').value) || 60;
             const custoReais = (fob + frete) * dolar;
-            const custoFinal = custoReal * (1 + (taxasPct / 100));
+            const custoFinal = custoReais * (1 + (taxasPct / 100));
             document.getElementById('impResCustoFinal').innerText = 'R$ ' + custoFinal.toFixed(2).replace('.', ',');
             atualizarDashboard('Landing Cost Importação', custoFinal, custoFinal * 2.2, custoFinal * 1.2);
         }
