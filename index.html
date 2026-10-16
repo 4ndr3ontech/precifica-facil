@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecificaFácil | Modular Enterprise Suite</title>
+    <title>PrecificaFácil | Suíte Executiva de Precificação</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -37,17 +37,17 @@
                 <span class="text-xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
             </div>
             <div class="my-auto py-12 relative z-10 max-w-lg">
-                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Ecossistema Modular SaaS</span>
+                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-6">Plataforma Nacional de Precificação</span>
                 <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
                     Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
                 </h1>
                 <p class="text-slate-400 text-sm lg:text-base mt-4 leading-relaxed">
-                    Ferramentas avançadas para precificação unitária, simulação de marketplaces e controle financeiro de nível industrial.
+                    Ferramentas modulares para precificação unitária, simulador de marketplaces e operações sem limites.
                 </p>
                 <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-800/80">
-                    <div><h4 class="text-white font-extrabold text-base">Unitário</h4><p class="text-slate-500 text-[11px]">Precisão exata</p></div>
-                    <div><h4 class="text-white font-extrabold text-base">Marketplaces</h4><p class="text-slate-500 text-[11px]">Shopee & ML</p></div>
-                    <div><h4 class="text-white font-extrabold text-base">Lotes</h4><p class="text-slate-500 text-[11px]">Escala comercial</p></div>
+                    <div><h4 class="text-white font-extrabold text-base">Free</h4><p class="text-slate-500 text-[11px]">Para começar</p></div>
+                    <div><h4 class="text-white font-extrabold text-base">Pro</h4><p class="text-slate-500 text-[11px]">Crescimento</p></div>
+                    <div><h4 class="text-white font-extrabold text-base">Premium</h4><p class="text-slate-500 text-[11px]">Sem limites</p></div>
                 </div>
             </div>
             <div class="text-xs text-slate-500 relative z-10">&copy; 2026 PrecificaFácil Corporation.</div>
@@ -84,25 +84,81 @@
         </div>
     </div>
 
-    <!-- Modal de Paywall PRO Avançado -->
-    <div id="modalPro" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-gradient-to-b from-slate-900 to-indigo-950 border border-indigo-500/30 max-w-lg w-full rounded-3xl p-8 shadow-2xl relative">
-            <div class="text-center mb-6">
-                <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-500/30">Módulo Exclusivo PRO</span>
-                <h3 class="text-2xl font-black text-white mt-3">Eleve Seu Negócio ao Nível Profissional</h3>
-                <p class="text-xs text-slate-300 mt-1">Este recurso avançado está disponível apenas no <strong class="text-amber-400">Plano PRO</strong>.</p>
+    <!-- Modal de Planos & Assinaturas (Pricing Table Profissional) -->
+    <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
+            <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
+            
+            <div class="text-center mb-8">
+                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
+                <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para o seu momento</h2>
+                <p class="text-xs text-slate-400 mt-1">Comece grátis. Evolua conforme seus resultados crescem.</p>
+                
+                <!-- Toggle Mensal / Anual -->
+                <div class="inline-flex items-center bg-slate-950 p-1.5 rounded-full border border-slate-800 mt-6">
+                    <button onclick="mudarCiclo('mensal')" id="btnMensal" class="px-5 py-2 rounded-full text-xs font-bold transition bg-indigo-600 text-white cursor-pointer">Mensal</button>
+                    <button onclick="mudarCiclo('anual')" id="btnAnual" class="px-5 py-2 rounded-full text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer">Anual <span class="text-emerald-400 text-[10px] ml-1">-17%</span></button>
+                </div>
             </div>
-            <div class="space-y-3 bg-slate-950/60 p-5 rounded-2xl border border-slate-800 mb-6 text-xs text-slate-300">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador completo de taxas de Marketplaces (Shopee, ML, iFood)</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calculadora de Lotes e Produção em Escala</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação de Orçamentos Profissionais em PDF com Logo</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Histórico ilimitado sincronizado na nuvem</div>
-            </div>
-            <div class="flex gap-3">
-                <button onclick="ativarPlanoPro()" class="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs shadow-lg shadow-emerald-600/20 cursor-pointer">
-                    Assinar Plano PRO (R$ 29/mês)
-                </button>
-                <button onclick="fecharPro()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-3.5 rounded-xl text-xs font-bold cursor-pointer">Agora não</button>
+
+            <!-- Grid de Planos -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Plano Free -->
+                <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Free</h3>
+                        <p class="text-xs text-slate-400 mt-1">Para começar a precificar</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-white">R$ 0</span><span class="text-xs text-slate-500">/mês</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 5 produtos cadastrados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 1 plano padrão de precificação</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 1 modelo de custo fixo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte por e-mail</li>
+                        </ul>
+                    </div>
+                    <button onclick="assinarPlano('FREE')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Seu Plano Atual</button>
+                </div>
+
+                <!-- Plano Pro (Mais Escolhido) -->
+                <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border border-indigo-500/50 flex flex-col justify-between relative shadow-2xl shadow-indigo-600/10">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow">Mais Escolhido</div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg flex items-center gap-2">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
+                        <p class="text-xs text-slate-300 mt-1">Para negócios em crescimento</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-white" id="precoPro">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 100 produtos cadastrados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 2 modelos de custo fixo / cenários</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulador de Marketplaces (Shopee/ML)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação de relatórios em PDF</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte por e-mail</li>
+                        </ul>
+                    </div>
+                    <button onclick="assinarPlano('PRO')" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-extrabold py-3.5 rounded-xl transition text-xs shadow-lg shadow-indigo-600/25 cursor-pointer">Assinar Pro</button>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Premium</h3>
+                        <p class="text-xs text-slate-400 mt-1">Operações sem limites</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-white" id="precoPremium">R$ 39,90</span><span class="text-xs text-slate-500">/mês</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Até 3.000 produtos cadastrados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 30 modelos de custos fixos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calculadora de Produção em Lotes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Exportação ilimitada em PDF</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Suporte prioritário via WhatsApp</li>
+                        </ul>
+                    </div>
+                    <button onclick="assinarPlano('PREMIUM')" class="w-full mt-8 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl transition text-xs cursor-pointer">Assinar Premium</button>
+                </div>
             </div>
         </div>
     </div>
@@ -127,8 +183,8 @@
                 <button onclick="abrirHistorico()" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 px-4 py-2.5 rounded-xl transition text-xs font-semibold flex items-center gap-2 cursor-pointer shadow-sm">
                     <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Histórico
                 </button>
-                <button id="btnUpgradeNav" onclick="abrirPro()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white px-4 py-2.5 rounded-xl transition shadow-lg shadow-orange-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-crown"></i> Seja PRO
+                <button id="btnUpgradeNav" onclick="abrirPlanos()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white px-4 py-2.5 rounded-xl transition shadow-lg shadow-orange-600/20 text-xs font-bold flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-crown"></i> Planos PRO
                 </button>
                 <button onclick="fazerLogout()" class="bg-slate-900 hover:bg-red-500/20 hover:text-red-400 border border-slate-800 text-slate-400 px-3 py-2.5 rounded-xl transition text-xs cursor-pointer" title="Sair">
                     <i class="fa-solid fa-right-from-bracket"></i>
@@ -144,10 +200,10 @@
                 <i class="fa-solid fa-calculator"></i> Precificação Unitária
             </button>
             <button onclick="mudarModulo('marketplaces')" id="tabMarketplaces" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+                <i class="fa-solid fa-store text-indigo-400"></i> Simulador Marketplaces <span class="bg-indigo-500/20 text-indigo-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
             <button onclick="mudarModulo('lotes')" id="tabLotes" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
-                <i class="fa-solid fa-boxes-stacked text-indigo-400"></i> Produção em Lote <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+                <i class="fa-solid fa-boxes-stacked text-indigo-400"></i> Produção em Lote <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PREMIUM</span>
             </button>
         </div>
     </div>
@@ -221,51 +277,43 @@
             </div>
         </div>
 
-        <!-- MÓDULO 2: SIMULADOR DE MARKETPLACES (Oculto inicialmente) -->
+        <!-- MÓDULO 2: SIMULADOR DE MARKETPLACES -->
         <div id="moduloMarketplaces" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
                 <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
                     <div>
                         <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-store"></i></span>
+                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-store"></i></span>
                             Simulador de Comissões & Marketplaces
                         </h2>
-                        <p class="text-xs text-slate-400 mt-1">Calcule exatamente o preço ideal para Shopee, Mercado Livre e iFood sem prejuízo.</p>
+                        <p class="text-xs text-slate-400 mt-1">Calcule exatamente o preço ideal para Shopee e Mercado Livre.</p>
                     </div>
                 </div>
-
                 <div class="space-y-5">
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Escolha o Canal de Venda</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Canal de Venda</label>
                         <select id="selectMarketplace" onchange="calcularMarketplace()" class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="12">Shopee (Clássico / Comissão ~14% + Fixa)</option>
+                            <option value="12">Shopee (Clássico ~14%)</option>
                             <option value="18">Mercado Livre (Clássico ~11%)</option>
-                            <option value="20">Mercado Livre (Premium / 12x Sem Juros ~17%)</option>
-                            <option value="25">iFood (Delivery ~23% com Entrega)</option>
-                            <option value="5">Instagram / WhatsApp Direto (PIX - Sem Taxa)</option>
+                            <option value="20">Mercado Livre (Premium 12x ~17%)</option>
+                            <option value="5">WhatsApp / Instagram (PIX - 0%)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base de Produção (Insumos + Mão de Obra)</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Base de Produção (R$)</label>
                         <input type="number" id="custoBaseMarketplace" step="0.01" placeholder="Ex: 50,00" oninput="calcularMarketplace()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Margem de Lucro Desejada (%)</label>
                         <input type="number" id="margemMarketplace" value="50" oninput="calcularMarketplace()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                    </div>
-
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-indigo-500/30 space-y-2">
-                        <span class="text-[10px] uppercase tracking-widest text-indigo-400 font-bold block">Preço de Venda Recomendado no Canal</span>
-                        <h3 id="resPrecoMarketplace" class="text-3xl font-black font-mono text-white">R$ 0,00</h3>
-                        <p id="resDetalheMarketplace" class="text-xs text-slate-400">Inclui repasse de comissão e taxa fixa do marketplace.</p>
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- MÓDULO 3: PRODUÇÃO EM LOTE (Oculto inicialmente) -->
+        <!-- MÓDULO 3: PRODUÇÃO EM LOTE -->
         <div id="moduloLotes" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
                 <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
@@ -274,39 +322,32 @@
                             <span class="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-boxes-stacked"></i></span>
                             Calculadora de Produção em Lote (Escala)
                         </h2>
-                        <p class="text-xs text-slate-400 mt-1">Descubra o custo por unidade ao fabricar em grande volume.</p>
+                        <p class="text-xs text-slate-400 mt-1">Descubra o custo unitário exato fabricando em grande volume.</p>
                     </div>
                 </div>
-
                 <div class="space-y-5">
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Quantidade de Itens no Lote</label>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Quantidade de Peças no Lote</label>
                         <input type="number" id="qtdLote" value="50" min="1" oninput="calcularLote()"
-                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                            class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Total de Matéria-Prima do Lote (R$)</label>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Total de Insumos do Lote (R$)</label>
                             <input type="number" id="custoTotalLote" step="0.01" placeholder="Ex: 500,00" oninput="calcularLote()"
-                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                         </div>
                         <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Total Gasto no Lote (Horas)</label>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Tempo Total Gasto (Horas)</label>
                             <input type="number" id="tempoTotalLote" step="0.5" placeholder="Ex: 10" oninput="calcularLote()"
-                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                                class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none">
                         </div>
-                    </div>
-
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 space-y-2">
-                        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold block">Custo Unitário Efetivo por Peça</span>
-                        <h3 id="resCustoUnitarioLote" class="text-3xl font-black font-mono text-white">R$ 0,00</h3>
-                        <p class="text-xs text-slate-400">Inclui rateio proporcional de insumos e tempo de produção.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Coluna Direita: Dashboard de Resultados (Comum a todos) -->
+        <!-- Coluna Direita: Dashboard de Resultados -->
         <div class="lg:col-span-5 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl flex flex-col justify-between">
             <div>
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
@@ -327,7 +368,7 @@
                     </div>
 
                     <div class="bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 p-6 rounded-2xl border border-indigo-500/40 shadow-xl relative">
-                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido (À Vista)</span>
+                        <span class="text-[11px] uppercase tracking-widest text-indigo-300 font-black block mb-1">Preço Sugerido de Venda</span>
                         <span id="resPrecoVenda" class="text-4xl lg:text-5xl font-black font-mono text-white tracking-tight">R$ 0,00</span>
                     </div>
 
@@ -352,6 +393,11 @@
         </div>
     </main>
 
+    <!-- Widget Flutuante do WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Olá! Preciso de ajuda com a plataforma PrecificaFácil." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-105 cursor-pointer" title="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
     <!-- Modal de Histórico -->
     <div id="modalHistorico" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-3xl p-6 shadow-2xl relative">
@@ -369,7 +415,7 @@
         </div>
     </div>
 
-    <!-- Script Principal Modular -->
+    <!-- Script Principal -->
     <script src="script.js"></script>
 </body>
 </html>
