@@ -1354,6 +1354,7 @@
             document.getElementById('fgResPreco').innerText = 'R$ ' + preco.toFixed(2).replace('.', ',');
             atualizarDashboard('Portes Grátis Embutidos', custoTotal, preco, preco - custoTotal);
         }
+        
 
         function calcularLote() {
             const qtd = parseFloat(document.getElementById('qtdLote').value) || 50;
