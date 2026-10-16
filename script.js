@@ -1,4 +1,3 @@
-// Estado do Usuário
 let usuarioAtual = JSON.parse(localStorage.getItem('precifica_user')) || null;
 
 window.onload = () => {
@@ -8,9 +7,9 @@ window.onload = () => {
 
 function verificarAutenticacao() {
     if (!usuarioAtual) {
-        document.getElementById('modalAuth').classList.remove('hidden');
+        document.getElementById('telaAuth').classList.remove('hidden');
     } else {
-        document.getElementById('modalAuth').classList.add('hidden');
+        document.getElementById('telaAuth').classList.add('hidden');
         document.getElementById('userGreeting').innerText = `Olá, ${usuarioAtual.nome || 'Cliente'}`;
         atualizarBadgePlano();
     }
@@ -20,10 +19,11 @@ let modoCadastro = false;
 function alternarModoAuth() {
     modoCadastro = !modoCadastro;
     document.getElementById('campoNomeDiv').classList.toggle('hidden', !modoCadastro);
-    document.getElementById('authSubtitle').innerText = modoCadastro ? "Crie sua conta gratuita em segundos" : "Acesse sua conta para começar a precificar";
-    document.getElementById('btnSubmitAuth').innerText = modoCadastro ? "Cadastrar Gratuitamente" : "Entrar na Plataforma";
-    document.getElementById('authToggleText').innerText = modoCadastro ? "Já tem uma conta?" : "Não tem uma conta?";
-    document.getElementById('authToggleBtn').innerText = modoCadastro ? "Fazer login" : "Criar conta grátis";
+    document.getElementById('authTitulo').innerText = modoCadastro ? "Criar sua conta grátis" : "Bem-vindo de volta";
+    document.getElementById('authSub').innerText = modoCadastro ? "Comece a precificar seus produtos agora mesmo" : "Insira suas credenciais para gerenciar seus produtos";
+    document.getElementById('btnSubmitAuth').innerText = modoCadastro ? "Cadastrar Gratuitamente" : "Acessar Plataforma";
+    document.getElementById('authToggleText').innerText = modoCadastro ? "Já tem uma conta?" : "Ainda não tem uma conta?";
+    document.getElementById('authToggleBtn').innerText = modoCadastro ? "Fazer login" : "Criar conta gratuita";
 }
 
 function realizarLogin(event) {
@@ -35,7 +35,7 @@ function realizarLogin(event) {
     localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
     
     verificarAutenticacao();
-    mostrarToast('Bem-vindo!', `Sessão iniciada como ${nome}.`);
+    mostrarToast('Sucesso!', `Bem-vindo à plataforma, ${nome}.`);
 }
 
 function fazerLogout() {
@@ -72,7 +72,7 @@ function ativarPlanoPro() {
         localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
         atualizarBadgePlano();
         fecharPro();
-        mostrarToast('Parabéns!', 'Sua conta foi atualizada para o Plano PRO com sucesso!', 'success');
+        mostrarToast('Parabéns!', 'Sua conta foi atualizada para o Plano PRO!', 'success');
     }
 }
 
