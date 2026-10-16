@@ -27,14 +27,14 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen 50/50 Centralizada) -->
+    <!-- Tela de Autenticação World-Class (Split-Screen Ajustada para 58% na Esquerda) -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
         
-        <!-- Lado Esquerdo: Portal Enterprise (50%) -->
-        <div class="lg:w-1/2 min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
+        <!-- Lado Esquerdo: Portal Enterprise Ampliado -->
+        <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-2xl mx-auto w-full my-auto">
+            <div class="relative z-10 max-w-3xl mx-auto w-full my-auto">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-600/40 ring-1 ring-white/20">
                         <i class="fa-solid fa-calculator text-white text-xl"></i>
@@ -52,11 +52,11 @@
                     </p>
                 </div>
 
-                <!-- Cards de Planos Corrigidos (Valores perfeitamente alinhados) -->
+                <!-- Cards de Planos Ajustados -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     
                     <!-- Free -->
-                    <div class="bg-slate-900/60 p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
+                    <div class="bg-slate-900/60 p-4 xl:p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
                         <div>
                             <div class="flex items-center justify-between mb-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Free</h3>
@@ -77,7 +77,7 @@
                     </div>
 
                     <!-- Pro -->
-                    <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20">
+                    <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-4 xl:p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais escolhido</div>
                         <div>
                             <div class="flex items-center justify-between mb-1 mt-1">
@@ -100,7 +100,7 @@
                     </div>
 
                     <!-- Premium -->
-                    <div class="bg-slate-900/60 p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
+                    <div class="bg-slate-900/60 p-4 xl:p-5 rounded-3xl border border-slate-800/90 backdrop-blur-xl flex flex-col justify-between transition hover:border-slate-700">
                         <div>
                             <div class="flex items-center justify-between mb-1">
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Premium</h3>
@@ -124,13 +124,13 @@
             </div>
 
             <!-- Rodapé Fixo na Base da Coluna Esquerda -->
-            <div class="relative z-10 max-w-2xl mx-auto w-full pt-6">
+            <div class="relative z-10 max-w-3xl mx-auto w-full pt-6">
                 <div class="text-xs text-slate-400 font-medium">&copy; 2026 Precifica Corporation. Todos os direitos reservados.</div>
             </div>
         </div>
 
-        <!-- Lado Direito: Formulário de Autenticação (50%) -->
-        <div class="lg:w-1/2 min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
+        <!-- Lado Direito: Formulário de Autenticação (42%) -->
+        <div class="lg:w-[42%] min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
             <div class="max-w-md w-full bg-slate-900/80 border border-slate-800 p-8 lg:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -184,7 +184,6 @@
                 <p class="text-xs text-slate-400 mt-1">Comece grátis. Evolua conforme seus resultados crescem.</p>
             </div>
 
-            <!-- Grid de Planos Padronizado (Modal) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Free -->
                 <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
