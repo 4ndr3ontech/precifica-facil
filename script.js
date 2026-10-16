@@ -20,7 +20,7 @@ function alternarModoAuth() {
     modoCadastro = !modoCadastro;
     document.getElementById('campoNomeDiv').classList.toggle('hidden', !modoCadastro);
     document.getElementById('authTitulo').innerText = modoCadastro ? "Criar sua conta grátis" : "Bem-vindo de volta";
-    document.getElementById('authSub').innerText = modoCadastro ? "Comece a precificar seus produtos agora mesmo" : "Insira suas credenciais para gerenciar seus produtos";
+    document.getElementById('authSub').innerText = modoCadastro ? "Comece a usar os módulos avançados" : "Acesse sua conta para gerenciar seus negócios";
     document.getElementById('btnSubmitAuth').innerText = modoCadastro ? "Cadastrar Gratuitamente" : "Acessar Plataforma";
     document.getElementById('authToggleText').innerText = modoCadastro ? "Já tem uma conta?" : "Ainda não tem uma conta?";
     document.getElementById('authToggleBtn').innerText = modoCadastro ? "Fazer login" : "Criar conta gratuita";
@@ -35,7 +35,7 @@ function realizarLogin(event) {
     localStorage.setItem('precifica_user', JSON.stringify(usuarioAtual));
     
     verificarAutenticacao();
-    mostrarToast('Sucesso!', `Bem-vindo à plataforma, ${nome}.`);
+    mostrarToast('Sucesso!', `Bem-vindo, ${nome}.`);
 }
 
 function fazerLogout() {
@@ -76,20 +76,35 @@ function ativarPlanoPro() {
     }
 }
 
-function checarRecursoPro(input) {
-    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
-        input.value = 0;
+// Navegação entre Módulos com Paywall Estratégico
+function mudarModulo(modulo) {
+    if (modulo !== 'unitario' && usuarioAtual && usuarioAtual.plano !== 'PRO') {
         abrirPro();
-    } else {
-        calcularPreco();
+        return;
     }
-}
 
-function gerarPdfPro() {
-    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
-        abrirPro();
-    } else {
-        window.print();
+    // Resetar abas
+    document.getElementById('tabUnitario').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
+    document.getElementById('tabMarketplaces').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
+    document.getElementById('tabLotes').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer";
+
+    // Ocultar módulos
+    document.getElementById('moduloUnitario').classList.add('hidden');
+    document.getElementById('moduloMarketplaces').classList.add('hidden');
+    document.getElementById('moduloLotes').classList.add('hidden');
+
+    if (modulo === 'unitario') {
+        document.getElementById('tabUnitario').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
+        document.getElementById('moduloUnitario').classList.remove('hidden');
+        calcularPreco();
+    } else if (modulo === 'marketplaces') {
+        document.getElementById('tabMarketplaces').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
+        document.getElementById('moduloMarketplaces').classList.remove('hidden');
+        calcularMarketplace();
+    } else if (modulo === 'lotes') {
+        document.getElementById('tabLotes').className = "px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer";
+        document.getElementById('moduloLotes').classList.remove('hidden');
+        calcularLote();
     }
 }
 
@@ -100,24 +115,43 @@ function calcularPreco() {
     const horas = parseFloat(document.getElementById('horasTrabalho').value) || 0;
     const valorHora = parseFloat(document.getElementById('valorHora').value) || 0;
     const margem = parseFloat(document.getElementById('sliderMargem').value) || 60;
-    const taxaCartao = usuarioAtual && usuarioAtual.plano === 'PRO' ? (parseFloat(document.getElementById('taxaCartao').value) || 0) : 0;
 
     const maoDeObra = horas * valorHora;
     const custoTotal = materiais + maoDeObra + custosFixos;
-    const precoBase = custoTotal * (1 + (margem / 100));
+    const precoVenda = custoTotal * (1 + (margem / 100));
+    const lucroLiquido = precoVenda - custoTotal;
 
-    let precoVenda = precoBase;
-    if (taxaCartao > 0) {
-        precoVenda = precoBase / (1 - (taxaCartao / 100));
-    }
-
-    const lucroLiquido = precoVenda - custoTotal - (precoVenda * (taxaCartao / 100));
-
-    document.getElementById('resNomeProduto').innerText = nome !== "" ? nome : "Produto sem nome";
+    document.getElementById('resNomeProduto').innerText = nome !== "" ? nome : "Produto Unitário";
     document.getElementById('resCustoTotal').innerText = `Custo: ${custoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
     document.getElementById('resPrecoVenda').innerText = precoVenda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('resPrecoCartao').innerText = taxaCartao > 0 ? `À Vista: ${precoBase.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}` : `Venda Direta / PIX`;
     document.getElementById('resLucro').innerText = lucroLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function calcularMarketplace() {
+    const comissao = parseFloat(document.getElementById('selectMarketplace').value) || 0;
+    const custo = parseFloat(document.getElementById('custoBaseMarketplace').value) || 0;
+    const margem = parseFloat(document.getElementById('margemMarketplace').value) || 50;
+
+    const precoBase = custo * (1 + (margem / 100));
+    const precoFinal = comissao > 0 ? precoBase / (1 - (comissao / 100)) : precoBase;
+    const lucro = precoFinal - custo - (precoFinal * (comissao / 100));
+
+    document.getElementById('resPrecoMarketplace').innerText = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('resPrecoVenda').innerText = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('resCustoTotal').innerText = `Custo Base: ${custo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+    document.getElementById('resLucro').innerText = lucro.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function calcularLote() {
+    const qtd = parseInt(document.getElementById('qtdLote').value) || 1;
+    const custoTotalLote = parseFloat(document.getElementById('custoTotalLote').value) || 0;
+    const tempoLote = parseFloat(document.getElementById('tempoTotalLote').value) || 0;
+
+    const custoUnitario = qtd > 0 ? custoTotalLote / qtd : 0;
+    document.getElementById('resCustoUnitarioLote').innerText = custoUnitario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('resCustoTotal').innerText = `Lote (${qtd} un): ${custoTotalLote.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+    document.getElementById('resPrecoVenda').innerText = (custoUnitario * 1.6).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('resLucro').innerText = (custoUnitario * 0.6).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
 function sincronizarMargem() {
@@ -145,11 +179,6 @@ function salvarPrecificacao() {
     const nome = document.getElementById('nomeProduto').value.trim() || "Produto Criativo";
     const preco = document.getElementById('resPrecoVenda').innerText;
     const lucro = document.getElementById('resLucro').innerText;
-
-    if (preco === "R$ 0,00") {
-        mostrarToast('Aviso', 'Preencha os custos antes de salvar.', 'error');
-        return;
-    }
 
     const item = { nome, preco, lucro, data: new Date().toLocaleDateString('pt-BR') };
     let historico = JSON.parse(localStorage.getItem('precifica_historico_user')) || [];
@@ -189,6 +218,14 @@ function fecharHistorico() {
 function limparHistorico() {
     localStorage.removeItem('precifica_historico_user');
     abrirHistorico();
+}
+
+function gerarPdfPro() {
+    if (usuarioAtual && usuarioAtual.plano !== 'PRO') {
+        abrirPro();
+    } else {
+        window.print();
+    }
 }
 
 function copiarResumo() {
