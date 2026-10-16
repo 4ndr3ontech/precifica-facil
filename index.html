@@ -27,13 +27,13 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen Centralizada) -->
+    <!-- Tela de Autenticação World-Class (Split-Screen 50/50 Centralizada) -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
-        <!-- Lado Esquerdo: Branding & Preview dos Planos (Centralizado Verticalmente) -->
-        <div class="lg:w-7/12 min-h-full bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-8 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
+        <!-- Lado Esquerdo: Branding & Preview dos Planos (Exatamente 50%) -->
+        <div class="lg:w-1/2 min-h-full bg-gradient-to-br from-indigo-950/30 via-[#04060f] to-slate-950 p-8 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-800/60 relative overflow-hidden">
             <div class="absolute -left-20 -top-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-2xl mx-auto w-full">
+            <div class="relative z-10 max-w-xl mx-auto w-full">
                 <div class="flex items-center gap-3.5 mb-8">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 ring-1 ring-white/10">
                         <i class="fa-solid fa-calculator text-white text-lg"></i>
@@ -41,7 +41,7 @@
                     <span class="text-2xl font-extrabold tracking-tight text-white">Precifica<span class="text-indigo-400">Fácil</span></span>
                 </div>
 
-                <div class="max-w-xl mb-8">
+                <div class="mb-8">
                     <span class="bg-indigo-500/10 text-indigo-400 text-xs font-extrabold px-4 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest inline-block mb-3 shadow-sm">Plataforma Nacional de Precificação</span>
                     <h1 class="text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.15]">
                         Domine suas margens e <span class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent">escale seu faturamento</span>.
@@ -52,55 +52,55 @@
                 </div>
 
                 <!-- Cards de Planos Estilizados -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
                     <!-- Free -->
-                    <div class="bg-slate-900/40 p-4 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
+                    <div class="bg-slate-900/40 p-3.5 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-center mb-1.5">
-                                <h3 class="text-white font-bold text-sm tracking-wide">Free</h3>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-white font-bold text-xs tracking-wide">Free</h3>
                                 <span class="text-[9px] text-slate-500 font-mono uppercase">Iniciante</span>
                             </div>
-                            <div class="mb-3">
-                                <span class="text-2xl font-black text-white font-mono">R$ 0</span><span class="text-[10px] text-slate-400">/mês</span>
+                            <div class="mb-2">
+                                <span class="text-xl font-black text-white font-mono">R$ 0</span><span class="text-[10px] text-slate-400">/mês</span>
                             </div>
-                            <ul class="space-y-1.5 text-[11px] text-slate-300">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 5 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 1 plano padrão</li>
+                            <ul class="space-y-1 text-[10px] text-slate-300">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 5 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> 1 plano padrão</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Pro -->
-                    <div class="bg-gradient-to-b from-indigo-950/60 via-slate-900/60 to-slate-950 p-4 rounded-2xl border border-indigo-500/40 backdrop-blur-md flex flex-col justify-between relative shadow-xl shadow-indigo-600/10">
+                    <div class="bg-gradient-to-b from-indigo-950/60 via-slate-900/60 to-slate-950 p-3.5 rounded-2xl border border-indigo-500/40 backdrop-blur-md flex flex-col justify-between relative shadow-xl shadow-indigo-600/10">
                         <div class="absolute -top-2.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[9px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-widest shadow">Popular</div>
                         <div>
-                            <div class="flex justify-between items-center mb-1.5">
-                                <h3 class="text-white font-bold text-sm tracking-wide flex items-center gap-1">Pro <i class="fa-solid fa-star text-amber-400 text-[9px]"></i></h3>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-white font-bold text-xs tracking-wide flex items-center gap-1">Pro <i class="fa-solid fa-star text-amber-400 text-[9px]"></i></h3>
                                 <span class="text-[9px] text-indigo-300 font-mono uppercase">Crescimento</span>
                             </div>
-                            <div class="mb-3">
-                                <span class="text-2xl font-black text-white font-mono">R$ 19,90</span><span class="text-[10px] text-indigo-300">/mês</span>
+                            <div class="mb-2">
+                                <span class="text-xl font-black text-white font-mono">R$ 19,90</span><span class="text-[10px] text-indigo-300">/mês</span>
                             </div>
-                            <ul class="space-y-1.5 text-[11px] text-slate-200">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 100 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Simulador Marketplaces</li>
+                            <ul class="space-y-1 text-[10px] text-slate-200">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 100 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Simulador Marketplaces</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Premium -->
-                    <div class="bg-slate-900/40 p-4 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
+                    <div class="bg-slate-900/40 p-3.5 rounded-2xl border border-slate-800/80 backdrop-blur-md flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-center mb-1.5">
-                                <h3 class="text-white font-bold text-sm tracking-wide">Premium</h3>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-white font-bold text-xs tracking-wide">Premium</h3>
                                 <span class="text-[9px] text-emerald-400 font-mono uppercase">Ilimitado</span>
                             </div>
-                            <div class="mb-3">
-                                <span class="text-2xl font-black text-white font-mono">R$ 39,90</span><span class="text-[10px] text-slate-400">/mês</span>
+                            <div class="mb-2">
+                                <span class="text-xl font-black text-white font-mono">R$ 39,90</span><span class="text-[10px] text-slate-400">/mês</span>
                             </div>
-                            <ul class="space-y-1.5 text-[11px] text-slate-300">
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Até 3.000 produtos</li>
-                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Produção em Lotes</li>
+                            <ul class="space-y-1 text-[10px] text-slate-300">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Até 3.000 produtos</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400 text-[9px]"></i> Produção em Lotes</li>
                             </ul>
                         </div>
                     </div>
@@ -110,8 +110,8 @@
             </div>
         </div>
 
-        <!-- Lado Direito: Formulário de Autenticação (Centralizado) -->
-        <div class="lg:w-5/12 min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
+        <!-- Lado Direito: Formulário de Autenticação (Exatamente 50%) -->
+        <div class="lg:w-1/2 min-h-full bg-[#03050b] p-8 lg:p-14 flex items-center justify-center relative">
             <div class="max-w-md w-full bg-slate-900/60 border border-slate-800/90 p-8 rounded-3xl shadow-2xl backdrop-blur-xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
