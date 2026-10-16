@@ -27,10 +27,10 @@
         </div>
     </div>
 
-    <!-- Tela de Autenticação World-Class (Split-Screen Simétrica e Profissional) -->
+    <!-- Tela de Autenticação World-Class com Gatilhos de Conversão e ROI -->
     <div id="telaAuth" class="fixed inset-0 bg-[#03050b] z-50 flex flex-col lg:flex-row items-center justify-center overflow-y-auto">
         
-        <!-- Lado Esquerdo: Portal Enterprise com Alta Conversão -->
+        <!-- Lado Esquerdo: Portal Enterprise com Alta Conversão & Psych Pricing -->
         <div class="lg:w-[58%] min-h-full bg-gradient-to-br from-indigo-950/40 via-[#03050b] to-slate-950 p-8 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800/80 relative overflow-hidden">
             <div class="absolute -left-32 -top-32 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
             
@@ -52,7 +52,7 @@
                     </p>
                 </div>
 
-                <!-- Cards de Planos Profissionais Otimizados -->
+                <!-- Cards de Planos com Gatilhos de ROI e Escala -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     
                     <!-- Free -->
@@ -62,20 +62,21 @@
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Free</h3>
                                 <span class="text-[10px] text-slate-400 font-mono uppercase font-semibold">Iniciante</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-4 font-medium">Para testes iniciais</p>
+                            <p class="text-xs text-slate-400 mb-3 font-medium">Ideal para testar (Limitado a 5)</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 0</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
-                            <button onclick="assinarPlano('FREE')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Criar conta grátis</button>
-                            <ul class="space-y-2.5 text-xs text-slate-300 font-medium">
+                            <button onclick="assinarPlano('FREE')" class="w-full mb-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Criar conta grátis</button>
+                            <span class="block text-[10px] text-center text-slate-500 mb-3"><i class="fa-solid fa-bolt mr-1"></i> Acesso imediato</span>
+                            <ul class="space-y-2 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 5 produtos cadastrados</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 1 plano padrão de precificação</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> 1 plano de precificação</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte por e-mail</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Pro (Destaque Principal Corrigido) -->
+                    <!-- Pro (Destaque ROI / Psychological Pricing) -->
                     <div class="bg-gradient-to-b from-indigo-950/80 via-slate-900/80 to-slate-950 p-5 rounded-3xl border-2 border-indigo-500/70 backdrop-blur-xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/20 pt-7">
                         <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg whitespace-nowrap">Mais Escolhido • ROI Garantido</div>
                         <div>
@@ -83,12 +84,13 @@
                                 <h3 class="text-white font-extrabold text-sm tracking-wide flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
                                 <span class="text-[10px] text-indigo-300 font-mono uppercase font-bold">Crescimento</span>
                             </div>
-                            <p class="text-xs text-indigo-200 mb-4 font-medium">Para negócios que faturam alto</p>
+                            <p class="text-xs text-indigo-200 mb-3 font-medium">Se paga com 1 venda ajustada</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 19,90</span><span class="text-xs text-indigo-300">/mês</span>
                             </div>
-                            <button onclick="assinarPlano('PRO')" class="w-full mb-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 cursor-pointer">Assinar Pro Agora</button>
-                            <ul class="space-y-2.5 text-xs text-slate-200 font-medium">
+                            <button onclick="assinarPlano('PRO')" class="w-full mb-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 cursor-pointer">Assinar Pro Agora</button>
+                            <span class="block text-[10px] text-center text-indigo-300/80 mb-3 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Cancelamento a qualquer momento</span>
+                            <ul class="space-y-2 text-xs text-slate-200 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 100 produtos cadastrados</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Marketplaces</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Simulador de Descontos</li>
@@ -104,15 +106,16 @@
                                 <h3 class="text-white font-extrabold text-sm tracking-wide">Premium</h3>
                                 <span class="text-[10px] text-emerald-400 font-mono uppercase font-semibold">Ilimitado</span>
                             </div>
-                            <p class="text-xs text-slate-400 mb-4 font-medium">Operações industriais</p>
+                            <p class="text-xs text-slate-400 mb-3 font-medium">Operações sem barreiras</p>
                             <div class="mb-4 flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white font-mono">R$ 39,90</span><span class="text-xs text-slate-400">/mês</span>
                             </div>
-                            <button onclick="assinarPlano('PREMIUM')" class="w-full mb-4 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Assinar Premium</button>
-                            <ul class="space-y-2.5 text-xs text-slate-300 font-medium">
+                            <button onclick="assinarPlano('PREMIUM')" class="w-full mb-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow cursor-pointer">Assinar Premium</button>
+                            <span class="block text-[10px] text-center text-slate-500 mb-3"><i class="fa-solid fa-headset mr-1"></i> Suporte VIP dedicado</span>
+                            <ul class="space-y-2 text-xs text-slate-300 font-medium">
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Até 3.000 produtos</li>
                                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Produção em Lotes (Escala)</li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> Suporte VIP WhatsApp</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 text-xs"></i> IA Avançada de Precificação</li>
                             </ul>
                         </div>
                     </div>
@@ -171,14 +174,14 @@
         </div>
     </div>
 
-    <!-- Modal de Planos & Assinaturas Interativo -->
+    <!-- Modal Interativo de Planos & Assinaturas -->
     <div id="modalPlanos" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-800 max-w-5xl w-full rounded-3xl p-8 shadow-2xl relative my-8">
             <button onclick="fecharPlanos()" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
             <div class="text-center mb-8">
                 <span class="bg-indigo-500/20 text-indigo-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-500/30">Planos & Assinaturas</span>
                 <h2 class="text-3xl font-black text-white mt-3">Escolha o plano ideal para blindar sua margem</h2>
-                <p class="text-xs text-slate-400 mt-1">Comece grátis ou evolua para recursos ilimitados.</p>
+                <p class="text-xs text-slate-400 mt-1">Recursos avançados para empresários que não aceitam vender com prejuízo.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -202,7 +205,7 @@
 
                 <!-- Pro -->
                 <div class="bg-gradient-to-b from-indigo-950/80 to-slate-950 p-8 rounded-3xl border-2 border-indigo-500/70 flex flex-col justify-between relative shadow-2xl">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Escolhido</div>
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">Mais Vendido • Maior ROI</div>
                     <div>
                         <div class="flex items-center justify-between mb-1 mt-1">
                             <h3 class="text-white font-bold text-lg flex items-center gap-1.5">Pro <i class="fa-solid fa-star text-amber-400 text-xs"></i></h3>
@@ -213,7 +216,7 @@
                         <ul class="space-y-3 text-xs text-slate-200 font-medium">
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Até 100 produtos cadastrados</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Marketplaces</li>
-                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Descontos</li>
+                            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Simulador de Descontos & Promoções</li>
                             <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Relatório Executivo em PDF PRO</li>
                         </ul>
                     </div>
@@ -272,7 +275,7 @@
         </div>
     </header>
 
-    <!-- Seletor de Módulos da Plataforma -->
+    <!-- Seletor de Módulos da Plataforma (Incluindo Ponto de Equilíbrio & Descontos) -->
     <div class="max-w-7xl mx-auto px-6 pt-8 pb-2">
         <div class="flex gap-3 overflow-x-auto pb-2 border-b border-slate-800/80">
             <button onclick="mudarModulo('unitario')" id="tabUnitario" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20 cursor-pointer">
@@ -286,6 +289,9 @@
             </button>
             <button onclick="mudarModulo('descontos')" id="tabDescontos" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-tags text-emerald-400"></i> Simulador Descontos <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
+            </button>
+            <button onclick="mudarModulo('breakeven')" id="tabBreakeven" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-chart-pie text-violet-400"></i> Ponto de Equilíbrio <span class="bg-violet-500/20 text-violet-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
             </button>
             <button onclick="mudarModulo('ia')" id="tabIa" class="px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white cursor-pointer">
                 <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> IA Precificação <span class="bg-amber-500/20 text-amber-300 text-[9px] px-2 py-0.5 rounded-full uppercase">PRO</span>
@@ -514,6 +520,52 @@
             </div>
         </div>
 
+        <!-- MÓDULO NOVO: CALCULADORA DE PONTO DE EQUILÍBRIO (BREAK-EVEN) -->
+        <div id="moduloBreakeven" class="hidden contents">
+            <div class="lg:col-span-7 bg-slate-900/60 p-8 rounded-3xl border border-slate-800/90 shadow-2xl backdrop-blur-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex items-center justify-between mb-6 pb-5 border-b border-slate-800/80 relative z-10">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-black text-white tracking-tight">Calculadora de Ponto de Equilíbrio (Break-Even)</h2>
+                            <span class="bg-violet-500/15 text-violet-300 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-violet-500/30 uppercase tracking-wide">PRO</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Descubra exatamente quantas unidades você precisa vender para cobrir todos os custos fixos.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-5 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Fixo Mensal Total (R$)</label>
+                            <input type="number" id="beCustoFixo" step="0.01" placeholder="Ex: 3000,00" oninput="calcularBreakEven()"
+                                class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-violet-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Preço de Venda Unitário (R$)</label>
+                            <input type="number" id="bePrecoVenda" step="0.01" placeholder="Ex: 150,00" oninput="calcularBreakEven()"
+                                class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-violet-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Custo Variável por Unidade (R$)</label>
+                        <input type="number" id="beCustoVariavel" step="0.01" placeholder="Ex: 50,00" oninput="calcularBreakEven()"
+                            class="w-full px-4 py-3.5 bg-slate-950/90 border border-slate-800 rounded-xl text-white font-mono text-sm outline-none focus:border-violet-500 transition">
+                    </div>
+
+                    <div class="bg-gradient-to-r from-violet-950/40 via-slate-950/80 to-slate-950 p-5 rounded-2xl border border-violet-500/30 flex items-center justify-between">
+                        <div>
+                            <span class="text-slate-400 text-xs block mb-1">Meta de Vendas para Empatar:</span>
+                            <span class="text-slate-500 text-[10px]">Unidades mínimas mensais</span>
+                        </div>
+                        <strong id="resBreakEvenUnidades" class="text-white font-mono text-2xl font-black">0 un</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MÓDULO: IA PRECIFICAÇÃO -->
         <div id="moduloIa" class="hidden contents">
             <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-3xl border border-slate-800/80 shadow-2xl backdrop-blur-xl">
@@ -648,7 +700,7 @@
         </div>
     </div>
 
-    <!-- Script Principal com Controle de Módulos e Planos -->
+    <!-- Script Principal com Controle de Módulos, Ponto de Equilíbrio e Planos -->
     <script>
         let planoAtual = 'FREE';
 
@@ -667,7 +719,7 @@
         }
 
         function mudarModulo(modulo) {
-            ['unitario', 'custosFixos', 'marketplaces', 'descontos', 'ia', 'lotes'].forEach(m => {
+            ['unitario', 'custosFixos', 'marketplaces', 'descontos', 'breakeven', 'ia', 'lotes'].forEach(m => {
                 const el = document.getElementById('modulo' + m.charAt(0).toUpperCase() + m.slice(1));
                 if(el) el.classList.add('hidden');
                 const btn = document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1));
@@ -676,7 +728,7 @@
                 }
             });
 
-            if((modulo === 'marketplaces' || modulo === 'descontos' || modulo === 'ia') && planoAtual === 'FREE') {
+            if((modulo === 'marketplaces' || modulo === 'descontos' || modulo === 'breakeven' || modulo === 'ia') && planoAtual === 'FREE') {
                 abrirPlanos();
                 mostrarToast('Aviso', 'Este módulo exclusivo exige o Plano PRO ou superior.');
                 return;
@@ -759,6 +811,17 @@
                 statusEl.innerText = 'Saudável & Lucrativo';
                 statusEl.className = 'text-emerald-400 font-extrabold uppercase';
             }
+        }
+
+        function calcularBreakEven() {
+            const custoFixo = parseFloat(document.getElementById('beCustoFixo').value) || 0;
+            const precoVenda = parseFloat(document.getElementById('bePrecoVenda').value) || 0;
+            const custoVariavel = parseFloat(document.getElementById('beCustoVariavel').value) || 0;
+
+            const margemContribuicao = precoVenda - custoVariavel;
+            const unidades = margemContribuicao > 0 ? Math.ceil(custoFixo / margemContribuicao) : 0;
+
+            document.getElementById('resBreakEvenUnidades').innerText = unidades > 0 ? unidades + ' un' : '0 un';
         }
 
         function sincronizarMargem() {
